@@ -9,14 +9,16 @@ import { CaseItemComponent } from './components/case-item/case-item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
-
+import { CasesComponent } from './components/cases/cases.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     CaseItemComponent,
     HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    CasesComponent
   ],
   imports: [
     BrowserModule,
@@ -24,13 +26,15 @@ import { AppRoutingModule } from './/app-routing.module';
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   exports: [
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
