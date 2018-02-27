@@ -6,12 +6,14 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { CaseItemComponent } from './components/case-item/case-item.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CaseItemComponent
+    CaseItemComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
