@@ -1,21 +1,21 @@
 <h2>My Cases</h2>
 
 <div>
-  <label>Case title:
-    <input #caseTitle />
+  <label>Legal Case title:
+    <input #legalcaseTitle />
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(caseTitle.value); caseTitle.value=''">
+  <button (click)="add(legalcaseTitle.value); legalcaseTitle.value=''">
     add
   </button>
 </div>
 
 <ul class="cases">
-  <li *ngFor="let case of cases">
-    <a routerLink="/detail/{{case.id}}">
-      <span class="badge">{{case.id}}</span> {{case.title}}
+  <li *ngFor="let legalcase of legalcases">
+    <a routerLink="/detail/{{legalcase.id}}">
+      <span class="badge">{{legalcase.id}}</span> {{legalcase.title}}
     </a>
     <button class="delete" title="delete case"
-            (click)="delete(case)">x</button>
+            (click)="delete(legalcase)">x</button>
   </li>
 </ul>

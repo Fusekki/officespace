@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Case } from '../../classes/case';
-import { CaseService} from '../../services/case.service';
+import { Legalcase } from '../../classes/legalcase';
+import { LegalcaseService} from '../../services/legalcase.service';
 
 @Component({
   selector: 'app-cases',
@@ -8,32 +8,31 @@ import { CaseService} from '../../services/case.service';
   styleUrls: ['./cases.component.css']
 })
 export class CasesComponent implements OnInit {
+  legalcases: Legalcase[];
 
-  cases: Case[];
-
-  constructor(private caseService: CaseService) { }
+  constructor(private legalcaseService: LegalcaseService) { }
 
   ngOnInit() {
-    this.getCases();
+    this.getLegalcases();
   }
 
-  getCases(): void {
-    this.caseService.getCases()
-      .subscribe(cases => this.cases = cases);
+  getLegalcases(): void {
+    this.legalcaseService.getLegalcases()
+      .subscribe(legalcases => this.legalcases = legalcases);
   }
 
   add(title: string): void {
-    title = name.trim();
-    if (!name) { return; }
-    this.caseService.addCase({ title } as Case)
-      .subscribe(case => {
-        this.cases.push(case);
+    title = title.trim();
+    if (!title) { return; }
+    this.legalcaseService.addLegalcase({ title } as Legalcase)
+      .subscribe(legalcase => {
+        this.legalcases.push(legalcase);
       });
   }
 
-  delete(case: Case): void {
-    this.cases = this.cases.filter(c => c !== case);
-    this.caseService.deleteCase(case).subscribe();
+  delete(legalcase: Legalcase): void {
+    this.legalcases = this.legalcases.filter(l => l !== legalcase);
+    this.legalcaseService.deleteLegalcase(legalcase).subscribe();
   }
 
 }
