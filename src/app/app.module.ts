@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { CaseItemComponent } from './components/case-item/case-item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BrowserAnimationsModule,
     MatMenuModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    AppRoutingModule
   ],
   exports: [
     BrowserAnimationsModule,
