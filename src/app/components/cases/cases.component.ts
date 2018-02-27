@@ -9,6 +9,8 @@ import { CaseService} from '../../services/case.service';
 })
 export class CasesComponent implements OnInit {
 
+  cases: Case[];
+
   constructor(private caseService: CaseService) { }
 
   ngOnInit() {
