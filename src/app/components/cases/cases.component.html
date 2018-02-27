@@ -1,0 +1,21 @@
+<h2>My Cases</h2>
+
+<div>
+  <label>Case title:
+    <input #caseTitle />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(caseTitle.value); caseTitle.value=''">
+    add
+  </button>
+</div>
+
+<ul class="cases">
+  <li *ngFor="let case of cases">
+    <a routerLink="/detail/{{case.id}}">
+      <span class="badge">{{case.id}}</span> {{case.title}}
+    </a>
+    <button class="delete" title="delete case"
+            (click)="delete(case)">x</button>
+  </li>
+</ul>
