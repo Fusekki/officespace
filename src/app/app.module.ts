@@ -12,21 +12,21 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './classes/in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
-import { LegalCaseItemComponent } from './components/legalcase-item/legalcase-item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LegalCasesComponent } from './components/legalcases/legalcases.component';
 import { MessageService } from './services/message.service';
 import { LegalcaseService } from './services/legalcase.service';
+import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcase-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LegalCaseItemComponent,
     HeaderComponent,
     DashboardComponent,
-    LegalCasesComponent
+    LegalCasesComponent,
+    LegalcaseDetailComponent
   ],
   imports: [
     BrowserModule,
