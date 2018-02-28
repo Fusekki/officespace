@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LegalCaseItemComponent } from './components/legalcase-item/legalcase-item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { CasesComponent } from './components/legalcases/legalcases.component';
+import { LegalCasesComponent } from './components/legalcases/legalcases.component';
 import { MessageService } from './services/message.service';
 import { LegalcaseService } from './services/legalcase.service';
 
@@ -23,7 +23,7 @@ import { LegalcaseService } from './services/legalcase.service';
     LegalCaseItemComponent,
     HeaderComponent,
     DashboardComponent,
-    CasesComponent
+    LegalCasesComponent
   ],
   imports: [
     BrowserModule,
