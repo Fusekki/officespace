@@ -2,12 +2,13 @@
   <mat-icon>menu</mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item disabled>
+  <button mat-menu-item>
     <mat-icon>home</mat-icon>
-    <span>Home</span>
+    <span routerLink="/dashboard">Dashboard</span>
   </button>
   <button mat-menu-item>
     <mat-icon>dashboard</mat-icon>
-    <span>Cases</span>
+    <span routerLink="/legalcases">Cases</span>
   </button>
 </mat-menu>
+
