@@ -7,7 +7,7 @@ import { LegalcaseService} from '../../services/legalcase.service';
   templateUrl: './legalcases.component.html',
   styleUrls: ['./legalcases.component.css']
 })
-export class CasesComponent implements OnInit {
+export class LegalCasesComponent implements OnInit {
   legalcases: Legalcase[];
 
   constructor(private legalcaseService: LegalcaseService) { }
