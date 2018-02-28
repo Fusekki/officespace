@@ -3,9 +3,9 @@ import { Legalcase } from '../../classes/legalcase';
 import { LegalcaseService} from '../../services/legalcase.service';
 
 @Component({
-  selector: 'app-cases',
-  templateUrl: './cases.component.html',
-  styleUrls: ['./cases.component.css']
+  selector: 'app-legalcases',
+  templateUrl: './legalcases.component.html',
+  styleUrls: ['./legalcases.component.css']
 })
 export class CasesComponent implements OnInit {
   legalcases: Legalcase[];

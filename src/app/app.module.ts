@@ -7,20 +7,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
-import { CaseItemComponent } from './components/case-item/case-item.component';
+import { LegalCaseItemComponent } from './components/legalcase-item/legalcase-item.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { AppRoutingModule } from './app-routing.module';
-import { CasesComponent } from './components/cases/cases.component';
-import { HttpClientModule } from '@angular/common/http';
+import { CasesComponent } from './components/legalcases/legalcases.component';
 import { MessageService } from './services/message.service';
 import { LegalcaseService } from './services/legalcase.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CaseItemComponent,
+    LegalCaseItemComponent,
     HeaderComponent,
     DashboardComponent,
     CasesComponent
