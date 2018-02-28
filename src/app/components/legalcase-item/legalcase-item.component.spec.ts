@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CaseItemComponent } from './case-item.component';
+import { CaseItemComponent } from './legalcase-item.component';
 
 describe('CaseItemComponent', () => {
   let component: CaseItemComponent;
