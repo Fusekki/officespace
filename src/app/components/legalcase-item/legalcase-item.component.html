@@ -1,13 +1,11 @@
-<button mat-icon-button [matMenuTriggerFor]="menu">
-  <mat-icon>menu</mat-icon>
-</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item disabled>
-    <mat-icon>home</mat-icon>
-    <span>Home</span>
-  </button>
-  <button mat-menu-item>
-    <mat-icon>dashboard</mat-icon>
-    <span>Cases</span>
-  </button>
-</mat-menu>
+<div *ngIf="legalcase">
+  <h2>{{ legalcase.title | uppercase }} Details</h2>
+  <div><span>id: </span>{{legalclase.id}}</div>
+  <div>
+    <label>title:
+      <input [(ngModel)]="legalcase.title" placeholder="title"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save()">save</button>
+</div>
