@@ -2,19 +2,7 @@ h3 {
   text-align: center;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
+.mat-grid-tile {
+  border: 1px solid grey;
   text-align: center;
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-.module {
-  margin: 0 5px;
-  height: 150px;
-  width: 150px;
-  border: 2px solid grey;
 }
