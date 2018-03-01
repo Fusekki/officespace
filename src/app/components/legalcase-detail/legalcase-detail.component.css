@@ -1,20 +1,19 @@
-h2 {
-  text-align: center;
-}
 label {
   font-weight: bold;
 }
 input {
   width: 100%;
 }
-mat-card-subtitle {
-  text-align: center;
+
+.mat-icon-button {
+  width: 25%;
 }
 
 mat-card-actions {
   text-align: center;
 }
 
-.mat-icon-button {
-  width: 25%;
+.legalcase-header-image {
+  background-image: url('http://via.placeholder.com/40x40');
+  background-size: cover;
 }
