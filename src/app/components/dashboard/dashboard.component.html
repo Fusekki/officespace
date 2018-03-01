@@ -1,9 +1,9 @@
 <h3>Top Legalcases</h3>
 <div class="grid grid-pad">
-  <a *ngFor="let legalcase of legalcases" class="col-1-4"
+  <span *ngFor="let legalcase of legalcases" class="col-1-4"
      routerLink="/detail/{{legalcase.id}}">
     <div class="module legalcase">
       <h4>{{legalcase.title}}</h4>
     </div>
-  </a>
+  </span>
 </div>
