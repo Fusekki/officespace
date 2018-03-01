@@ -1,8 +1,8 @@
 <mat-card *ngIf="legalcase">
   <mat-card-header>
-    <div mat-card-avatar class="legalcase-header-image"><mat-icon aria-label="case">folder</mat-icon></div>
-    <mat-card-title><h2>{{ legalcase.title | uppercase }}</h2></mat-card-title>
-    <mat-card-subtitle>Details</mat-card-subtitle>
+    <div mat-card-avatar class="legalcase-header-image"></div>
+    <mat-card-title><h3>{{ legalcase.title | uppercase }}</h3></mat-card-title>
+    <mat-card-subtitle>Docket #: {{legalcase.docket}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <div>
