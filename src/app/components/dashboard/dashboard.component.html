@@ -1,9 +1,12 @@
 <h3>Top Legalcases</h3>
-<div class="grid grid-pad">
-  <span *ngFor="let legalcase of legalcases" class="col-1-4"
-     routerLink="/detail/{{legalcase.id}}">
-    <div class="module legalcase">
-      <h4>{{legalcase.title}}</h4>
-    </div>
-  </span>
-</div>
+
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile
+      *ngFor="let legalcase of legalcases"
+      routerLink="/detail/{{legalcase.id}}"
+      [colspan]="legalcase.cols"
+      [rowspan]="legalcase.rows"
+      [style.background]="legalcase.color">
+    {{legalcase.title}}
+  </mat-grid-tile>
+</mat-grid-list>
