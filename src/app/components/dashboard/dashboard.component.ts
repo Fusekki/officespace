@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   getLegalcases(): void {
     this.legalcaseService.getLegalcases()
-      .subscribe(legalcases => this.legalcases = legalcases.slice(1, 5));
+      .subscribe(legalcases => this.legalcases = legalcases.slice(0, 4));
   }
 
 }
