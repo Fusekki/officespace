@@ -9,6 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
@@ -39,6 +40,7 @@ import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcas
     MatButtonModule,
     MatIconModule,
     MatCardModule,
+    MatTooltipModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -49,12 +51,13 @@ import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcas
   ],
   exports: [
     BrowserAnimationsModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatIconModule,
     HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
     MatGridListModule,
-    MatCardModule
+    MatIconModule,
+    MatMenuModule,
+    MatTooltipModule
   ],
   providers: [
     LegalcaseService,
