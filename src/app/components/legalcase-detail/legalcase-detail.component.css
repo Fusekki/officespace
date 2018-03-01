@@ -10,3 +10,11 @@ input {
 mat-card-subtitle {
   text-align: center;
 }
+
+mat-card-actions {
+  text-align: center;
+}
+
+.mat-icon-button {
+  width: 25%;
+}
