@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './classes/in-memory-data.service';
@@ -33,6 +34,7 @@ import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcas
     BrowserAnimationsModule,
     FormsModule,
     MatMenuModule,
+    MatGridListModule,
     MatButtonModule,
     MatIconModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
@@ -48,7 +50,8 @@ import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcas
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [
     LegalcaseService,
