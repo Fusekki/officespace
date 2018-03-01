@@ -26,13 +26,13 @@
     <button mat-button matTooltip="Save!" matTooltipPosition="right" (click)="save()">save</button>
   </mat-card-actions>
   <mat-card-actions>
-    <button mat-icon-button matTooltip="Files!" (click)="files()">
+    <button mat-icon-button matTooltip="Files!" routerLink="/files/{{legalcase.id}}">
       <mat-icon>folder</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="Calendar!"(Click)="calendar()">
+    <button mat-icon-button matTooltip="Calendar!" routerLink="/calendar/{{legalcase.id}}">
       <mat-icon>today</mat-icon>
     </button>
-    <button mat-icon-button matTooltip="Messages!" (Click)="messages()">
+    <button mat-icon-button matTooltip="Messages!" routerLink="/messages/{{legalcase.id}}">
       <mat-icon>message</mat-icon>
     </button>
   </mat-card-actions>
