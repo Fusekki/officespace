@@ -1,6 +1,6 @@
 <h2>My Cases</h2>
 
-<div>
+<div class="header">
   <label>Legal Case title:
     <input #legalcaseTitle />
   </label>
@@ -10,12 +10,16 @@
   </button>
 </div>
 
-<ul class="cases">
-  <li *ngFor="let legalcase of legalcases">
-    <a routerLink="/detail/{{legalcase.id}}">
-      <span class="badge">{{legalcase.id}}</span> {{legalcase.title}}
-    </a>
-    <button class="delete" title="delete case"
-            (click)="delete(legalcase)">x</button>
-  </li>
-</ul>
+<mat-grid-list cols="4" rowHeight="100px" [gutterSize]="10">
+  <mat-grid-tile
+      *ngFor="let legalcase of legalcases"
+      routerLink="/detail/{{legalcase.id}}"
+      [colspan]="legalcase.cols"
+      [rowspan]="legalcase.rows"
+      [style.background]="legalcase.color">
+    {{legalcase.title}}
+    <button mat-icon-button color="warn" class="delete" title="delete case" (click)="delete(legalcase)">
+      <mat-icon aria-label="delete">delete</mat-icon>
+    </button>
+  </mat-grid-tile>
+</mat-grid-list>

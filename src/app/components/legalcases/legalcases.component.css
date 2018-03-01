@@ -1,0 +1,8 @@
+.header {
+  margin-bottom: 20px;
+}
+
+.mat-grid-tile {
+  border: 1px solid grey;
+  text-align: center;
+}
