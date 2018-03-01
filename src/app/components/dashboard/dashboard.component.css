@@ -6,3 +6,9 @@ h3 {
   border: 1px solid grey;
   text-align: center;
 }
+
+ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}

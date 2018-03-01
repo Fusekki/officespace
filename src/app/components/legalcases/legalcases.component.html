@@ -17,7 +17,14 @@
       [colspan]="legalcase.cols"
       [rowspan]="legalcase.rows"
       [style.background]="legalcase.color">
-    {{legalcase.title}}
+      <ul>
+        <li>{{legalcase.title}}
+        </li>
+        <li>{{legalcase.docket}}
+        </li>
+        <li>{{legalcase.defendant}}
+        </li>
+      </ul>
     <button mat-icon-button color="warn" class="delete" title="delete case" (click)="delete(legalcase)">
       <mat-icon aria-label="delete">delete</mat-icon>
     </button>

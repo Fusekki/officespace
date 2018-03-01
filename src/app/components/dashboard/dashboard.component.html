@@ -7,6 +7,13 @@
       [colspan]="legalcase.cols"
       [rowspan]="legalcase.rows"
       [style.background]="legalcase.color">
-    {{legalcase.title}}
+      <ul>
+        <li>{{legalcase.title}}
+        </li>
+        <li>{{legalcase.docket}}
+        </li>
+        <li>{{legalcase.defendant}}
+        </li>
+      </ul>
   </mat-grid-tile>
 </mat-grid-list>
