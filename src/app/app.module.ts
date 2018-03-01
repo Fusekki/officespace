@@ -21,8 +21,8 @@ import { LegalCasesComponent } from './components/legalcases/legalcases.componen
 import { MessageService } from './services/message.service';
 import { LegalcaseService } from './services/legalcase.service';
 import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcase-detail.component';
-import { LegalcaseFilesComponent } from './components/legalcase-files/legalcase-files.component';
-
+import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
+import { LegalfileService } from './services/legalfile.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { LegalcaseFilesComponent } from './components/legalcase-files/legalcase-
     DashboardComponent,
     LegalCasesComponent,
     LegalcaseDetailComponent,
-    LegalcaseFilesComponent
+    LegalfilesComponent
   ],
   imports: [
     BrowserModule,
@@ -63,6 +63,7 @@ import { LegalcaseFilesComponent } from './components/legalcase-files/legalcase-
   ],
   providers: [
     LegalcaseService,
+    LegalfileService,
     MessageService
   ],
   bootstrap: [AppComponent]
