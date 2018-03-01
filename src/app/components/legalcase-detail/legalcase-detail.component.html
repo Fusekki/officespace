@@ -1,11 +1,28 @@
-<div *ngIf="legalcase">
-  <h2>{{ legalcase.title | uppercase }} Details</h2>
-  <div><span>id: </span>{{legalcase.id}}</div>
-  <div>
-    <label>title:
-      <input [(ngModel)]="legalcase.title" placeholder="title"/>
-    </label>
-  </div>
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
-</div>
+<mat-card *ngIf="legalcase">
+  <mat-card-header>
+    <div mat-card-avatar class="legalcase-header-image"><mat-icon aria-label="case">folder</mat-icon></div>
+    <mat-card-title><h2>{{ legalcase.title | uppercase }}</h2></mat-card-title>
+    <mat-card-subtitle>Details</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <label>Title:
+        <input [(ngModel)]="legalcase.title" placeholder="title"/>
+      </label>
+    </div>
+    <div>
+      <label>Docket:
+        <input [(ngModel)]="legalcase.docket" placeholder="docket"/>
+      </label>
+    </div>
+    <div>
+      <label>Defandant:
+        <input [(ngModel)]="legalcase.defendant" placeholder="defandant"/>
+      </label>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="goBack()">go back</button>
+    <button mat-button (click)="save()">save</button>
+  </mat-card-actions>
+</mat-card>

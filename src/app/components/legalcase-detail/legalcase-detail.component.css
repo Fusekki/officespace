@@ -1,0 +1,12 @@
+h2 {
+  text-align: center;
+}
+label {
+  font-weight: bold;
+}
+input {
+  width: 100%;
+}
+mat-card-subtitle {
+  text-align: center;
+}
