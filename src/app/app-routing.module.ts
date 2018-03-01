@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'detail/:id', component: LegalcaseDetailComponent },
   { path: 'legalcases', component: LegalCasesComponent },
   { path: 'files/:id', component: LegalfilesComponent }
+  // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
 
 
