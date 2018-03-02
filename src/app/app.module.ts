@@ -23,6 +23,7 @@ import { LegalcaseService } from './services/legalcase.service';
 import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcase-detail.component';
 import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
 import { LegalfileService } from './services/legalfile.service';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LegalfileService } from './services/legalfile.service';
     DashboardComponent,
     LegalCasesComponent,
     LegalcaseDetailComponent,
-    LegalfilesComponent
+    LegalfilesComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
