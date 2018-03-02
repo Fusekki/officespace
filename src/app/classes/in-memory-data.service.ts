@@ -19,7 +19,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 0,  title: 'Law Firm' }
     ];
     const teams = [
-      {id: 0, title: 'Some team' }
+      {id: 0, title: 'Some team', members: ["Jane Doe"] }
     ];
     return {legalcases, legalfiles, projects, companies, teams};
   }
