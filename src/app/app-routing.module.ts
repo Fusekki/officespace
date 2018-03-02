@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: LegalcaseDetailComponent },
   { path: 'legalcases', component: LegalCasesComponent },
-  { path: 'files/:id', component: LegalfilesComponent }
+  { path: 'files/:id', component: LegalfilesComponent },
+  { path: 'projects/:id', component: ProjectsComponent }
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
 
