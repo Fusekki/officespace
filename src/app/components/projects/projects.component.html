@@ -1,7 +1,7 @@
 
 <mat-grid-list cols="3" rowHeight="200px" [gutterSize]="10">
-  <mat-grid-tile>
-    <mat-grid-tile-header>{{ company[0].title }}</mat-grid-tile-header>
+  <mat-grid-tile  *ngFor="let project of projects">
+    <mat-grid-tile-header>{{ project.title }}</mat-grid-tile-header>
     <mat-icon aria-label="delete">delete</mat-icon>
   </mat-grid-tile>
   <mat-grid-tile>

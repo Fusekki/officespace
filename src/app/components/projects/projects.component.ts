@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Company } from '../../classes/company';
-import { CompaniesService } from '../../services/companies.service';
+import { Project } from '../../classes/project';
+import { ProjectsService } from '../../services/projects.service';
 
 @Component({
   selector: 'app-projects',
@@ -9,17 +9,18 @@ import { CompaniesService } from '../../services/companies.service';
 })
 export class ProjectsComponent implements OnInit {
 
-  companies: Company[] = [];
+  projects: Project[] = [];
 
-  constructor(private companiesService: CompaniesService) { }
+  constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
-    this.getCompanies();
+    this.getProjects();
   }
 
-  getCompanies(): void {
-    this.companiesService.getCompanies()
-      .subscribe(companies => this.companies = companies);
+  getProjects(): void {
+    this.projectsService.getProjects()
+      .subscribe(projects => this.projects = projects);
   }
+
 
 }
