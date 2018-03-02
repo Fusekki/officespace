@@ -5,9 +5,11 @@ import { LegalCasesComponent } from './components/legalcases/legalcases.componen
 import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcase-detail.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/projects', pathMatch: 'full' },
+  { path: 'projects', component: ProjectsComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: LegalcaseDetailComponent },
   { path: 'legalcases', component: LegalCasesComponent },
