@@ -24,6 +24,7 @@ import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcas
 import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
 import { LegalfileService } from './services/legalfile.service';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { CompaniesService } from './services/companies.service';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
   providers: [
     LegalcaseService,
     LegalfileService,
-    MessageService
+    MessageService,
+    CompaniesService
   ],
   bootstrap: [AppComponent]
 })
