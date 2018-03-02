@@ -21,6 +21,9 @@
 <mat-grid-list cols="2" rowHeight="200px" [gutterSize]="10">
   <mat-grid-tile *ngFor="let team of teams">
     <mat-grid-tile-header>{{team.title}}</mat-grid-tile-header>
+    <ul>
+      <li *ngFor="let member of team.members"><mat-icon aria-label="Person Pin" matTooltip="{{member}}" matTooltipPosition="above">person_pin</mat-icon></li>
+    </ul>
   </mat-grid-tile>
 </mat-grid-list>
   <h3>Projects</h3>
