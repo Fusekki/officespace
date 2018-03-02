@@ -1,10 +1,15 @@
-
+<h3>Some company</h3>
 <mat-grid-list cols="3" rowHeight="200px" [gutterSize]="10">
-  <mat-grid-tile  *ngFor="let project of projects">
-    <mat-grid-tile-header>{{ project.title }}</mat-grid-tile-header>
-    <mat-icon aria-label="delete">delete</mat-icon>
+  <mat-grid-tile>
+    <mat-grid-tile-header>Some Company HQ</mat-grid-tile-header>
+    Company-wide announcements and stuff everyone needs to know
+    <mat-icon aria-label="delete"></mat-icon>
   </mat-grid-tile>
   <mat-grid-tile>
+    <ul>
+      <li><a routerLink="/assignments/{{legalcase.id}}"
+      </li>
+    </ul>
     <mat-grid-tile-header>Message Board</mat-grid-tile-header>
   </mat-grid-tile>
   <mat-grid-tile>
