@@ -12,6 +12,9 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 1, legalcase_id: 0, title: 'Document2', icon: 'word' },
       { id: 2, legalcase_id: 0, title: 'Spreadsheet1', icon: 'excel' }
     ];
-    return {legalcases, legalfiles};
+    const companies = [
+      { id: 0,  title: 'Law Firm' }
+    ];
+    return {legalcases, legalfiles, companies};
   }
 }
