@@ -1,3 +1,22 @@
-<p>
-  projects works!
-</p>
+
+<mat-grid-list cols="3" rowHeight="200px" [gutterSize]="10">
+  <mat-grid-tile>
+    <mat-grid-tile-header>{{ company[0].title }}</mat-grid-tile-header>
+    <mat-icon aria-label="delete">delete</mat-icon>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header>Message Board</mat-grid-tile-header>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header>To-dos</mat-grid-tile-header>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header>Schedule</mat-grid-tile-header>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header>Automatic Check-ins</mat-grid-tile-header>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-grid-tile-header>Docs & Files</mat-grid-tile-header>
+  </mat-grid-tile>
+</mat-grid-list>
