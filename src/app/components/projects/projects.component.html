@@ -1,27 +1,31 @@
 <h3>Some company</h3>
-<mat-grid-list cols="3" rowHeight="200px" [gutterSize]="10">
+<mat-grid-list cols="2" rowHeight="200px" [gutterSize]="10">
   <mat-grid-tile>
     <mat-grid-tile-header>Some Company HQ</mat-grid-tile-header>
     Company-wide announcements and stuff everyone needs to know
     <mat-icon aria-label="delete"></mat-icon>
   </mat-grid-tile>
   <mat-grid-tile>
-    <ul>
-      <li><a routerLink="/assignments/{{legalcase.id}}"
-      </li>
-    </ul>
     <mat-grid-tile-header>Message Board</mat-grid-tile-header>
+    <ul>
+      <li><a routerLink="/assignments/{{user.id}}">My Assignments</a></li>
+      <li><a routerLink="/bookmarks/{{user.id}}">My Bookmarks</a></li>
+      <li><a routerLink="/schedule/{{user.id}}">My Schedule</a></li>
+      <li><a routerLink="/drafts/{{user.id}}">My Drafts</a></li>
+      <li><a routerLink="/activity/{{user.id}}">My Recent Activity</a></li>
+      <li><a routerLink="/applause/{{user.id}}">My Applause</a></li>
+    </ul>
   </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-grid-tile-header>To-dos</mat-grid-tile-header>
+</mat-grid-list>
+<h3>Teams</h3>
+<mat-grid-list cols="2" rowHeight="200px" [gutterSize]="10">
+  <mat-grid-tile *ngFor="let team of teams">
+    <mat-grid-tile-header>{{team.title}}</mat-grid-tile-header>
   </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-grid-tile-header>Schedule</mat-grid-tile-header>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-grid-tile-header>Automatic Check-ins</mat-grid-tile-header>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <mat-grid-tile-header>Docs & Files</mat-grid-tile-header>
+</mat-grid-list>
+  <h3>Projects</h3>
+<mat-grid-list cols="2" rowHeight="200px" [gutterSize]="10">
+  <mat-grid-tile *ngFor="let project of projects">
+    <mat-grid-tile-header>{{project.title}}</mat-grid-tile-header>
   </mat-grid-tile>
 </mat-grid-list>
