@@ -1,3 +1,7 @@
+h3 {
+  text-align: center;
+}
+
 .mat-grid-tile {
   border: 1px solid grey;
   text-align: center;
