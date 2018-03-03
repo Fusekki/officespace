@@ -19,11 +19,8 @@ export class ProjectsComponent implements OnInit {
   constructor(
     private projectsService: ProjectsService,
     private teamService: TeamService) { }
-
-  // private company = new Company(0, 'Law Firm');
-  private user = new User(0, 'ying@staffordesq.com', 'Ying', 'Stafford', 'Ying Stafford');
-  // private project = new Project(0, 'Some project');
-  // private team = new Team(0, 'Some team');
+    private user = [ {id: 0, email: 'ying@staffordesq.com',
+                  firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford'} ];
 
   ngOnInit() {
     this.getProjects();
