@@ -25,7 +25,7 @@ import { LegalfilesComponent } from './components/legalfiles/legalfiles.componen
 import { LegalfileService } from './services/legalfile.service';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CompanyService } from './services/company.service';
-import { ProjectsService } from './services/projects.service';
+import { ProjectService } from './services/project.service';
 import { TeamService } from './services/team.service';
 
 @NgModule({
@@ -71,7 +71,7 @@ import { TeamService } from './services/team.service';
     LegalfileService,
     MessageService,
     CompanyService,
-    ProjectsService,
+    ProjectService,
     TeamService
   ],
   bootstrap: [AppComponent]

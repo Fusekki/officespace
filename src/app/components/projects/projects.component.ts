@@ -3,7 +3,7 @@ import { Project } from '../../classes/project';
 import { User } from '../../classes/user';
 import { Team } from '../../classes/team';
 import { Company } from '../../classes/company';
-import { ProjectsService } from '../../services/projects.service';
+import { ProjectService } from '../../services/project.service';
 import { TeamService } from '../../services/team.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
   teams: Team[] = [];
 
   constructor(
-    private projectsService: ProjectsService,
+    private projectService: ProjectService,
     private teamService: TeamService) { }
     private user = [ {id: 0, email: 'ying@staffordesq.com',
                   firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford'} ];
@@ -28,7 +28,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.projectsService.getProjects()
+    this.projectService.getProjects()
       .subscribe(projects => this.projects = projects);
   }
 
