@@ -27,6 +27,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { CompanyService } from './services/company.service';
 import { ProjectService } from './services/project.service';
 import { TeamService } from './services/team.service';
+import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { TeamService } from './services/team.service';
     LegalCasesComponent,
     LegalcaseDetailComponent,
     LegalfilesComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TeamDetailComponent
   ],
   imports: [
     BrowserModule,
