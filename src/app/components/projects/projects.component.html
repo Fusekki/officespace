@@ -19,7 +19,7 @@
 </mat-grid-list>
 <h3>Teams</h3>
 <mat-grid-list cols="2" rowHeight="200px" [gutterSize]="10">
-  <mat-grid-tile *ngFor="let team of teams">
+  <mat-grid-tile *ngFor="let team of teams" routerLink="/teams/{{team.id}}">
     <mat-grid-tile-header>{{team.title}}</mat-grid-tile-header>
     <ul>
       <li *ngFor="let member of team.members">
