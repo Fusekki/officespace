@@ -24,7 +24,7 @@ import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcas
 import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
 import { LegalfileService } from './services/legalfile.service';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { CompaniesService } from './services/companies.service';
+import { CompanyService } from './services/company.service';
 import { ProjectsService } from './services/projects.service';
 import { TeamService } from './services/team.service';
 
@@ -70,7 +70,7 @@ import { TeamService } from './services/team.service';
     LegalcaseService,
     LegalfileService,
     MessageService,
-    CompaniesService,
+    CompanyService,
     ProjectsService,
     TeamService
   ],
