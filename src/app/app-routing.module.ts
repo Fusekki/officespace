@@ -6,6 +6,7 @@ import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcas
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full' },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'detail/:id', component: LegalcaseDetailComponent },
   { path: 'legalcases', component: LegalCasesComponent },
   { path: 'files/:id', component: LegalfilesComponent },
-  { path: 'projects/:id', component: ProjectsComponent }
+  { path: 'projects/:id', component: ProjectsComponent },
+  { path: 'teams/:id', component: TeamDetailComponent }
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
 
