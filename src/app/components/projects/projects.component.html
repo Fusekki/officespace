@@ -1,7 +1,7 @@
 <h3>Some company</h3>
 <mat-grid-list cols="2" rowHeight="200px" [gutterSize]="10">
-  <mat-grid-tile>
-    <mat-grid-tile-header>Some Company HQ</mat-grid-tile-header>
+  <mat-grid-tile *ngFor="let company of companies" routerLink="/companies/{{company.id}}">>
+    <mat-grid-tile-header>{{ company.name }}Some Company HQ</mat-grid-tile-header>
     Company-wide announcements and stuff everyone needs to know
     <mat-icon aria-label="delete"></mat-icon>
   </mat-grid-tile>
