@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import {FormControl} from '@angular/forms';
 
 import { Team } from '../../classes/team';
 import { TeamService } from '../../services/team.service';
@@ -11,12 +12,13 @@ import { TeamService } from '../../services/team.service';
   styleUrls: ['./team-detail.component.css']
 })
 export class TeamDetailComponent implements OnInit {
+  Members = new FormControl();
 
   @Input() team: Team;
 
   constructor(
     private route: ActivatedRoute,
-    private legalcaseService: TeamService,
+    private teamService: TeamService,
     private location: Location
   ) {}
 
@@ -26,7 +28,7 @@ export class TeamDetailComponent implements OnInit {
 
   getTeam(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.legalcaseService.getTeam(id)
+    this.teamService.getTeam(id)
       .subscribe(team => this.team = team);
   }
 
@@ -35,7 +37,7 @@ export class TeamDetailComponent implements OnInit {
   }
 
   save(): void {
-    this.legalcaseService.updateTeam(this.team)
+    this.teamService.updateTeam(this.team)
       .subscribe(() => this.goBack());
   }
 

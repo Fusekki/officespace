@@ -1,3 +1,38 @@
-<p>
-  team-detail works!
-</p>
+<mat-card *ngIf="team">
+  <mat-card-header>
+    <div mat-card-avatar class="team-header-image"></div>
+    <mat-card-title><h3>{{ team.title | uppercase }}</h3></mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <label>Title:
+        <input [(ngModel)]="team.title" placeholder="title"/>
+      </label>
+    </div>
+    <div>
+      <label>Members:
+        <mat-form-field>
+          <mat-select placeholder="members" [formControl]="members" multiple>
+            <mat-option *ngFor="let member of team.members" [value]="member">{{member}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </label>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button matTooltip="Back!" matTooltipPosition="left" (click)="goBack()">go back</button>
+    <button mat-button matTooltip="Save!" matTooltipPosition="right" (click)="save()">save</button>
+  </mat-card-actions>
+  <mat-card-actions>
+    <button mat-icon-button matTooltip="Files!" routerLink="/files/{{team.id}}">
+      <mat-icon>folder</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Calendar!" routerLink="/calendar/{{team.id}}">
+      <mat-icon>today</mat-icon>
+    </button>
+    <button mat-icon-button matTooltip="Messages!" routerLink="/messages/{{team.id}}">
+      <mat-icon>message</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
