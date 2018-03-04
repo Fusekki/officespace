@@ -7,6 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
+import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'legalcases', component: LegalCasesComponent },
   { path: 'files/:id', component: LegalfilesComponent },
   { path: 'projects/:id', component: ProjectsComponent },
-  { path: 'teams/:id', component: TeamDetailComponent }
+  { path: 'teams/:id', component: TeamDetailComponent },
+  { path: 'companies/:id', component: CompanyDashboardComponent }
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
 
