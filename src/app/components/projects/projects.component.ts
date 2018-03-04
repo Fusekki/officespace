@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
   teams: Team[] = [];
   companies: Company[] = [];
-  const user = { id: 0, email: 'ying@staffordesq.com',
+  user = { id: 0, email: 'ying@staffordesq.com',
                     firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford', companies: [0] };
 
   constructor(
