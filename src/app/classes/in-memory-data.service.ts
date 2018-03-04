@@ -16,11 +16,15 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 0,  title: 'Special Case' }
     ];
     const companies = [
-      { id: 0,  title: 'Law Firm' }
+      { id: 0,  name: 'Law Firm' }
     ];
     const teams = [
       {id: 0, title: 'Some team', members: ["Jane Doe"] }
     ];
-    return {legalcases, legalfiles, projects, companies, teams};
+    const users = [
+      {id: 0, email: 'ying@staffordesq.com',
+                      firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford', companies: [0] }
+    ];
+    return {legalcases, legalfiles, projects, companies, teams, users};
   }
 }
