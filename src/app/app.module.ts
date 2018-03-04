@@ -29,8 +29,10 @@ import { LegalfileService } from './services/legalfile.service';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { CompanyService } from './services/company.service';
 import { ProjectService } from './services/project.service';
+import { UserService } from './services/user.service';
 import { TeamService } from './services/team.service';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
+import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
     LegalcaseDetailComponent,
     LegalfilesComponent,
     ProjectsComponent,
-    TeamDetailComponent
+    TeamDetailComponent,
+    CompanyDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -84,7 +87,8 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
     MessageService,
     CompanyService,
     ProjectService,
-    TeamService
+    TeamService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
