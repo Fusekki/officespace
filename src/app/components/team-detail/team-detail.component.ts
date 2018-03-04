@@ -12,7 +12,7 @@ import { TeamService } from '../../services/team.service';
   styleUrls: ['./team-detail.component.css']
 })
 export class TeamDetailComponent implements OnInit {
-  Members = new FormControl();
+  members = new FormControl();
 
   @Input() team: Team;
 

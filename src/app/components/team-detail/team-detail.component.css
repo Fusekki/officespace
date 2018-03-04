@@ -1,0 +1,14 @@
+.mat-icon-button {
+  width: 25%;
+}
+
+mat-card-content,
+mat-card-actions {
+  text-align: center;
+}
+
+.team-header-image {
+  background-image: url('http://via.placeholder.com/40x40');
+  background-size: cover;
+  margin-right: 20px;
+}
