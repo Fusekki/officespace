@@ -11,6 +11,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
@@ -50,6 +52,7 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
     MatGridListModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
     MatCardModule,
     MatTooltipModule,
     MatSelectModule,
@@ -68,6 +71,7 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
     HttpClientModule,
     MatButtonModule,
     MatCardModule,
+    MatInputModule,
     MatGridListModule,
     MatIconModule,
     MatMenuModule,
