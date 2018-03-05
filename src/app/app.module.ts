@@ -33,6 +33,10 @@ import { UserService } from './services/user.service';
 import { TeamService } from './services/team.service';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
+import { NaviComponent } from './components/navi/navi.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +48,8 @@ import { CompanyDashboardComponent } from './components/company-dashboard/compan
     LegalfilesComponent,
     ProjectsComponent,
     TeamDetailComponent,
-    CompanyDashboardComponent
+    CompanyDashboardComponent,
+    NaviComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +64,8 @@ import { CompanyDashboardComponent } from './components/company-dashboard/compan
     MatCardModule,
     MatTooltipModule,
     MatSelectModule,
+    MatSidenavModule,
+    MatListModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -78,8 +85,10 @@ import { CompanyDashboardComponent } from './components/company-dashboard/compan
     MatGridListModule,
     MatIconModule,
     MatMenuModule,
+    MatSidenavModule,
     MatTooltipModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule
   ],
   providers: [
     LegalcaseService,
