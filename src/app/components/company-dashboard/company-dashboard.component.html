@@ -1,21 +1,35 @@
-<mat-grid-list cols="3" rowHeight="200px" [gutterSize]="10">
+<mat-grid-list cols="2" rowHeight="150px" [gutterSize]="15">
   <mat-grid-tile>
     <mat-grid-tile-header>Water Cooler</mat-grid-tile-header>
-    <mat-icon aria-label="delete">delete</mat-icon>
+    <div class="icon-container" id="water-cooler">
+      <mat-icon aria-label="forum" matTooltip="Water Cooler">forum</mat-icon>
+    </div>
   </mat-grid-tile>
   <mat-grid-tile>
-    <mat-grid-tile-header>Message Board</mat-grid-tile-header>
+    <div class="icon-container" id="message-board">
+      <mat-grid-tile-header>Message Board</mat-grid-tile-header>
+      <mat-icon  aria-label="message board" matTooltip="Mesage Board">chat</mat-icon>
+    </div>
   </mat-grid-tile>
   <mat-grid-tile>
-    <mat-grid-tile-header>To-dos</mat-grid-tile-header>
+    <div class="icon-container" id="to-dos">
+      <mat-grid-tile-header>To-dos</mat-grid-tile-header>
+      <mat-icon aria-label="to-dos" matTooltip="To-dos">check</mat-icon>
+    </div>
   </mat-grid-tile>
   <mat-grid-tile>
-    <mat-grid-tile-header>Schedule</mat-grid-tile-header>
+    <div class="icon-container" id="schedule">
+      <mat-grid-tile-header>Schedule</mat-grid-tile-header>
+      <mat-icon aria-label="schedule" matTooltip="Schedule">today</mat-icon>
+    </div>
   </mat-grid-tile>
   <mat-grid-tile>
-    <mat-grid-tile-header>Automatic Check-ins</mat-grid-tile-header>
+      <mat-grid-tile-header>Automatic Check-ins</mat-grid-tile-header>
   </mat-grid-tile>
   <mat-grid-tile>
-    <mat-grid-tile-header>Docs & Files</mat-grid-tile-header>
+    <div class="icon-container" id="docs-and-files">
+      <mat-grid-tile-header>Docs & Files</mat-grid-tile-header>
+      <mat-icon aria-label="docs & files" matTooltip="Docs & Files">insert_drive_file</mat-icon>
+    </div>
   </mat-grid-tile>
 </mat-grid-list>

@@ -1,0 +1,55 @@
+h3 {
+  text-align: center;
+}
+
+.mat-grid-tile {
+  border: 1px solid grey;
+  text-align: center;
+}
+
+mat-grid-tile-header {
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+.icon-container {
+  margin-top: 50px;
+  height: 70px;
+  width: 70px;
+  border: 1px solid lightblue;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+mat-icon {
+  margin-top: 5px;
+  font-size: 60px;
+  height: 60px;
+  width: 60px;
+  color: white;
+}
+
+#water-cooler {
+  background-color: #28b1cc;
+}
+
+#message-board {
+  background-color: #1b6ac9;
+}
+
+#to-dos {
+  background-color: #3cb371;
+}
+
+#schedule {
+  background-color: #ff2d55;
+}
+
+#docs-and-files {
+  background-color: #ffcc00;
+}
