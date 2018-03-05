@@ -1,35 +1,50 @@
-<mat-grid-list cols="2" rowHeight="150px" [gutterSize]="15">
-  <mat-grid-tile>
-    <mat-grid-tile-header>Water Cooler</mat-grid-tile-header>
-    <div class="icon-container" id="water-cooler">
-      <mat-icon aria-label="forum" matTooltip="Water Cooler">forum</mat-icon>
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="icon-container" id="message-board">
-      <mat-grid-tile-header>Message Board</mat-grid-tile-header>
-      <mat-icon  aria-label="message board" matTooltip="Mesage Board">chat</mat-icon>
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="icon-container" id="to-dos">
-      <mat-grid-tile-header>To-dos</mat-grid-tile-header>
-      <mat-icon aria-label="to-dos" matTooltip="To-dos">check</mat-icon>
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="icon-container" id="schedule">
-      <mat-grid-tile-header>Schedule</mat-grid-tile-header>
-      <mat-icon aria-label="schedule" matTooltip="Schedule">today</mat-icon>
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile>
-      <mat-grid-tile-header>Automatic Check-ins</mat-grid-tile-header>
-  </mat-grid-tile>
-  <mat-grid-tile>
-    <div class="icon-container" id="docs-and-files">
-      <mat-grid-tile-header>Docs & Files</mat-grid-tile-header>
-      <mat-icon aria-label="docs & files" matTooltip="Docs & Files">insert_drive_file</mat-icon>
-    </div>
-  </mat-grid-tile>
-</mat-grid-list>
+<div class="container" *ngIf="company" >
+  <h2 class="name">{{company.name}} HQ</h2>
+  <h4 class="announcement">
+    Company-wide announcements and stuff everyone needs to know.
+  </h4>
+  <mat-grid-list cols="2" rowHeight="150px" [gutterSize]="15">
+    <mat-grid-tile>
+      <mat-grid-tile-header>Water Cooler</mat-grid-tile-header>
+      <div class="icon-container" id="water-cooler">
+        <mat-icon aria-label="forum" matTooltip="Water Cooler">forum</mat-icon>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="icon-container" id="message-board">
+        <mat-grid-tile-header>Message Board</mat-grid-tile-header>
+        <mat-icon  aria-label="message board" matTooltip="Mesage Board">chat</mat-icon>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="icon-container" id="to-dos">
+        <mat-grid-tile-header>To-dos</mat-grid-tile-header>
+        <mat-icon aria-label="to-dos" matTooltip="To-dos">check</mat-icon>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="icon-container" id="schedule">
+        <mat-grid-tile-header>Schedule</mat-grid-tile-header>
+        <mat-icon aria-label="schedule" matTooltip="Schedule">today</mat-icon>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-grid-tile-header>Automatic Check-ins</mat-grid-tile-header>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="icon-container" id="docs-and-files">
+        <mat-grid-tile-header>Docs & Files</mat-grid-tile-header>
+        <mat-icon aria-label="docs & files" matTooltip="Docs & Files">insert_drive_file</mat-icon>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <div class="section">
+      <h2>{{company.name}} Activity</h2>
+      <h2>Welcome to {{company.name}} HQ!</h2>
+      <h5>{{company.creator}} created this {{company.created}}.</h5>
+      <p>
+            This is the communications hub for your whole company. Use it to post announcements, notes, and stuff everyone needs to know.
+        </p>
+        <h4>Happy Officecamping!</h4>
+  </div>
+</div>
