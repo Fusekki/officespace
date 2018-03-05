@@ -1,0 +1,12 @@
+mat-list {
+  list-style: none;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+li {
+  margin: 0 15px;
+}
