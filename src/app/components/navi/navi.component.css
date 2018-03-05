@@ -2,10 +2,17 @@ mat-list {
   list-style: none;
 }
 ul {
+  position: fixed;
+  background: #f6f2ef;
   list-style: none;
   display: flex;
   justify-content: center;
   padding: 0;
+  /* This is to offset the body margin of 8 on all sides. */
+  width: 100vw;
+  top: -16px;
+  left:0;
+  z-index: 1;
 }
 li {
   margin: 0 15px;
