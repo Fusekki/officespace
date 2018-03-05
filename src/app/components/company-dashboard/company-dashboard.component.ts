@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
 import { Company } from '../../classes/company';
 import { CompanyService } from '../../services/company.service';
 
@@ -10,17 +14,29 @@ import { CompanyService } from '../../services/company.service';
 })
 export class CompanyDashboardComponent implements OnInit {
 
-  companies: Company[] = [];
+  company: Company;
 
-  constructor(private companyService: CompanyService) { }
+  constructor(private companyService: CompanyService,
+              private route: ActivatedRoute,
+              private location: Location) { }
 
   ngOnInit() {
-    this.getCompanies();
+    this.getCompany();
   }
 
-  getCompanies(): void {
-    this.companyService.getCompanies()
-      .subscribe(companies => this.companies = companies);
+  getCompany(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.companyService.getCompany(id)
+      .subscribe(company => this.company = company);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
+  save(): void {
+    this.companyService.updateCompany(this.company)
+      .subscribe(() => this.goBack());
   }
 
 }
