@@ -1,19 +1,55 @@
 mat-list {
   list-style: none;
 }
+
+mat-icon {
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
 ul {
-  position: fixed;
   background: #f6f2ef;
-  list-style: none;
   display: flex;
   justify-content: center;
-  padding: 0;
-  /* This is to offset the body margin of 8 on all sides. */
-  width: 100vw;
-  top: -16px;
   left:0;
+  list-style: none;
+  padding: 0;
+  position: fixed;
+  top: -16px;
+  width: 100vw;
   z-index: 1;
 }
 li {
-  margin: 0 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  /* margin: 0 10px; */
+}
+
+button {
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: -18px;
+  text-align: center;
+}
+
+.button-content {
+  margin: 0 auto;
+}
+/* These classes serve as adjustments needed because the mat-button-wrapper span gets added progamatically and I cannot be centered. */
+.padding-left-sm {
+  padding-left: 4px;
+}
+
+.padding-left-md {
+  padding-left: 8px;
 }
