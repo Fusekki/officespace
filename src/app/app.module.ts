@@ -35,7 +35,7 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
