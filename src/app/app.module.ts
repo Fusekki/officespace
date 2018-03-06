@@ -36,6 +36,7 @@ import { CompanyDashboardComponent } from './components/company-dashboard/compan
 import { NaviComponent } from './components/navi/navi.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { WatercoolerComponent } from './components/watercooler/watercooler.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { MatListModule } from '@angular/material/list';
     ProjectsComponent,
     TeamDetailComponent,
     CompanyDashboardComponent,
-    NaviComponent
+    NaviComponent,
+    WatercoolerComponent
   ],
   imports: [
     BrowserModule,
