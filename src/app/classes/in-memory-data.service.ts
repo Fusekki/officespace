@@ -22,15 +22,15 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 0, title: 'Some team', members: ["Jane Doe"] }
     ];
     const users = [
-      {id: 0, email: 'ying@staffordesq.com',
-                      firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford', companies: [0] }
+      {id: 0, email: 'janedoe@gmail.com',
+                      firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0] }
     ];
     const currentUser = [
-      {id: 0, email: 'ying@staffordesq.com',
-                      firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford', companies: [0] }
+      {id: 0, email: 'janedoe@gmail.com',
+                      firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0] }
     ];
     const watercoolers = [
-      {id: 0, company_name: "Law Firm", company_id: 0, messages: ['Hello'] }
+      {id: 0, company_name: "Law Firm", company_id: 0, messages: [{ author: 'Jane Doe', content: 'Hello', created:'4:00pm'}] }
     ];
     return {legalcases, legalfiles, projects, companies, teams, users, currentUser, watercoolers};
   }
