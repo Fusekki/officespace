@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+
 import { Watercooler } from '../../classes/watercooler';
 import { WatercoolerService } from '../../services/watercooler.service';
 
