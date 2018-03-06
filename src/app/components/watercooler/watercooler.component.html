@@ -3,8 +3,7 @@
 
   <h2 class="motto">Watercooler talk</h2>
   <p>
-    This is the best place to hash things out quickly, throw links and images back and forth,
-    think out loud, share news, riff, and chat in real-time with your team.
+    This is the best place to hash things out quickly, throw links and images back and forth, think out loud, share news, riff, and chat in real-time with your team.
   </p>
 
   <p>
@@ -13,7 +12,21 @@
 
   <ul>
     <li *ngFor="let message of watercooler.messages">
-      {{message}}
+      <mat-card class="watercooler-card">
+        <mat-card-header>
+          <div mat-card-avatar class="watercooler-header-image"></div>
+          <div class="mat-title-container">
+                    <mat-card-title>{{message.created}}</mat-card-title>
+          <mat-card-subtitle id='subtitle'>{{message.author}}</mat-card-subtitle>
+          </div>
+
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{message.content}}
+          </p>
+        </mat-card-content>
+      </mat-card>
     </li>
   </ul>
 </div>
