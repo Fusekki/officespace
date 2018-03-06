@@ -4,7 +4,7 @@
     Company-wide announcements and stuff everyone needs to know.
   </h4>
   <mat-grid-list cols="2" rowHeight="150px" [gutterSize]="15">
-    <mat-grid-tile>
+    <mat-grid-tile routerLink="/watercooler/{{company.watercooler_id}}">
       <mat-grid-tile-header>Water Cooler</mat-grid-tile-header>
       <div class="icon-container" id="water-cooler">
         <mat-icon aria-label="forum" matTooltip="Water Cooler">forum</mat-icon>
