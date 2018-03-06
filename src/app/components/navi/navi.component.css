@@ -8,18 +8,22 @@ mat-icon {
   font-size: 20px;
 }
 
+
 ul {
-  background: #f6f2ef;
+  background-color: #f6f2ef;
   display: flex;
   justify-content: center;
   left:0;
   list-style: none;
+  margin: 0;
+  overflow: hidden;
   padding: 0;
   position: fixed;
-  top: -16px;
-  width: 100vw;
+  top: 0;
+  width: 100;
   z-index: 1;
 }
+
 li {
   display: flex;
   flex-direction: column;
