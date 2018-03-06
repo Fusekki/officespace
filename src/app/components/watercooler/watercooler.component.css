@@ -23,3 +23,29 @@ form {
 mat-form-field, form {
   width: 89%;
 }
+
+mat-card {
+  background: #ecf9fd;
+  border-radius: 25px;
+  height: 60px;
+  padding: 5px;
+}
+
+.watercooler-header-image {
+  background-image: url('http://via.placeholder.com/44x44');
+  background-size: cover;
+}
+.mat-card-title,
+.mat-card-subtitle {
+  font-size: 13px;
+}
+#subtitle {
+  margin-left: 5px;
+  margin-top: 0;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.mat-title-container {
+  display: flex;
+}
