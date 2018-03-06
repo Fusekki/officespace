@@ -1,10 +1,14 @@
 <div class='container' *ngIf="watercooler">
   <h2><a routerLink="/companies/{{watercooler.company_id}}">{{watercooler.company_name}} HQ</a></h2>
 
-  <h2>Gather 'round the Watercooler</h2>
+  <h2 class="motto">Watercooler talk</h2>
   <p>
     This is the best place to hash things out quickly, throw links and images back and forth,
     think out loud, share news, riff, and chat in real-time with your team.
+  </p>
+
+  <p>
+    Start by saying “Hi!” to your team (everyone will be notified that you’re chatting here).
   </p>
 
   <ul>
@@ -13,3 +17,8 @@
     </li>
   </ul>
 </div>
+<form class>
+  <mat-form-field>
+    <input matInput placeholder="Say something" #message />
+  </mat-form-field>
+</form>
