@@ -30,7 +30,7 @@ export class InMemoryDataService implements InMemoryDbService {
                       firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford', companies: [0] }
     ];
     const watercoolers = [
-      {id: 0, company_id: 0, messages: ['Hello'] }
+      {id: 0, company_name: "Law Firm", company_id: 0, messages: ['Hello'] }
     ];
     return {legalcases, legalfiles, projects, companies, teams, users, currentUser, watercoolers};
   }
