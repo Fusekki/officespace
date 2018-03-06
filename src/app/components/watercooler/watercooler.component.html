@@ -1,3 +1,13 @@
-<p>
-  watercooler works!
-</p>
+<div class='container' *ngIf="watercooler">
+  <h2><a routerLink="/companies/{{watercooler.company_id}}">Company HQ</a></h2>
+
+  <h2>Gather 'round the Watercooler</h2>
+  <p>
+    This is the best place to hash things out quickly, throw links and images back and forth,
+    think out loud, share news, riff, and chat in real-time with your team.
+  </p>
+
+  <ul>
+    <li *ngFor="let message of watercooler.messages"
+  </ul>
+</div>
