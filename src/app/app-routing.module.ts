@@ -8,6 +8,7 @@ import { LegalfilesComponent } from './components/legalfiles/legalfiles.componen
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
+import { WatercoolerComponent } from './components/watercooler/watercooler.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full' },
@@ -19,7 +20,9 @@ const routes: Routes = [
   { path: 'files/:id', component: LegalfilesComponent },
   { path: 'projects/:id', component: ProjectsComponent },
   { path: 'teams/:id', component: TeamDetailComponent },
-  { path: 'companies/:id', component: CompanyDashboardComponent }
+  { path: 'companies/:id', component: CompanyDashboardComponent },
+  { path: 'watercooler/:id', component: WatercoolerComponent }
+
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
 
