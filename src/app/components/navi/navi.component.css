@@ -28,7 +28,6 @@ li {
   display: flex;
   flex-direction: column;
   padding: 5px;
-  /* margin: 0 10px; */
 }
 
 button {
@@ -56,4 +55,4 @@ label {
 
 .padding-left-md {
   padding-left: 8px;
-}
+} 
