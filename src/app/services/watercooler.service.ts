@@ -16,7 +16,7 @@ const httpOptions = {
 @Injectable()
 export class WatercoolerService {
 
-    private WatercoolerUrl = 'api/watercooler';  // URL to web api
+    private WatercoolerUrl = 'api/watercoolers';  // URL to web api
 
     constructor(
       private http: HttpClient,
