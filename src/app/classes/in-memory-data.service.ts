@@ -16,7 +16,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 0,  title: 'Special Case' }
     ];
     const companies = [
-      { id: 0,  name: 'Law Firm', creator:"Ying Stafford", created: "March 5, 2018" }
+      { id: 0,  name: 'Law Firm', creator:"Ying Stafford", created: "March 5, 2018", watercooler_id: 0 }
     ];
     const teams = [
       {id: 0, title: 'Some team', members: ["Jane Doe"] }
@@ -28,6 +28,9 @@ export class InMemoryDataService implements InMemoryDbService {
     const currentUser = [
       {id: 0, email: 'ying@staffordesq.com',
                       firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford', companies: [0] }
+    ];
+    const watercoolers = [
+      {id: 0, company_id: 0, messages: ['Hello'] }
     ];
     return {legalcases, legalfiles, projects, companies, teams, users, currentUser};
   }
