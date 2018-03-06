@@ -37,6 +37,8 @@ import { NaviComponent } from './components/navi/navi.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
+import { WatercoolerService } from './services/watercooler.service';
+
 
 
 @NgModule({
@@ -99,7 +101,8 @@ import { WatercoolerComponent } from './components/watercooler/watercooler.compo
     CompanyService,
     ProjectService,
     TeamService,
-    UserService
+    UserService,
+    WatercoolerService
   ],
   bootstrap: [AppComponent]
 })
