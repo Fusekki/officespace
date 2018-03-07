@@ -26,12 +26,14 @@ export class WatercoolerInputComponent implements OnInit {
   serializedDate = new FormControl((new Date()).toISOString());
 
   watercooler: Watercooler;
+  messages: Message[] = [];
+
 
   constructor(private watercoolerService: WatercoolerService,
               private messageService: MessageService) {
     this.messageText = '';
     this.messageDate = this.serializedDate.value;
-    this.showMessageinput = messageService.getShowinput();
+    // this.showMessageinput = messageService.getShowinput();
     this.showMe = false;
   }
 
@@ -51,6 +53,12 @@ export class WatercoolerInputComponent implements OnInit {
     this.showMe = false;
     this.messageService.showInput();
     this.messageText = '';
+  }
+
+
+  getMessages(): void {
+    this.messageService.getMessages()
+      .subscribe(messages => this.messages = messages);
   }
 
 }
