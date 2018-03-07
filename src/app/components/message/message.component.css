@@ -2,7 +2,7 @@ mat-card {
   background: #ecf9fd;
   border-radius: 25px;
   height: 60px;
-  padding: 5px;
+  padding: 5px 30px 5px 5px;
 }
 
 .watercooler-header-image {
