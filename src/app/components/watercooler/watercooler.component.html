@@ -1,6 +1,5 @@
-<div class='container' *ngIf="watercooler">
-  <h2><a routerLink="/companies/{{watercooler.company_id}}">{{company?.name}} HQ</a></h2>
-
+<div class='container' *ngIf="company">
+  <h2><a routerLink="/companies/{{watercooler.company_id}}">{{company.name}} HQ</a></h2>
   <h2 class="motto">Watercooler talk</h2>
   <p>
     This is the best place to hash things out quickly, throw links and images back and forth, think out loud, share news, riff, and chat in real-time with your team.
