@@ -40,6 +40,7 @@ import { WatercoolerComponent } from './components/watercooler/watercooler.compo
 import { WatercoolerService } from './services/watercooler.service';
 import { WatercoolerInputComponent } from './components/watercooler-input/watercooler-input.component';
 import { MessageService } from './services/message.service';
+import { MessageComponent } from './components/message/message.component';
 
 
 
@@ -56,7 +57,8 @@ import { MessageService } from './services/message.service';
     CompanyDashboardComponent,
     NaviComponent,
     WatercoolerComponent,
-    WatercoolerInputComponent
+    WatercoolerInputComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
