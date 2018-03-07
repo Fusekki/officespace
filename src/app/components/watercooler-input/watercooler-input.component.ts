@@ -36,40 +36,25 @@ export class WatercoolerInputComponent implements OnInit {
   messages: Message[] = [];
 
 
-  constructor(private watercoolerService: WatercoolerService,
-              private messageService: MessageService,
+  constructor( private messageService: MessageService,
               private route: ActivatedRoute,
               private location: Location) {
   }
 
-  ngOnInit() {
-    this.getMessages();
-  }
+  ngOnInit() {}
 
   addMessage(): void {
     this.messageService.addMessage(this.message)
       .subscribe(() => this.goBack());
   }
 
-
   private cancelMessage(): void {
     this.messageText = '';
-  }
-
-
-  getMessages(): void {
-    this.messageService.getMessages()
-      .subscribe(messages => this.messages = messages);
-  }
-
-  getMessage(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.messageService.getMessage(id)
-      .subscribe(message => this.message = message);
   }
 
   goBack(): void {
     this.location.back();
   }
+
 
 }
