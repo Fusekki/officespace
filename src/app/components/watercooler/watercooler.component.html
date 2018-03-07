@@ -1,4 +1,4 @@
-<div class='container' *ngIf="company">
+<div class='section' *ngIf="company">
   <h2><a routerLink="/companies/{{watercooler.company_id}}">{{company.name}} HQ</a></h2>
   <h2 class="motto">Watercooler talk</h2>
   <p>
@@ -29,8 +29,4 @@
     </li>
   </ul>
 </div>
-<form class>
-  <mat-form-field>
-    <input matInput placeholder="Say something" #message />
-  </mat-form-field>
-</form>
+<app-watercooler-input></app-watercooler-input>
