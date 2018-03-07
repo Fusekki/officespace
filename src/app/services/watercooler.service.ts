@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Watercooler } from '../classes/watercooler';
-import { MessageService } from './message.service';
+import { ReportService } from './report.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -20,7 +20,7 @@ export class WatercoolerService {
 
     constructor(
       private http: HttpClient,
-      private messageService: MessageService) { }
+      private reportService: ReportService) { }
 
     /** GET Watercooleres from the server */
     getWatercoolers (): Observable<Watercooler[]> {
@@ -108,16 +108,16 @@ export class WatercoolerService {
         console.error(error); // log to console instead
 
         // TODO: better job of transforming error for user consumption
-        this.log(`${operation} failed: ${error.message}`);
+        this.log(`${operation} failed: ${error.report}`);
 
         // Let the app keep running by returning an empty result.
         return of(result as T);
       };
     }
 
-    /** Log a WatercoolerService message with the MessageService */
-    private log(message: string) {
-      this.messageService.add('WatercoolerService: ' + message);
+    /** Log a WatercoolerService report with the ReportService */
+    private log(report: string) {
+      this.reportService.add('WatercoolerService: ' + report);
     }
 
 }

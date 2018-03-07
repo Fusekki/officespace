@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Legalcase } from '../classes/legalcase';
-import { MessageService } from './message.service';
+import { ReportService } from './report.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,7 +19,7 @@ export class LegalcaseService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private reportService: ReportService) { }
 
   /** GET legalcasees from the server */
   getLegalcases (): Observable<Legalcase[]> {
@@ -107,15 +107,15 @@ export class LegalcaseService {
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      this.log(`${operation} failed: ${error.report}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
 
-  /** Log a LegalcaseService message with the MessageService */
-  private log(message: string) {
-    this.messageService.add('LegalcaseService: ' + message);
+  /** Log a LegalcaseService report with the ReportService */
+  private log(report: string) {
+    this.reportService.add('LegalcaseService: ' + report);
   }
 }

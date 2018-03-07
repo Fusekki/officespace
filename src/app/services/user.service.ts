@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { User } from '../classes/user';
-import { MessageService } from './message.service';
+import { ReportService } from './report.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,7 +19,7 @@ export class UserService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private reportService: ReportService) { }
 
   /** GET Useres from the server */
   getUsers (): Observable<User[]> {
@@ -107,16 +107,16 @@ export class UserService {
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      this.log(`${operation} failed: ${error.report}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
 
-  /** Log a userservice message with the MessageService */
-  private log(message: string) {
-    this.messageService.add('userservice: ' + message);
+  /** Log a userservice report with the ReportService */
+  private log(report: string) {
+    this.reportService.add('userservice: ' + report);
   }
 
 }

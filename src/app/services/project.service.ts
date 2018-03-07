@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Project } from '../classes/project';
-import { MessageService } from './message.service';
+import { ReportService } from './report.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,7 +19,7 @@ export class ProjectService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private reportService: ReportService) { }
 
   /** GET projectes from the server */
   getProjects (): Observable<Project[]> {
@@ -107,15 +107,15 @@ export class ProjectService {
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      this.log(`${operation} failed: ${error.report}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
 
-  /** Log a ProjectService message with the MessageService */
-  private log(message: string) {
-    this.messageService.add('ProjectService: ' + message);
+  /** Log a ProjectService report with the ReportService */
+  private log(report: string) {
+    this.reportService.add('ProjectService: ' + report);
   }
 }

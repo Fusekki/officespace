@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Team } from '../classes/team';
-import { MessageService } from './message.service';
+import { ReportService } from './report.service';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -19,7 +19,7 @@ export class TeamService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private reportService: ReportService) { }
 
   /** GET Teames from the server */
   getTeams (): Observable<Team[]> {
@@ -107,15 +107,15 @@ export class TeamService {
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: ${error.message}`);
+      this.log(`${operation} failed: ${error.report}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
   }
 
-  /** Log a teamservice message with the MessageService */
-  private log(message: string) {
-    this.messageService.add('teamservice: ' + message);
+  /** Log a teamservice report with the ReportService */
+  private log(report: string) {
+    this.reportService.add('teamservice: ' + report);
   }
 }
