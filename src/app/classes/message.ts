@@ -1,14 +1,20 @@
 export class Message {
-  idx: number;
-  text: string;
-  date: string;
+  id: number;
   author: string;
+  date: string;
+  time: string;
+  content: string;
+  watercooler_id: number;
 
-  constructor(idx: number, date: string, text: string, author: string) {
-    this.idx = idx;
-    this.date = date;
-    this.text = text;
+
+  constructor(id: number, author: string, date: string, time: string, text: string, watercooler_id: number) {
+    this.id = id;
     this.author = author;
-
+    this.date = date;
+    this.time = time;
+    this.content = text;
+    this.watercooler_id = watercooler_id
   }
+
+
 }
