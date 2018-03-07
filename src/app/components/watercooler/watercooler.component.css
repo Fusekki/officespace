@@ -18,7 +18,6 @@ p:nth-of-type(2) {
 form {
   bottom: 0;
   position: fixed;
-
 }
 
 mat-form-field, form {
@@ -36,6 +35,7 @@ mat-card {
   background-image: url('http://via.placeholder.com/44x44');
   background-size: cover;
 }
+
 .mat-card-title,
 .mat-card-subtitle {
   font-size: 13px;
