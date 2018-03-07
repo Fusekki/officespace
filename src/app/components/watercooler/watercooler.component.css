@@ -8,6 +8,7 @@ p {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 p:nth-of-type(2) {
@@ -15,14 +16,11 @@ p:nth-of-type(2) {
   font-weight: bold;
 }
 
-form {
+app-watercooler-input {
   bottom: 0;
   position: fixed;
 }
 
-mat-form-field, form {
-  width: 89%;
-}
 
 mat-card {
   background: #ecf9fd;
@@ -50,4 +48,10 @@ mat-card {
 
 .mat-title-container {
   display: flex;
+}
+
+/* There is 32 margin on each side set by the container with 25px per side
+and body with 8px. */
+app-watercooler-input {
+  width: calc(100% - 64px);
 }
