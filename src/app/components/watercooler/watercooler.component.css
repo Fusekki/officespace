@@ -16,8 +16,9 @@ p:nth-of-type(2) {
 }
 
 form {
-  position: fixed;
   bottom: 0;
+  position: fixed;
+
 }
 
 mat-form-field, form {
@@ -39,10 +40,11 @@ mat-card {
 .mat-card-subtitle {
   font-size: 13px;
 }
+
 #subtitle {
+  font-weight: bold;
   margin-left: 5px;
   margin-top: 0;
-  font-weight: bold;
   white-space: nowrap;
 }
 
