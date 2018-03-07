@@ -1,8 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {FormControl} from '@angular/forms';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { catchError, map, tap } from 'rxjs/operators';
+
 
 import { Message } from '../../classes/message';
 import { MessageService } from '../../services/message.service';
@@ -15,14 +22,14 @@ import { WatercoolerService } from '../../services/watercooler.service';
   styleUrls: ['./watercooler-input.component.css']
 })
 export class WatercoolerInputComponent implements OnInit {
-  @Input()
+  @Input() message: Message;
 
-  private showMe: boolean;
+  // private id: number;
   private messageText: string;
-  private messageDate: string;
-  private author: string;
   // private messageDate: string;
-  private showMessageinput: boolean;
+  // private author: string;
+  // private watercooler_id: number;
+  // private showMessageinput: boolean;
   serializedDate = new FormControl((new Date()).toISOString());
 
   watercooler: Watercooler;
@@ -30,28 +37,22 @@ export class WatercoolerInputComponent implements OnInit {
 
 
   constructor(private watercoolerService: WatercoolerService,
-              private messageService: MessageService) {
-    this.messageText = '';
-    this.messageDate = this.serializedDate.value;
-    // this.showMessageinput = messageService.getShowinput();
-    this.showMe = false;
+              private messageService: MessageService,
+              private route: ActivatedRoute,
+              private location: Location) {
   }
 
   ngOnInit() {
-  }
-  private addMessage(): void {
-    // console.log('Adding TODO.');
-    // console.log(this.messageDate);
-    // console.log(typeof(this.messageDate));
-    this.messageService.addMessage(this.messageDate, this.messageText, this.author);
-    // Reset totoText after submission
-    this.messageText = '';
+    this.getMessages();
   }
 
+  addMessage(): void {
+    this.messageService.addMessage(this.message)
+      .subscribe(() => this.goBack());
+  }
+
+
   private cancelMessage(): void {
-    // console.log('Csncelling message');
-    this.showMe = false;
-    this.messageService.showInput();
     this.messageText = '';
   }
 
@@ -59,6 +60,16 @@ export class WatercoolerInputComponent implements OnInit {
   getMessages(): void {
     this.messageService.getMessages()
       .subscribe(messages => this.messages = messages);
+  }
+
+  getMessage(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.messageService.getMessage(id)
+      .subscribe(message => this.message = message);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
