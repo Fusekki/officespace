@@ -21,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LegalCasesComponent } from './components/legalcases/legalcases.component';
-import { MessageService } from './services/message.service';
+import { ReportService } from './services/report.service';
 import { LegalcaseService } from './services/legalcase.service';
 import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcase-detail.component';
 import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
@@ -39,6 +39,7 @@ import { MatListModule } from '@angular/material/list';
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
 import { WatercoolerService } from './services/watercooler.service';
 import { WatercoolerInputComponent } from './components/watercooler-input/watercooler-input.component';
+import { MessageService } from './services/message.service';
 
 
 
@@ -99,12 +100,13 @@ import { WatercoolerInputComponent } from './components/watercooler-input/waterc
   providers: [
     LegalcaseService,
     LegalfileService,
-    MessageService,
+    ReportService,
     CompanyService,
     ProjectService,
     TeamService,
     UserService,
-    WatercoolerService
+    WatercoolerService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })
