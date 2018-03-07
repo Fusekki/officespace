@@ -38,7 +38,7 @@ export class WatercoolerComponent implements OnInit {
     });
   }
 
-  getWatercooler(): void {
+  getWatercooler() {
     const id = +this.route.snapshot.paramMap.get('id');
     return this.watercoolerService.getWatercooler(id)
       .map(watercooler => this.watercooler = watercooler);
