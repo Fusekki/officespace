@@ -45,7 +45,7 @@ export class WatercoolerComponent implements OnInit {
   }
 
   getCompany(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = +this.watercooler.company_id;
     this.companyService.getCompany(id)
       .subscribe(company => this.company = company);
   }
