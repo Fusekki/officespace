@@ -9,6 +9,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
+import { MessageComponent } from './components/message/message.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full' },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'projects/:id', component: ProjectsComponent },
   { path: 'teams/:id', component: TeamDetailComponent },
   { path: 'companies/:id', component: CompanyDashboardComponent },
-  { path: 'watercooler/:id', component: WatercoolerComponent }
+  { path: 'watercooler/:id', component: WatercoolerComponent },
+  { path: 'messages/:id', component: MessageComponent },
 
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
