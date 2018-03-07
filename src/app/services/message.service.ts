@@ -23,6 +23,7 @@ export class MessageService {
 
 
   messageDate = new FormControl(new Date());
+  // console.log(messageDate);
   // private messageArr: Message[];
   // private nextIndex: number;
   // private nextUserindex: number;
@@ -140,7 +141,6 @@ export class MessageService {
     private log(report: string) {
       this.reportService.add('MessageService: ' + report);
     }
-  }
 
 
   // /** GET message by id. Will 404 if id not found */
@@ -178,9 +178,4 @@ export class MessageService {
   // public showInput(): void {
   //   this.showMessage = !this.showMessage;
   // }
-
-
-
-
-
 }
