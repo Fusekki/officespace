@@ -38,6 +38,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
 import { WatercoolerService } from './services/watercooler.service';
+import { WatercoolerInputComponent } from './components/watercooler-input/watercooler-input.component';
 
 
 
@@ -53,7 +54,8 @@ import { WatercoolerService } from './services/watercooler.service';
     TeamDetailComponent,
     CompanyDashboardComponent,
     NaviComponent,
-    WatercoolerComponent
+    WatercoolerComponent,
+    WatercoolerInputComponent
   ],
   imports: [
     BrowserModule,
