@@ -1,6 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
+  private date = new Date('December 17, 1995 03:24:00');
   createDb() {
     const legalcases = [
       { id: 0, title: 'People vs. Someone', docket:'12345', defendant:'Someone', cols: 2, rows: 1, color: 'lightblue' },
@@ -30,8 +31,12 @@ export class InMemoryDataService implements InMemoryDbService {
                       firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0] }
     ];
     const watercoolers = [
-      {id: 0, company_name: "Law Firm", company_id: 0, messages: [{ author: 'Jane Doe', content: 'Hello', created:'4:00pm'}] }
+      {id: 0, company_name: "Law Firm", company_id: 0, messages: [0] }
     ];
-    return {legalcases, legalfiles, projects, companies, teams, users, currentUser, watercoolers};
+
+    const messages = [
+      {id: 0, author: "Jane Doe", date: this.date, time: "5:06pm", content: "Hello", watercooler_id: 0 }
+    ];
+    return {legalcases, legalfiles, projects, companies, teams, users, currentUser, watercoolers, messages};
   }
 }
