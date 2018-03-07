@@ -1,7 +1,8 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+// import { FormControl } from '@angular/forms';
 
 export class InMemoryDataService implements InMemoryDbService {
-  private date = new Date('December 17, 1995 03:24:00');
+    created = Date.now();
   createDb() {
     const legalcases = [
       { id: 0, title: 'People vs. Someone', docket:'12345', defendant:'Someone', cols: 2, rows: 1, color: 'lightblue' },
@@ -17,7 +18,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 0,  title: 'Special Case' }
     ];
     const companies = [
-      { id: 0,  name: 'Law Firm', creator:"Ying Stafford", created: "March 5, 2018", watercooler_id: 0 }
+      { id: 0,  name: 'Law Firm', creator:"Ying Stafford", created: created, watercooler_id: 0 }
     ];
     const teams = [
       {id: 0, title: 'Some team', members: ["Jane Doe"] }
@@ -35,7 +36,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const messages = [
-      {id: 0, author: "Jane Doe", date: this.date, time: "5:06pm", content: "Hello", watercooler_id: 0 }
+      {id: 0, author: "Jane Doe", created: this.created, content: "Hello", watercooler_id: 0 }
     ];
     return {legalcases, legalfiles, projects, companies, teams, users, currentUser, watercoolers, messages};
   }
