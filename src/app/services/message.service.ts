@@ -23,21 +23,11 @@ export class MessageService {
 
 
   messageDate = new FormControl(new Date());
-  // console.log(messageDate);
-  // private messageArr: Message[];
-  // private nextIndex: number;
-  // private nextUserindex: number;
-  // private showMessage: boolean;
+
 
   constructor(
     private http: HttpClient,
     private reportService: ReportService) {
-
-    // this.messageArr = [];
-    //
-    // this.nextIndex = 1;
-    // this.nextUserindex = 1;
-    // this.showMessage = true;
   }
 
   /** GET messagees from the server */
@@ -48,9 +38,6 @@ export class MessageService {
         catchError(this.handleError('getMessages', []))
       );
   }
-  // public getMessages(): Message[] {
-  //   return this.messageArr;
-  // }
 
   /** GET message by id. Return `undefined` when id not found */
   getMessageNo404<Data>(id: number): Observable<Message> {
@@ -142,40 +129,4 @@ export class MessageService {
       this.reportService.add('MessageService: ' + report);
     }
 
-
-  // /** GET message by id. Will 404 if id not found */
-  // getMessage(id: number): Observable<Message> {
-  //   const url = `${this.messagesUrl}/${id}`;
-  //   return this.http.get<Message>(url).pipe(
-  //     tap(_ => this.log(`fetched message id=${id}`)),
-  //     catchError(this.handleError<Message>(`getMessage id=${id}`))
-  //   );
-  // }
-  //
-  // public addMessage(text: string, date: string, author: string): void {
-  //   // Create a new message from the input
-  //   const message = new Message(this.nextIndex, text, date, author);
-  //   // Push the message to the array
-  //   this.messageArr.push(message);
-  //   // Hide the message input
-  //   this.showMessage = false;
-  //   // Increase the index
-  //   this.nextIndex++;
-  // }
-
-  // public deleteMessage(idx: number): void {
-  //   this.messageArr = this.messageArr.filter(function (item) {
-  //     return item.idx !== idx;
-  //   });
-  //   console.log(this.messageArr);
-  //
-  // }
-  //
-  // public getShowinput(): boolean {
-  //   return this.showMessage;
-  // }
-  //
-  // public showInput(): void {
-  //   this.showMessage = !this.showMessage;
-  // }
 }
