@@ -81,15 +81,19 @@ export class WatercoolerComponent implements OnInit {
       created: this.date,
       content: content,
       watercooler_id: 0
-    } as Message)
+    } as Message)author: "Jane",
+      created: this.date,
+        content: content,
+          watercooler_id: 0
+  } as Message)
       .subscribe(message => {
-        this.messages.push(message)
-      });
+  this.messages.push(message)
+});
   }
 
 
-  getMessages(): void {
-    this.messageService.getMessages()
-      .subscribe(messages => this.messages = messages);
-  }
+getMessages(): void {
+  this.messageService.getMessages()
+    .subscribe(messages => this.messages = messages);
+}
 }
