@@ -6,20 +6,26 @@ p {
   font-size: 18px;
 }
 
-ul {
+ul, ol {
   list-style: none;
   padding: 0;
 }
+
 
 p:nth-of-type(2) {
   color: #ff5400;
   font-weight: bold;
 }
 
-app-watercooler-input {
+.form-container {
   bottom: 0;
   position: fixed;
   /* There is 32 margin on each side set by the container with 25px per side
   and body with 8px. */
   width: calc(100% - 64px);
+}
+
+
+mat-form-field {
+  width: 100%;
 }

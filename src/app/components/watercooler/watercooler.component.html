@@ -10,7 +10,19 @@
   </p>
 
   <ul>
-    <app-message-wrapper></app-message-wrapper>
+    <!-- <app-message-wrapper></app-message-wrapper> -->
+    <ol *ngIf="messages">
+      <li *ngFor="let message of messages">
+        <app-message [message]="message"></app-message>
+      </li>
+    </ol>
   </ul>
 </div>
-<app-watercooler-input></app-watercooler-input>
+<div class="form-container">
+  <form class (keyup.enter)="addMessage(box.value); box.value='';">
+    <mat-form-field>
+      <input #box matInput placeholder="Say something" />
+    </mat-form-field>
+  </form>
+</div>
+<!-- <app-watercooler-input></app-watercooler-input> -->
