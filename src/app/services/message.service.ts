@@ -22,7 +22,6 @@ export class MessageService {
 
   private messagesUrl = 'api/messages';  // URL to web api
 
-
   messageDate = new FormControl(new Date());
 
 
@@ -35,7 +34,7 @@ export class MessageService {
   getMessages (): Observable<Message[]> {
     return this.http.get<Message[]>(this.messagesUrl)
       .pipe(
-        tap(messages => this.log(`fetched legal files`)),
+        tap(messages => this.log(`fetched messages files`)),
         catchError(this.handleError('getMessages', []))
       );
   }
@@ -77,6 +76,15 @@ export class MessageService {
     }
 
     //////// Save methods //////////
+    // /** POST: add a new hero to the server */
+    // addHero (hero: Hero): Observable<Hero> {
+    //   return this.http.post<Hero>(this.heroesUrl, hero, httpOptions).pipe(
+    //     tap((hero: Hero) => this.log(`added hero w/ id=${hero.id}`)),
+    //     catchError(this.handleError<Hero>('addHero'))
+    //   );
+    // }
+
+
 
     /** POST: add a new message to the server */
     addMessage (message: Message): Observable<Message> {
@@ -128,6 +136,7 @@ export class MessageService {
 
     /** Log a CompanyService report with the ReportService */
     private log(content: string) {
+      console.log('Log: ' + content);
       // this.reportService.addReport('CompanyService: ' + report);
       if (!content) { return; }
       this.reportService.addReport({ content } as Report)
