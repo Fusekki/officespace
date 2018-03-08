@@ -32,7 +32,6 @@ export class WatercoolerInputComponent implements OnInit {
   messages: Message[] = [];
 
   nextIndex = this.messages.lastIndexOf() + 1;
-  console.log(nextIndex)
 
   constructor( private messageService: MessageService,
               private route: ActivatedRoute,
@@ -41,9 +40,10 @@ export class WatercoolerInputComponent implements OnInit {
   ngOnInit() {}
 
   addMessage(value: string): void {
+    private date = Date.Now();
 
     this.messageService.addMessage( new Message(
-      nextIndex,
+      this.nextIndex,
       "someone",
       Date.Now(),
       "something",
