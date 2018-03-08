@@ -52,7 +52,7 @@ export class WatercoolerInputComponent implements OnInit {
       0
     ) );
 
-    this.messageText = '';
+    // this.messageText = '';
   }
 
   private cancelMessage(): void {
