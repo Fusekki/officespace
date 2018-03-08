@@ -1,7 +1,7 @@
 <div class="form-container">
   <form class (ngSubmit)="addMessage()">
     <mat-form-field>
-      <input name="message" matInput placeholder="Say something"  (keyup.enter)="addMessage()" [(ngModel)]="messageText" [ngModelOptions]="{standalone: true}" />
+      <input #box matInput placeholder="Say something"  (keyup.enter)="addMessage(box.value)" [(ngModel)]="messageText" [ngModelOptions]="{standalone: true}" />
     </mat-form-field>
   </form>
 </div>
