@@ -121,6 +121,7 @@ export class ReportService {
 
   /** Log a CompanyService report with the ReportService */
   private log(content: string) {
+    console.log('Added report {content}');
     // this.reportService.addReport('CompanyService: ' + report);
     if (!content) { return; }
     this.addReport({ content } as Report)
