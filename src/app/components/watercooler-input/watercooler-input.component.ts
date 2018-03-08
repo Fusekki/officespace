@@ -41,7 +41,8 @@ export class WatercoolerInputComponent implements OnInit {
   ngOnInit() {}
 
   addMessage(value: string): void {
-    // this.date = Date.now();
+    this.date = new Date(Date.now());
+    console.log('Pressed enter');
 
     this.messageService.addMessage( new Message(
       this.nextIndex,
@@ -50,6 +51,8 @@ export class WatercoolerInputComponent implements OnInit {
       "something",
       0
     ) );
+
+    this.messageText = '';
   }
 
   private cancelMessage(): void {
