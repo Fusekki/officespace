@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe, Location } from '@angular/common';
 
@@ -11,6 +11,7 @@ import { Message } from '../../classes/message';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
+  @Input()
   private message: Message;
   // @Input() message: Message;
 
@@ -21,7 +22,7 @@ export class MessageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.getMessage();
+    // this.getMessage();
   }
 
   getMessage(): void {
