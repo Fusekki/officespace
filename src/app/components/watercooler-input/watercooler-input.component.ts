@@ -24,28 +24,33 @@ import { WatercoolerService } from '../../services/watercooler.service';
 export class WatercoolerInputComponent implements OnInit {
   @Input() message: Message;
 
-  // private id: number;
   private messageText: string;
-  // private messageDate: string;
-  // private author: string;
-  // private watercooler_id: number;
-  // private showMessageinput: boolean;
+
   serializedDate = new FormControl((new Date()).toISOString());
 
   watercooler: Watercooler;
   messages: Message[] = [];
 
+  nextIndex = this.messages.lastIndexOf() + 1;
+  console.log(nextIndex)
 
   constructor( private messageService: MessageService,
               private route: ActivatedRoute,
-              private location: Location) {
-  }
+              private location: Location) {}
 
   ngOnInit() {}
 
-  addMessage(): void {
-    this.messageService.addMessage(this.message)
-      .subscribe(() => this.goBack());
+  addMessage(value: string): void {
+
+    this.messageService.addMessage( new Message(
+      nextIndex,
+      "someone",
+      Date.Now(),
+      "something",
+      0
+    ) );
+      // onEnter(value: string) { this.value = value; }
+            // .subscribe(projects => this.projects = projects);
   }
 
   private cancelMessage(): void {
