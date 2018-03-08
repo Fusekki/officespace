@@ -47,6 +47,7 @@ export class WatercoolerComponent implements OnInit {
       this.companyService.getCompany(id)
         .subscribe(company => this.company = company);
     });
+    this.getMessages();
   }
 
   getWatercooler() {
@@ -75,14 +76,20 @@ export class WatercoolerComponent implements OnInit {
     console.log(content);
     content = content.trim();
     if (!content) { return; }
-    this.messageService.addMessage( {
-    author: "Jane",
-    created: this.date,
-    content: content,
-    watercooler_id: 0
-  }  as Message)
+    this.messageService.addMessage({
+      author: "Jane",
+      created: this.date,
+      content: content,
+      watercooler_id: 0
+    } as Message)
       .subscribe(message => {
         this.messages.push(message)
-    });
+      });
+  }
+
+
+  getMessages(): void {
+    this.messageService.getMessages()
+      .subscribe(messages => this.messages = messages);
   }
 }
