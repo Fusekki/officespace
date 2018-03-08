@@ -7,6 +7,9 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Project } from '../classes/project';
 import { ReportService } from './report.service';
+import { Report } from '../classes/report';
+
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -114,8 +117,18 @@ export class ProjectService {
     };
   }
 
-  /** Log a ProjectService report with the ReportService */
-  private log(report: string) {
-    this.reportService.add('ProjectService: ' + report);
+  /** Log a CompanyService report with the ReportService */
+  private log(content: string) {
+    // this.reportService.addReport('CompanyService: ' + report);
+    if (!content) { return; }
+    this.reportService.addReport({ content } as Report)
+      // .subscribe(legalcase => {
+      //   this.legalcases.push(legalcase);
+      // });
   }
+
+  /** Log a ProjectService report with the ReportService */
+  // private log(report: string) {
+  //   this.reportService.addReport('ProjectService: ' + report);
+  // }
 }

@@ -8,6 +8,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import {Message} from '../classes/message';
 import {User} from '../classes/user';
+import { Report } from '../classes/report';
 import { ReportService } from './report.service';
 
 import {FormControl} from '@angular/forms';
@@ -79,6 +80,7 @@ export class MessageService {
 
     /** POST: add a new message to the server */
     addMessage (message: Message): Observable<Message> {
+      console.log(message);
       return this.http.post<Message>(this.messagesUrl, message, httpOptions).pipe(
         tap((message: Message) => this.log(`added message w/ id=${message.id}`)),
         catchError(this.handleError<Message>('addMessage'))
@@ -124,9 +126,19 @@ export class MessageService {
       };
     }
 
-    /** Log a MessageService report with the ReportService */
-    private log(report: string) {
-      this.reportService.add('MessageService: ' + report);
+    /** Log a CompanyService report with the ReportService */
+    private log(content: string) {
+      // this.reportService.addReport('CompanyService: ' + report);
+      if (!content) { return; }
+      this.reportService.addReport({ content } as Report)
+        // .subscribe(legalcase => {
+        //   this.legalcases.push(legalcase);
+        // });
     }
+
+    /** Log a MessageService report with the ReportService */
+    // private log(report: string) {
+    //   this.reportService.addReport('MessageService: ' + report);
+    // }
 
 }

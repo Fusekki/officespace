@@ -6,6 +6,8 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Company } from '../classes/company';
+import { Report } from '../classes/report';
+
 import { ReportService } from './report.service';
 
 const httpOptions = {
@@ -115,7 +117,13 @@ export class CompanyService {
   }
 
   /** Log a CompanyService report with the ReportService */
-  private log(report: string) {
-    this.reportService.add('CompanyService: ' + report);
+  private log(content: string) {
+    // this.reportService.addReport('CompanyService: ' + report);
+    if (!content) { return; }
+    this.reportService.addReport({ content } as Report)
+      // .subscribe(legalcase => {
+      //   this.legalcases.push(legalcase);
+      // });
   }
+
 }
