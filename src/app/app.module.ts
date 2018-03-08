@@ -42,8 +42,7 @@ import { WatercoolerInputComponent } from './components/watercooler-input/waterc
 import { MessageService } from './services/message.service';
 import { MessageComponent } from './components/message/message.component';
 import { MessageWrapperComponent } from './components/message-wrapper/message-wrapper.component';
-
-
+import { ReportsComponent } from './components/reports/reports.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +59,8 @@ import { MessageWrapperComponent } from './components/message-wrapper/message-wr
     WatercoolerComponent,
     WatercoolerInputComponent,
     MessageComponent,
-    MessageWrapperComponent
+    MessageWrapperComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,
