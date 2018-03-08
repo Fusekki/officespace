@@ -10,6 +10,7 @@ import { TeamDetailComponent } from './components/team-detail/team-detail.compon
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
 import { MessageComponent } from './components/message/message.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full' },
@@ -24,10 +25,9 @@ const routes: Routes = [
   { path: 'companies/:id', component: CompanyDashboardComponent },
   { path: 'watercooler/:id', component: WatercoolerComponent },
   { path: 'messages/:id', component: MessageComponent },
-
+  { path: 'reports/:id', component: ReportsComponent }
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
-
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
