@@ -26,12 +26,13 @@ export class WatercoolerInputComponent implements OnInit {
 
   private messageText: string;
 
-  serializedDate = new FormControl((new Date()).toISOString());
+  // serializedDate = new FormControl((new Date()).toISOString());
 
   watercooler: Watercooler;
   messages: Message[] = [];
+  date: Date;
 
-  nextIndex = this.messages.lastIndexOf() + 1;
+  nextIndex = 0;
 
   constructor( private messageService: MessageService,
               private route: ActivatedRoute,
@@ -40,17 +41,15 @@ export class WatercoolerInputComponent implements OnInit {
   ngOnInit() {}
 
   addMessage(value: string): void {
-    private date = Date.Now();
+    // this.date = Date.now();
 
     this.messageService.addMessage( new Message(
       this.nextIndex,
       "someone",
-      Date.Now(),
+      this.date,
       "something",
       0
     ) );
-      // onEnter(value: string) { this.value = value; }
-            // .subscribe(projects => this.projects = projects);
   }
 
   private cancelMessage(): void {
