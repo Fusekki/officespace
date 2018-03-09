@@ -19,7 +19,7 @@ const httpOptions = {
 @Injectable()
 export class WcmessageService {
 
-  private messagesUrl = 'api/messages';  // URL to web api
+  private messagesUrl = 'api/wcmessages';  // URL to web api
 
   messageDate = new FormControl(new Date());
 
