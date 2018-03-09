@@ -13,7 +13,6 @@ import { Message } from '../../classes/message';
 export class MessageComponent implements OnInit {
   @Input()
   private message: Message;
-  // @Input() message: Message;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +21,6 @@ export class MessageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.getMessage();
   }
 
   getMessage(): void {
