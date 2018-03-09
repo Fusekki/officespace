@@ -34,10 +34,6 @@ export class InMemoryDataService implements InMemoryDbService {
     const messages = [
       {id: 0, author: "Jane Doe", created: this.created, content: "Hello", watercooler_id: 0 }
     ];
-
-    const reports = [
-      {id: 0, content: "App launched." }
-    ];
-    return {legalcases, legalfiles, projects, companies, teams, users, watercoolers, messages, reports};
+    return {legalcases, legalfiles, projects, companies, teams, users, watercoolers, messages};
   }
 }
