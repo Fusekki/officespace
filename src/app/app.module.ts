@@ -43,6 +43,7 @@ import { WatercoolerService } from './services/watercooler.service';
 import { WcmessageService } from './services/wc-message.service';
 import { WcmessageComponent } from './components/wc-message/wc-message.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { ReportsComponent } from './components/reports/reports.component';
     NaviComponent,
     WatercoolerComponent,
     WcmessageComponent,
-    ReportsComponent
+    ReportsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
