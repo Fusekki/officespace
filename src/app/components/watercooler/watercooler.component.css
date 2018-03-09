@@ -11,6 +11,10 @@ ul, ol {
   padding: 0;
 }
 
+li {
+  margin: 10px 0;
+}
+
 
 p:nth-of-type(2) {
   color: #ff5400;
