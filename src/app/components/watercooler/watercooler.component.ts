@@ -79,7 +79,6 @@ export class WatercoolerComponent implements OnInit {
 
   addMessage(content: string): void {
     this.date = new Date(Date.now());
-    console.log(content);
     content = content.trim();
     if (!content) { return; }
     this.messageService.addMessage({
