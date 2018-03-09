@@ -16,6 +16,8 @@ import {MatInputModule} from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
+import { OrderModule } from 'ngx-order-pipe';
+
 import { InMemoryDataService } from './classes/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
@@ -62,6 +64,7 @@ import { ReportsComponent } from './components/reports/reports.component';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    OrderModule,
     ReactiveFormsModule,
     MatMenuModule,
     MatGridListModule,
@@ -86,6 +89,7 @@ import { ReportsComponent } from './components/reports/reports.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    OrderModule,
     MatButtonModule,
     MatCardModule,
     MatInputModule,
