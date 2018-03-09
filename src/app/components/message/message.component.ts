@@ -10,7 +10,7 @@ import { Wcmessage } from '../../classes/wc-message';
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.css']
 })
-export class MessageComponent implements OnInit {
+export class WcmessageComponent implements OnInit {
   @Input()
   private wcmessage: Wcmessage;
 

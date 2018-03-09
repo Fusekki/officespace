@@ -9,7 +9,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
 import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
-import { MessageComponent } from './components/message/message.component';
+import { WcmessageComponent } from './components/message/message.component';
 import { ReportsComponent } from './components/reports/reports.component';
 
 const routes: Routes = [
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'teams/:id', component: TeamDetailComponent },
   { path: 'companies/:id', component: CompanyDashboardComponent },
   { path: 'watercooler/:id', component: WatercoolerComponent },
-  { path: 'messages/:id', component: MessageComponent },
+  { path: 'messages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent }
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
