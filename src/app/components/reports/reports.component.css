@@ -3,6 +3,8 @@ ul {
   bottom: 0;
   font-size: 8px;
   list-style: none;
+  max-height: 100px;
+  overflow-y: scroll;
   padding: 2px 5px;
   position: fixed;
 }
