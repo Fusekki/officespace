@@ -30,8 +30,10 @@ export class WatercoolerComponent implements OnInit {
   company: Company;
   date: Date;
   nextIndex = 0;
-  mockUser = {id: 0, email: 'janedoe@gmail.com',
-                    firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0] };
+  mockUser = {
+    id: 0, email: 'janedoe@gmail.com',
+    firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0]
+  };
 
 
   constructor(private watercoolerService: WatercoolerService,
@@ -81,11 +83,11 @@ export class WatercoolerComponent implements OnInit {
     content = content.trim();
     if (!content) { return; }
     this.messageService.addMessage({
-author: this.mockUser.fullName,
-  created: this.date,
-    content: content,
+      author: this.mockUser.fullName,
+      created: this.date,
+      content: content,
       watercooler_id: 0
-                          } as Message)
+    } as Message)
       .subscribe(message => {
         this.messages.push(message)
       });
