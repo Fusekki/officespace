@@ -38,10 +38,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
 import { WatercoolerService } from './services/watercooler.service';
-import { WatercoolerInputComponent } from './components/watercooler-input/watercooler-input.component';
 import { MessageService } from './services/message.service';
 import { MessageComponent } from './components/message/message.component';
-import { MessageWrapperComponent } from './components/message-wrapper/message-wrapper.component';
 import { ReportsComponent } from './components/reports/reports.component';
 
 @NgModule({
@@ -57,9 +55,7 @@ import { ReportsComponent } from './components/reports/reports.component';
     CompanyDashboardComponent,
     NaviComponent,
     WatercoolerComponent,
-    WatercoolerInputComponent,
     MessageComponent,
-    MessageWrapperComponent,
     ReportsComponent
   ],
   imports: [
