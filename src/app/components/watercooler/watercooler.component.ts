@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-
 import { Company } from '../../classes/company';
 import { Message } from '../../classes/message';
 import { MessageService } from '../../services/message.service';
@@ -31,6 +30,8 @@ export class WatercoolerComponent implements OnInit {
   company: Company;
   date: Date;
   nextIndex = 0;
+  mockUser = {id: 0, email: 'janedoe@gmail.com',
+                    firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0] };
 
 
   constructor(private watercoolerService: WatercoolerService,
@@ -38,6 +39,8 @@ export class WatercoolerComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     private messageService: MessageService) { }
+
+
 
   ngOnInit() {
     this.getWatercooler().subscribe(_ => {
@@ -48,6 +51,7 @@ export class WatercoolerComponent implements OnInit {
         .subscribe(company => this.company = company);
     });
     this.getMessages();
+
   }
 
   getWatercooler() {
@@ -77,23 +81,19 @@ export class WatercoolerComponent implements OnInit {
     content = content.trim();
     if (!content) { return; }
     this.messageService.addMessage({
-      author: "Jane",
-      created: this.date,
-      content: content,
+author: this.mockUser.fullName,
+  created: this.date,
+    content: content,
       watercooler_id: 0
-    } as Message)author: "Jane",
-      created: this.date,
-        content: content,
-          watercooler_id: 0
-  } as Message)
+                          } as Message)
       .subscribe(message => {
-  this.messages.push(message)
-});
+        this.messages.push(message)
+      });
   }
 
 
-getMessages(): void {
-  this.messageService.getMessages()
-    .subscribe(messages => this.messages = messages);
-}
+  getMessages(): void {
+    this.messageService.getMessages()
+      .subscribe(messages => this.messages = messages);
+  }
 }
