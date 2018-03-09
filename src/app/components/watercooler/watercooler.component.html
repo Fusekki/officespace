@@ -8,15 +8,13 @@
   <p>
     Start by saying “Hi!” to your team (everyone will be notified that you’re chatting here).
   </p>
-
-  <ul>
-    <!-- <app-message-wrapper></app-message-wrapper> -->
-    <ol *ngIf="messages">
-      <li *ngFor="let message of messages">
-        <app-message [message]="message"></app-message>
+  <section class="timeline">
+    <ul *ngIf="messages">
+      <li *ngFor="let message of messages | orderBy: 'message.created':true">
+          <app-message [message]="message"></app-message>
       </li>
-    </ol>
-  </ul>
+    </ul>
+  </section>
 </div>
 <div class="form-container">
   <form class (keyup.enter)="addMessage(box.value); box.value='';">
