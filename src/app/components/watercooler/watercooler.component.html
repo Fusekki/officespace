@@ -11,7 +11,7 @@
   <section class="timeline">
     <ul *ngIf="wcmessages">
       <li *ngFor="let wcmessage of wcmessages | orderBy: 'wcmessage.created':true">
-          <app-message [wcmessage]="wcmessage"></app-message>
+          <app-wcmessage [wcmessage]="wcmessage"></app-wcmessage>
       </li>
     </ul>
   </section>

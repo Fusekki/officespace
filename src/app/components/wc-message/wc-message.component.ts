@@ -6,9 +6,9 @@ import { WcmessageService } from '../../services/wc-message.service';
 import { Wcmessage } from '../../classes/wc-message';
 
 @Component({
-  selector: 'app-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
+  selector: 'app-wcmessage',
+  templateUrl: './wc-message.component.html',
+  styleUrls: ['./wc-message.component.css']
 })
 export class WcmessageComponent implements OnInit {
   @Input()
