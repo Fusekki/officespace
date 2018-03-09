@@ -1,0 +1,20 @@
+.banner {
+  background: #fffae5;
+  border: 1px solid orange;
+  margin: 0 -23px;
+  padding: 5px;
+  text-align: center;
+}
+
+.subtitle {
+  margin-bottom: 2px;
+}
+
+p {
+  color: grey;
+  margin-top: 2px;
+}
+
+.clearspace {
+  height: 20px;
+}
