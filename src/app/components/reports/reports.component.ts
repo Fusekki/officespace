@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Report } from '../../classes/report';
 import { ReportService } from '../../services/report.service';
 
 @Component({
@@ -10,8 +9,7 @@ import { ReportService } from '../../services/report.service';
 })
 export class ReportsComponent implements OnInit {
 
-
-    reports: Report[] = [];
+    reports: string[] = [];
 
     constructor(private reportService: ReportService) { }
 
@@ -20,16 +18,14 @@ export class ReportsComponent implements OnInit {
     }
 
     getReports(): void {
-      this.reportService.getReports()
-        .subscribe(reports => this.reports = reports);
+      this.reports = this.reportService.getReports();
     }
 
-    addReport(content: String): void {
+    addReport(content: string): void {
+      console.log('Adding to report ' + content);
       if (!content) { return; }
-      this.reportService.addReport({ content } as Report)
-        .subscribe(report => {
-          this.reports.push(report);
-        });
+      this.reportService.add(content);
+      this.getReports();
     }
 
 }

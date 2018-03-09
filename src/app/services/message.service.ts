@@ -134,20 +134,9 @@ export class MessageService {
       };
     }
 
-    /** Log a CompanyService report with the ReportService */
-    private log(content: string) {
-      console.log('Log: ' + content);
-      // this.reportService.addReport('CompanyService: ' + report);
-      if (!content) { return; }
-      this.reportService.addReport({ content } as Report)
-        // .subscribe(legalcase => {
-        //   this.legalcases.push(legalcase);
-        // });
-    }
-
     /** Log a MessageService report with the ReportService */
-    // private log(report: string) {
-    //   this.reportService.addReport('MessageService: ' + report);
-    // }
+    private log(report: string) {
+      this.reportService.addReport('MessageService: ' + report);
+    }
 
 }

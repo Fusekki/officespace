@@ -6,7 +6,6 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Company } from '../classes/company';
-import { Report } from '../classes/report';
 
 import { ReportService } from './report.service';
 
