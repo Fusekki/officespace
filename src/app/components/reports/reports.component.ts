@@ -24,7 +24,7 @@ export class ReportsComponent implements OnInit {
     addReport(content: string): void {
       console.log('Adding to report ' + content);
       if (!content) { return; }
-      this.reportService.add(content);
+      this.reportService.addReport(content);
       this.getReports();
     }
 
