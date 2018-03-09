@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'watercooler/:id', component: WatercoolerComponent },
   { path: 'wcmessages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent },
-  { path: 'messages/:id', component: MessageBoardComponent }
+  { path: 'messageboard/:id', component: MessageBoardComponent }
 
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
