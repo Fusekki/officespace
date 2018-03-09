@@ -11,6 +11,7 @@ import { CompanyDashboardComponent } from './components/company-dashboard/compan
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
 import { WcmessageComponent } from './components/wc-message/wc-message.component';
 import { ReportsComponent } from './components/reports/reports.component';
+import { MessagesComponent } from './components/messages/messages.component';
 const routes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full' },
   { path: 'projects', component: ProjectsComponent },
@@ -24,7 +25,9 @@ const routes: Routes = [
   { path: 'companies/:id', component: CompanyDashboardComponent },
   { path: 'watercooler/:id', component: WatercoolerComponent },
   { path: 'wcmessages/:id', component: WcmessageComponent },
-  { path: 'reports/:id', component: ReportsComponent }
+  { path: 'reports/:id', component: ReportsComponent },
+  { path: 'messages/:id', component: MessagesComponent }
+
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
 
