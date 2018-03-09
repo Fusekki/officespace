@@ -22,6 +22,7 @@ p:nth-of-type(2) {
 }
 
 .form-container {
+  background: white;
   bottom: 0;
   position: fixed;
   /* There is 32 margin on each side set by the container with 25px per side
