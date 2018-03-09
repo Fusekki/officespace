@@ -5,7 +5,7 @@ export class ReportService {
 
   reports: string[] = [];
 
-  add(report: string) {
+  addReport(report: string) {
     this.reports.push(report);
   }
 

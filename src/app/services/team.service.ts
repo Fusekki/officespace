@@ -7,8 +7,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { Team } from '../classes/team';
 import { ReportService } from './report.service';
-import { Report } from '../classes/report';
-
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -120,7 +118,7 @@ export class TeamService {
   private log(content: string) {
     // this.reportService.addReport('CompanyService: ' + report);
     if (!content) { return; }
-    this.reportService.addReport({ content } as Report)
+    this.reportService.addReport( content );
       // .subscribe(legalcase => {
       //   this.legalcases.push(legalcase);
       // });

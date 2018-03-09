@@ -8,7 +8,6 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import {Message} from '../classes/message';
 import {User} from '../classes/user';
-import { Report } from '../classes/report';
 import { ReportService } from './report.service';
 
 import {FormControl} from '@angular/forms';

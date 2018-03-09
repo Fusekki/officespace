@@ -119,7 +119,7 @@ export class CompanyService {
   private log(content: string) {
     // this.reportService.addReport('CompanyService: ' + report);
     if (!content) { return; }
-    this.reportService.addReport({ content } as Report)
+    this.reportService.addReport(content);
       // .subscribe(legalcase => {
       //   this.legalcases.push(legalcase);
       // });
