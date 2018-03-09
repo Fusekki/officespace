@@ -27,10 +27,6 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 0, email: 'janedoe@gmail.com',
                       firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0] }
     ];
-    const currentUser = [
-      {id: 0, email: 'janedoe@gmail.com',
-                      firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0] }
-    ];
     const watercoolers = [
       {id: 0, company_name: "Law Firm", company_id: 0, messages: [0] }
     ];
@@ -42,6 +38,6 @@ export class InMemoryDataService implements InMemoryDbService {
     const reports = [
       {id: 0, content: "App launched." }
     ];
-    return {legalcases, legalfiles, projects, companies, teams, users, currentUser, watercoolers, messages, reports};
+    return {legalcases, legalfiles, projects, companies, teams, users, watercoolers, messages, reports};
   }
 }
