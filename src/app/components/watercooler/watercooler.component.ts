@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Company } from '../../classes/company';
 import { Wcmessage } from '../../classes/wc-message';
-import { MessageService } from '../../services/message.service';
+import { WcmessageService } from '../../services/message.service';
 
 import { Watercooler } from '../../classes/watercooler';
 import { WatercoolerService } from '../../services/watercooler.service';
@@ -40,7 +40,7 @@ export class WatercoolerComponent implements OnInit {
     private companyService: CompanyService,
     private route: ActivatedRoute,
     private location: Location,
-    private messageService: MessageService) { }
+    private wcmessageService: WcmessageService) { }
 
 
 
@@ -80,7 +80,7 @@ export class WatercoolerComponent implements OnInit {
     this.date = new Date(Date.now());
     content = content.trim();
     if (!content) { return; }
-    this.messageService.addMessage({
+    this.wcmessageService.addMessage({
       author: this.mockUser.fullName,
       created: this.date,
       content: content,
@@ -93,7 +93,7 @@ export class WatercoolerComponent implements OnInit {
 
 
   getMessages(): void {
-    this.messageService.getMessages()
+    this.wcmessageService.getMessages()
       .subscribe(wcmessages => this.wcmessages = wcmessages);
   }
 }

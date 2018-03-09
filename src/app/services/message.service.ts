@@ -17,7 +17,7 @@ const httpOptions = {
 };
 
 @Injectable()
-export class MessageService {
+export class WcmessageService {
 
   private messagesUrl = 'api/messages';  // URL to web api
 

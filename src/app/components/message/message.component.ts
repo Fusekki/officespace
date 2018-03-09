@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe, Location } from '@angular/common';
 
-import { MessageService } from '../../services/message.service';
+import { WcmessageService } from '../../services/message.service';
 import { Wcmessage } from '../../classes/wc-message';
 
 @Component({
@@ -16,7 +16,7 @@ export class MessageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private messageService: MessageService,
+    private wcmessageService: WcmessageService,
     private location: Location
   ) {}
 
@@ -25,7 +25,7 @@ export class MessageComponent implements OnInit {
 
   getMessage(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.messageService.getMessage(id)
+    this.wcmessageService.getMessage(id)
       .subscribe(wcmessage => this.wcmessage = wcmessage);
   }
 
@@ -34,7 +34,7 @@ export class MessageComponent implements OnInit {
   }
 
   save(): void {
-    this.messageService.updateMessage(this.wcmessage)
+    this.wcmessageService.updateMessage(this.wcmessage)
       .subscribe(() => this.goBack());
   }
 
