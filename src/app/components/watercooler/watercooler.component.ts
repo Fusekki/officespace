@@ -47,7 +47,6 @@ export class WatercoolerComponent implements OnInit {
   ngOnInit() {
     this.getWatercooler().subscribe(_ => {
       ;
-      console.log(this.watercooler.company_id);
       var id = this.watercooler.company_id;
       this.companyService.getCompany(id)
         .subscribe(company => this.company = company);
