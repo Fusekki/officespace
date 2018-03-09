@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe, Location } from '@angular/common';
 
-import { WcmessageService } from '../../services/message.service';
+import { WcmessageService } from '../../services/wc-message.service';
 import { Wcmessage } from '../../classes/wc-message';
 
 @Component({

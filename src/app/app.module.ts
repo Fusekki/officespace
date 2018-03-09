@@ -40,7 +40,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
 import { WatercoolerService } from './services/watercooler.service';
-import { WcmessageService } from './services/message.service';
+import { WcmessageService } from './services/wc-message.service';
 import { MessageComponent } from './components/message/message.component';
 import { ReportsComponent } from './components/reports/reports.component';
 

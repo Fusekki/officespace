@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Company } from '../../classes/company';
 import { Wcmessage } from '../../classes/wc-message';
-import { WcmessageService } from '../../services/message.service';
+import { WcmessageService } from '../../services/wc-message.service';
 
 import { Watercooler } from '../../classes/watercooler';
 import { WatercoolerService } from '../../services/watercooler.service';
