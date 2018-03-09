@@ -9,9 +9,9 @@
     Start by saying “Hi!” to your team (everyone will be notified that you’re chatting here).
   </p>
   <section class="timeline">
-    <ul *ngIf="messages">
-      <li *ngFor="let message of messages | orderBy: 'message.created':true">
-          <app-message [message]="message"></app-message>
+    <ul *ngIf="wcmessages">
+      <li *ngFor="let wcmessage of wcmessages | orderBy: 'wcmessage.created':true">
+          <app-message [wcmessage]="wcmessage"></app-message>
       </li>
     </ul>
   </section>

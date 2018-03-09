@@ -1,14 +1,14 @@
-<mat-card *ngIf="message" class="watercooler-card">
+<mat-card *ngIf="wcmessage" class="watercooler-card">
   <mat-card-header>
     <div mat-card-avatar class="watercooler-header-image"></div>
     <div class="mat-title-container">
-      <mat-card-title>{{message.created | date}}</mat-card-title>
-      <mat-card-subtitle id='subtitle'>{{message.author}}</mat-card-subtitle>
+      <mat-card-title>{{wcmessage.created | date}}</mat-card-title>
+      <mat-card-subtitle id='subtitle'>{{wcmessage.author}}</mat-card-subtitle>
     </div>
   </mat-card-header>
   <mat-card-content>
     <p>
-      {{message.content}}
+      {{wcmessage.content}}
     </p>
   </mat-card-content>
 </mat-card>

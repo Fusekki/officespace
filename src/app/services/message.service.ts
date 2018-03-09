@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import {Message} from '../classes/message';
+import {Wcmessage} from '../classes/message';
 import {User} from '../classes/user';
 import { ReportService } from './report.service';
 
@@ -30,8 +30,8 @@ export class MessageService {
   }
 
   /** GET messagees from the server */
-  getMessages (): Observable<Message[]> {
-    return this.http.get<Message[]>(this.messagesUrl)
+  getMessages (): Observable<Wcmessage[]> {
+    return this.http.get<Wcmessage[]>(this.messagesUrl)
       .pipe(
         tap(messages => this.log(`fetched messages files`)),
         catchError(this.handleError('getMessages', []))
@@ -39,62 +39,62 @@ export class MessageService {
   }
 
   /** GET message by id. Return `undefined` when id not found */
-  getMessageNo404<Data>(id: number): Observable<Message> {
+  getMessageNo404<Data>(id: number): Observable<Wcmessage> {
     const url = `${this.messagesUrl}/?id=${id}`;
-    return this.http.get<Message[]>(url)
+    return this.http.get<Wcmessage[]>(url)
       .pipe(
         map(messages => messages[0]), // returns a {0|1} element array
         tap(h => {
           const outcome = h ? `fetched` : `did not find`;
           this.log(`${outcome} message id=${id}`);
         }),
-        catchError(this.handleError<Message>(`getMessage id=${id}`))
+        catchError(this.handleError<Wcmessage>(`getMessage id=${id}`))
       );
   }
 
 
     /** GET message by id. Will 404 if id not found */
-    getMessage(id: number): Observable<Message> {
+    getMessage(id: number): Observable<Wcmessage> {
       const url = `${this.messagesUrl}/${id}`;
-      return this.http.get<Message>(url).pipe(
+      return this.http.get<Wcmessage>(url).pipe(
         tap(_ => this.log(`fetched message id=${id}`)),
-        catchError(this.handleError<Message>(`getMessage id=${id}`))
+        catchError(this.handleError<Wcmessage>(`getMessage id=${id}`))
       );
     }
 
     /* GET messagees whose name contains search term */
-    searchMessages(term: string): Observable<Message[]> {
+    searchMessages(term: string): Observable<Wcmessage[]> {
       if (!term.trim()) {
         // if not search term, return empty message array.
         return of([]);
       }
-      return this.http.get<Message[]>(`api/messages/?title=${term}`).pipe(
+      return this.http.get<Wcmessage[]>(`api/messages/?title=${term}`).pipe(
         tap(_ => this.log(`found messages matching "${term}"`)),
-        catchError(this.handleError<Message[]>('searchMessages', []))
+        catchError(this.handleError<Wcmessage[]>('searchMessages', []))
       );
     }
 
     /** POST: add a new message to the server */
-    addMessage (message: Message): Observable<Message> {
-      return this.http.post<Message>(this.messagesUrl, message, httpOptions).pipe(
-        tap((message: Message) => this.log(`added message w/ id=${message.id}`)),
-        catchError(this.handleError<Message>('addMessage'))
+    addMessage (message: Wcmessage): Observable<Wcmessage> {
+      return this.http.post<Wcmessage>(this.messagesUrl, message, httpOptions).pipe(
+        tap((message: Wcmessage) => this.log(`added message w/ id=${message.id}`)),
+        catchError(this.handleError<Wcmessage>('addMessage'))
       );
     }
 
     /** DELETE: delete the message from the server */
-    deleteMessage (message: Message | number): Observable<Message> {
+    deleteMessage (message: Wcmessage | number): Observable<Wcmessage> {
       const id = typeof message === 'number' ? message : message.id;
       const url = `${this.messagesUrl}/${id}`;
 
-      return this.http.delete<Message>(url, httpOptions).pipe(
+      return this.http.delete<Wcmessage>(url, httpOptions).pipe(
         tap(_ => this.log(`deleted message id=${id}`)),
-        catchError(this.handleError<Message>('deleteMessage'))
+        catchError(this.handleError<Wcmessage>('deleteMessage'))
       );
     }
 
     /** PUT: update the message on the server */
-    updateMessage (message: Message): Observable<any> {
+    updateMessage (message: Wcmessage): Observable<any> {
       return this.http.put(this.messagesUrl, message, httpOptions).pipe(
         tap(_ => this.log(`updated message id=${message.id}`)),
         catchError(this.handleError<any>('updateMessage'))

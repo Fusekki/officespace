@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Company } from '../../classes/company';
-import { Message } from '../../classes/message';
+import { Wcmessage } from '../../classes/message';
 import { MessageService } from '../../services/message.service';
 
 import { Watercooler } from '../../classes/watercooler';
@@ -20,12 +20,12 @@ import { CompanyService } from '../../services/company.service';
   styleUrls: ['./watercooler.component.css']
 })
 export class WatercoolerComponent implements OnInit {
-  @Input() message: Message;
+  @Input() wcmessage: Wcmessage;
 
 
   private messageText: string;
 
-  messages: Message[] = [];
+  wcmessages: Wcmessage[] = [];
   watercooler: Watercooler;
   company: Company;
   date: Date;
@@ -85,15 +85,15 @@ export class WatercoolerComponent implements OnInit {
       created: this.date,
       content: content,
       watercooler_id: 0
-    } as Message)
-      .subscribe(message => {
-        this.messages.push(message)
+    } as Wcmessage)
+      .subscribe(wcmessage => {
+        this.wcmessages.push(wcmessage)
       });
   }
 
 
   getMessages(): void {
     this.messageService.getMessages()
-      .subscribe(messages => this.messages = messages);
+      .subscribe(wcmessages => this.wcmessages = wcmessages);
   }
 }
