@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Company } from '../../classes/company';
-import { Wcmessage } from '../../classes/message';
+import { Wcmessage } from '../../classes/wc-message';
 import { MessageService } from '../../services/message.service';
 
 import { Watercooler } from '../../classes/watercooler';

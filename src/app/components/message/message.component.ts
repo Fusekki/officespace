@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { DatePipe, Location } from '@angular/common';
 
 import { MessageService } from '../../services/message.service';
-import { Wcmessage } from '../../classes/message';
+import { Wcmessage } from '../../classes/wc-message';
 
 @Component({
   selector: 'app-message',

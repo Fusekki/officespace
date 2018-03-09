@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import {Wcmessage} from '../classes/message';
+import {Wcmessage} from '../classes/wc-message';
 import {User} from '../classes/user';
 import { ReportService } from './report.service';
 
