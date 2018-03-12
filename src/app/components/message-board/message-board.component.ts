@@ -21,7 +21,7 @@ export class MessageBoardComponent implements OnInit {
 
   company: Company;
   currentUser: User;
-  messageBoard: MessageBoard
+  messageBoard: MessageBoard;
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
