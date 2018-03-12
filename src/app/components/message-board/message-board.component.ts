@@ -5,6 +5,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { MessageBoard } from '../../classes/message-board';
 import { Company } from '../../classes/company';
 import { CompanyService } from '../../services/company.service';
 // Keep until we move to a backend
@@ -20,6 +21,7 @@ export class MessageBoardComponent implements OnInit {
 
   company: Company;
   currentUser: User;
+  messageBoard: MessageBoard
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
