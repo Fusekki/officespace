@@ -35,10 +35,23 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 0, author: "Jane Doe", created: this.created, content: "Hello", watercooler_id: 0 }
     ];
 
+    const messageboard = [
+      {id: 0, company_id: 0, categories: ['General', 'Off-Topic'] }
+    ];
+
     const currentUser = {
       id: 0, email: 'janedoe@gmail.com',
       firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0]
     };
-    return {legalcases, legalfiles, projects, companies, teams, users, watercoolers, wcmessages, currentUser};
+    return {legalcases,
+      legalfiles,
+      projects,
+      companies,
+      teams,
+      users,
+      watercoolers,
+      wcmessages,
+      currentUser,
+      messageboard};
   }
 }
