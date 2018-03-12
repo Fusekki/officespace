@@ -1,5 +1,5 @@
 export class MessageBoard {
-  id: number,
-  company_id,
-  categories: string[]
+  id: number;
+  company_id;
+  categories: string[];
 }
