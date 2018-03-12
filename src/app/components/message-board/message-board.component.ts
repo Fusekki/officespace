@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {MatSelectModule} from '@angular/material/select';
+
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
