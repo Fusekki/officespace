@@ -19,7 +19,7 @@ const httpOptions = {
 @Injectable()
 export class WcmessageService {
 
-  private messagesUrl = 'api/wcmessages';  // URL to web api
+  private wcwvmessagesUrl = 'api/wcmessages';  // URL to web api
 
   messageDate = new FormControl(new Date());
 
@@ -31,7 +31,7 @@ export class WcmessageService {
 
   /** GET messagees from the server */
   getMessages (): Observable<Wcmessage[]> {
-    return this.http.get<Wcmessage[]>(this.messagesUrl)
+    return this.http.get<Wcmessage[]>(this.wvmessagesUrl)
       .pipe(
         tap(messages => this.log(`fetched messages files`)),
         catchError(this.handleError('getMessages', []))
@@ -40,7 +40,7 @@ export class WcmessageService {
 
   /** GET message by id. Return `undefined` when id not found */
   getMessageNo404<Data>(id: number): Observable<Wcmessage> {
-    const url = `${this.messagesUrl}/?id=${id}`;
+    const url = `${this.wvmessagesUrl}/?id=${id}`;
     return this.http.get<Wcmessage[]>(url)
       .pipe(
         map(messages => messages[0]), // returns a {0|1} element array
@@ -55,7 +55,7 @@ export class WcmessageService {
 
     /** GET message by id. Will 404 if id not found */
     getMessage(id: number): Observable<Wcmessage> {
-      const url = `${this.messagesUrl}/${id}`;
+      const url = `${this.wvmessagesUrl}/${id}`;
       return this.http.get<Wcmessage>(url).pipe(
         tap(_ => this.log(`fetched message id=${id}`)),
         catchError(this.handleError<Wcmessage>(`getMessage id=${id}`))
@@ -76,7 +76,7 @@ export class WcmessageService {
 
     /** POST: add a new message to the server */
     addMessage (message: Wcmessage): Observable<Wcmessage> {
-      return this.http.post<Wcmessage>(this.messagesUrl, message, httpOptions).pipe(
+      return this.http.post<Wcmessage>(this.wvmessagesUrl, message, httpOptions).pipe(
         tap((message: Wcmessage) => this.log(`added message w/ id=${message.id}`)),
         catchError(this.handleError<Wcmessage>('addMessage'))
       );
@@ -85,7 +85,7 @@ export class WcmessageService {
     /** DELETE: delete the message from the server */
     deleteMessage (message: Wcmessage | number): Observable<Wcmessage> {
       const id = typeof message === 'number' ? message : message.id;
-      const url = `${this.messagesUrl}/${id}`;
+      const url = `${this.wvmessagesUrl}/${id}`;
 
       return this.http.delete<Wcmessage>(url, httpOptions).pipe(
         tap(_ => this.log(`deleted message id=${id}`)),
@@ -95,7 +95,7 @@ export class WcmessageService {
 
     /** PUT: update the message on the server */
     updateMessage (message: Wcmessage): Observable<any> {
-      return this.http.put(this.messagesUrl, message, httpOptions).pipe(
+      return this.http.put(this.wvmessagesUrl, message, httpOptions).pipe(
         tap(_ => this.log(`updated message id=${message.id}`)),
         catchError(this.handleError<any>('updateMessage'))
       );
