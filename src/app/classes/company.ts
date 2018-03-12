@@ -4,4 +4,5 @@ export class Company {
   creator: string;
   created: string;
   watercooler_id: number;
+  messageboard_id: number;
 }
