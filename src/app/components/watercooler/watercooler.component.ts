@@ -12,7 +12,9 @@ import { WcmessageService } from '../../services/wc-message.service';
 import { Watercooler } from '../../classes/watercooler';
 import { WatercoolerService } from '../../services/watercooler.service';
 import { CompanyService } from '../../services/company.service';
-
+// Keep until we move to a backend
+import { User } from '../../classes/user';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-watercooler',
@@ -29,18 +31,14 @@ export class WatercoolerComponent implements OnInit {
   watercooler: Watercooler;
   company: Company;
   date: Date;
-  nextIndex = 0;
-  mockUser = {
-    id: 0, email: 'janedoe@gmail.com',
-    firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0]
-  };
-
+  currentUser: User;
 
   constructor(private watercoolerService: WatercoolerService,
     private companyService: CompanyService,
     private route: ActivatedRoute,
     private location: Location,
-    private wcmessageService: WcmessageService) { }
+    private wcmessageService: WcmessageService,
+    private userService: UserService) { }
 
 
 
@@ -52,6 +50,7 @@ export class WatercoolerComponent implements OnInit {
         .subscribe(company => this.company = company);
     });
     this.getMessages();
+    this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
 
   }
 
@@ -81,7 +80,7 @@ export class WatercoolerComponent implements OnInit {
     content = content.trim();
     if (!content) { return; }
     this.wcmessageService.addMessage({
-      author: this.mockUser.fullName,
+      author: this.currentUser.fullName,
       created: this.date,
       content: content,
       watercooler_id: 0
