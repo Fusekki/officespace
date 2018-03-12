@@ -94,6 +94,15 @@ export class UserService {
     );
   }
 
+  /** GET User by id. Will 404 if id not found */
+  getCurrentUser(): Observable<User> {
+    const url = `${this.usersUrl}/0`;
+    return this.http.get<User>(url).pipe(
+      tap(_ => this.log(`fetched User id=0`)),
+      catchError(this.handleError<User>(`getUser id=0`))
+    );
+  }
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.
