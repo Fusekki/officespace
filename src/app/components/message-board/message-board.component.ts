@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { Company } from '../../classes/company';
+import { CompanyService } from '../../services/company.service';
+// Keep until we move to a backend
+import { User } from '../../classes/user';
+import { UserService } from '../../services/user.service';
+
 @Component({
   selector: 'app-message-board',
   templateUrl: './message-board.component.html',
@@ -7,9 +16,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageBoardComponent implements OnInit {
 
-  constructor() { }
+  company: Company;
+  currentUser: User;
+
+  constructor(private companyService: CompanyService,
+              private route: ActivatedRoute,
+              private location: Location
+              private userService: UserService) { }
 
   ngOnInit() {
+    this.getCompany();
+    this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
+
   }
+
+  getCompany(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.companyService.getCompany(id)
+      .subscribe(company => this.company = company);
+  }
+
+  goBack(): void {
+    this.location.back();
+  }
+
 
 }
