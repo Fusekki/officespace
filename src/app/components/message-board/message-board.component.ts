@@ -34,6 +34,7 @@ export class MessageBoardComponent implements OnInit {
 
   }
 
+  // Temporary. This route has the id for the messageboard.
   getCompany(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.companyService.getCompany(id)
