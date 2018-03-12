@@ -8,6 +8,8 @@ import { Location } from '@angular/common';
 import { MessageBoard } from '../../classes/message-board';
 import { Company } from '../../classes/company';
 import { CompanyService } from '../../services/company.service';
+import { MessageBoardService } from '../../services/message-board.service';
+
 // Keep until we move to a backend
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
@@ -21,23 +23,23 @@ export class MessageBoardComponent implements OnInit {
 
   company: Company;
   currentUser: User;
-  messageBoard: MessageBoard;
+  messageboard: MessageBoard;
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
-              private location: Location
-              private userService: UserService) { }
+              private location: Location,
+              private userService: UserService,
+              private messageboardService: MessageBoardService) { }
 
   ngOnInit() {
     this.getCompany();
     this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
-
   }
 
   // Temporary. This route has the id for the messageboard.
   getMessageboard(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.messageboardService.getMessageboard(id)
+    this.messageboardService.getMessageBoard(id)
       .subscribe(messageboard => this.messageboard = messageboard);
   }
 
