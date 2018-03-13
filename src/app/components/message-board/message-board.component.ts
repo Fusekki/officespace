@@ -33,6 +33,7 @@ export class MessageBoardComponent implements OnInit {
 
   ngOnInit() {
     this.getCompany();
+    this.getMessageboard();
     this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
   }
 
