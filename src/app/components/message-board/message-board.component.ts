@@ -11,6 +11,8 @@ import { Company } from '../../classes/company';
 import { CompanyService } from '../../services/company.service';
 import { MessageBoardService } from '../../services/message-board.service';
 
+import { MbPost } from '../../classes/mb-post';
+
 // Keep until we move to a backend
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
