@@ -27,6 +27,7 @@ export class MessageBoardComponent implements OnInit {
   company: Company;
   currentUser: User;
   messageboard: MessageBoard;
+  MbPosts = MbPost[] = [];
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
