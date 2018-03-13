@@ -12,7 +12,7 @@ import { CompanyService } from '../../services/company.service';
 import { MessageBoardService } from '../../services/message-board.service';
 
 import { MbPost } from '../../classes/mb-post';
-
+import { MbPostService } from '../../services/mb-post.service';
 // Keep until we move to a backend
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
@@ -33,7 +33,8 @@ export class MessageBoardComponent implements OnInit {
               private route: ActivatedRoute,
               private location: Location,
               private userService: UserService,
-              private messageboardService: MessageBoardService) { }
+              private messageboardService: MessageBoardService,
+              private mbpostService: mbpostService) { }
 
   ngOnInit() {
     this.getCompany();
