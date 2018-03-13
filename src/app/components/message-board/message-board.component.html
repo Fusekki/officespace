@@ -7,6 +7,9 @@
 </div>
 <div class="section" *ngIf="company">
   <h3>{{company.name}} HQ</h3>
+  <div class="message-list-wrapper" *ngIf="mbPosts">
+    
+  </div>
   <div class="message-input-wrapper" *ngIf="mbPosts.length == 0">
       <!-- <form> -->
     <div class="form-wrapper" *ngIf="messageboard">
