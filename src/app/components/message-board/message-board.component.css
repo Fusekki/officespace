@@ -41,14 +41,24 @@ button {
 .mat-form-field-type-mat-select {
   border: 1px solid grey;
   border-radius: 2rem;
+  padding-top: 5px;
 }
 
 ::ng-deep .mat-form-field-label {
   color: black !important;
 }
 
+::ng-deep .mat-input-wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+
 ::ng-deep .form-wrapper .mat-input-infix {
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+::ng-deep .mat-select-value-text {
+  color: black !important;
 }
 
 ::ng-deep .title-container .mat-input-infix {
