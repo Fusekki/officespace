@@ -125,17 +125,10 @@ export class UserService {
 
   /** Log a CompanyService report with the ReportService */
   private log(content: string) {
-    // this.reportService.addReport('CompanyService: ' + report);
     if (!content) { return; }
     this.reportService.addReport( content );
-      // .subscribe(legalcase => {
-      //   this.legalcases.push(legalcase);
-      // });
+
   }
 
-  /** Log a userservice report with the ReportService */
-  // private log(report: string) {
-  //   this.reportService.addReport('userservice: ' + report);
-  // }
 
 }
