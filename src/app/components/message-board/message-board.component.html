@@ -7,13 +7,29 @@
 </div>
 <div class="section" *ngIf="company">
   <h3>{{company.name}} HQ</h3>
-  <div class="form-wrapper" *ngIf="messageboard">
+  <form>
+    <div class="form-wrapper" *ngIf="messageboard">
       <mat-form-field>
-  <mat-select placeholder="Pick a category (optional)">
-    <mat-option *ngFor="let category of messageboard.categories" [value]="category">
-      {{ category }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-  </div>
+        <mat-select placeholder="Pick a category (optional)">
+          <mat-option *ngFor="let category of messageboard.categories" [value]="category">
+            {{ category }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="title-container">
+      <mat-form-field>
+        <input matInput placeholder="Title...">
+      </mat-form-field>
+    </div>
+    <div class="body-container">
+      <mat-form-field>
+        <textarea matInput placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="10"></textarea>
+      </mat-form-field>
+    </div>
+    <h3>Raised Buttons</h3>
+    <div class="button-row">
+      <button mat-raised-button color="accent">Save as a draft</button>
+    </div>
+  </form>
 </div>
