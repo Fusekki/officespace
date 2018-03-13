@@ -35,7 +35,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 0, author: "Jane Doe", created: this.created, content: "Hello", watercooler_id: 0 }
     ];
 
-    const messageboard = [
+    const messageboards = [
       {id: 0, company_id: 0, categories: ['General', 'Off-Topic'] }
     ];
 
@@ -52,6 +52,6 @@ export class InMemoryDataService implements InMemoryDbService {
       watercoolers,
       wcmessages,
       currentUser,
-      messageboard};
+      messageboards};
   }
 }
