@@ -7,11 +7,13 @@
 </div>
 <div class="section" *ngIf="company">
   <h3>{{company.name}} HQ</h3>
-  <mat-form-field>
+  <div class="form-wrapper" *ngIf="messageboard">
+      <mat-form-field>
   <mat-select placeholder="Pick a category (optional)">
-    <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{ food.viewValue }}
+    <mat-option *ngFor="let category of messageboard.categories" [value]="category">
+      {{ category }}
     </mat-option>
   </mat-select>
 </mat-form-field>
+  </div>
 </div>
