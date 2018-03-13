@@ -22,3 +22,17 @@ p {
 h3 {
   text-align: center;
 }
+
+.section,
+mat-form-field {
+  width: 100%;
+}
+
+.button-row {
+  text-align: center;
+}
+
+button {
+  width: 100%;
+  border-radius: 2rem;
+}
