@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatListModule} from '@angular/material/list';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -27,7 +28,7 @@ export class MessageBoardComponent implements OnInit {
   company: Company;
   currentUser: User;
   messageboard: MessageBoard;
-  MbPosts: MbPost[];
+  mbposts: MbPost[];
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
@@ -39,6 +40,7 @@ export class MessageBoardComponent implements OnInit {
   ngOnInit() {
     this.getCompany();
     this.getMessageboard();
+    this.getMbposts();
     this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
   }
 
@@ -57,6 +59,27 @@ export class MessageBoardComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  addPost(content: string): void {
+    // this.date = new Date(Date.now());
+    // content = content.trim();
+    // if (!content) { return; }
+    // this.wcmessageService.addMessage({
+    //   author: this.currentUser.fullName,
+    //   created: this.date,
+    //   content: content,
+    //   watercooler_id: 0
+    // } as Wcmessage)
+    //   .subscribe(wcmessage => {
+    //     this.wcmessages.push(wcmessage)
+    //   });
+  }
+
+
+  getMbposts(): void {
+    this.mbpostService.getMbPosts()
+      .subscribe(mbposts => this.mbposts = mbposts);
   }
 
 
