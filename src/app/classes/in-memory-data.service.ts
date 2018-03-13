@@ -39,6 +39,10 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 0, company_id: 0, categories: ['General', 'Off-Topic'] }
     ];
 
+    const mbposts = [
+      {id: 0, messageboard_id: 0, author: 0, created: this.created, title: "Hello", category: 1, body: "Just wanted to say hi!!" }
+    ];
+
     const currentUser = {
       id: 0, email: 'janedoe@gmail.com',
       firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0]
@@ -52,6 +56,7 @@ export class InMemoryDataService implements InMemoryDbService {
       watercoolers,
       wcmessages,
       currentUser,
-      messageboards};
+      messageboards,
+      mbposts};
   }
 }
