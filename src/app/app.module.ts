@@ -46,6 +46,7 @@ import { WcmessageComponent } from './components/wc-message/wc-message.component
 import { ReportsComponent } from './components/reports/reports.component';
 import { MessageBoardComponent } from './components/message-board/message-board.component';
 import { MessageBoardService } from './services/message-board.service';
+import { MbPostService } from './services/mb-post.service';
 
 @NgModule({
   declarations: [
@@ -116,7 +117,8 @@ import { MessageBoardService } from './services/message-board.service';
     UserService,
     WatercoolerService,
     WcmessageService,
-    MessageBoardService
+    MessageBoardService,
+    MbPostService
   ],
   bootstrap: [AppComponent]
 })
