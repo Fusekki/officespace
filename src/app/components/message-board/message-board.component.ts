@@ -34,7 +34,7 @@ export class MessageBoardComponent implements OnInit {
               private location: Location,
               private userService: UserService,
               private messageboardService: MessageBoardService,
-              private mbpostService: mbpostService) { }
+              private mbpostService: MbPostService) { }
 
   ngOnInit() {
     this.getCompany();
