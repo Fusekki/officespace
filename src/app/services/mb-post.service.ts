@@ -15,7 +15,7 @@ const httpOptions = {
 @Injectable()
 export class MbPostService {
 
-  private mbpostsurl = 'api/mbposts';  // URL to web api
+  private mbpostsUrl = 'api/mbposts';  // URL to web api
 
   constructor(
     private http: HttpClient,
