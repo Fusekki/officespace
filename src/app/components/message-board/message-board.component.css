@@ -26,6 +26,7 @@ h3 {
 .section,
 mat-form-field {
   width: 100%;
+  color: black;
 }
 
 .button-row {
@@ -35,4 +36,26 @@ mat-form-field {
 button {
   width: 100%;
   border-radius: 2rem;
+}
+
+.mat-form-field-type-mat-select {
+  border: 1px solid grey;
+  border-radius: 2rem;
+}
+
+::ng-deep .mat-form-field-label {
+  color: black !important;
+}
+
+::ng-deep .form-wrapper .mat-input-infix {
+  margin-left: 10px;
+}
+
+::ng-deep .title-container .mat-input-infix {
+  color: grey !important;
+  font-weight: bold;
+}
+
+::ng-deep .body-container .mat-form-field-label {
+  color: grey !important;
 }
