@@ -36,8 +36,13 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const messageboards = [
-      {id: 0, company_id: 0, categories: ['Announcements', 'FYI', 'Hearbeat', 'Pitch', 'Question'] }
-    ];
+      {id: 0, company_id: 0, categories: [
+        {id: 0, name: 'Announcements', icon:'announcement'},
+        {id: 1, name: 'FYI', icon:''},
+        {id: 2, name: 'Hearbeat', icon:''},
+        {id:3, name: 'Pitch', icon:''},
+        {id:4, name: 'Question', icon:''}
+    ]};
 
     const mbposts = [
       {id: 0, messageboard_id: 0, author: 0, created: this.created, title: "Hello", category: 1, body: "Just wanted to say hi!!" }
