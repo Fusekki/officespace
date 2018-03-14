@@ -24,7 +24,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./message-board.component.css']
 })
 export class MessageBoardComponent implements OnInit {
-
+  selectedCategory: string;
   company: Company;
   currentUser: User;
   messageboard: MessageBoard;
