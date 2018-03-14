@@ -36,7 +36,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const messageboards = [
-      {id: 0, company_id: 0, categories: ['General', 'Off-Topic'] }
+      {id: 0, company_id: 0, categories: ['Announcements', 'FYI', 'Hearbeat', 'Pitch', 'Question'] }
     ];
 
     const mbposts = [
