@@ -14,13 +14,13 @@
       </mat-list-item>
     </mat-list>
   </div>
-  <div class="message-input-wrapper" *ngIf="!mbposts">
+  <div class="message-input-wrapper" *ngIf="mbposts.length == 0">
       <!-- <form> -->
     <div class="form-wrapper" *ngIf="messageboard">
       <mat-form-field>
-        <mat-select placeholder="Pick a category (optional)">
-          <mat-option *ngFor="let category of messageboard.categories" [value]="category">
-            {{ category }}
+        <mat-select placeholder="Pick a category (optional)"  [(ngModel)]="selectedCategory">
+          <mat-option *ngFor="let category of messageboard.categories" [value]="category.id">
+            {{ category.name }}
           </mat-option>
         </mat-select>
       </mat-form-field>
