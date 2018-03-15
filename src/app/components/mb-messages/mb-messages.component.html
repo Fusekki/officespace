@@ -1,8 +1,7 @@
-<div class="messages-wrapper">
   <div class="section" *ngIf="company">
     <h3><a routerLink="/companies/{{company.id}}">{{company.name}} HQ</a></h3>
     <h2>Message Board</h2>
-    <div class="button-row">
+    <div class="buttons-container">
       <button mat-raised-button color="accent">New message</button>
         <span class="form-wrapper" *ngIf="messageboard">
           <mat-form-field>
@@ -20,7 +19,7 @@
         <mat-list-item *ngFor="let mbpost of mbposts" role="listitem">
           <mat-card class="message-card">
             <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
+              <div mat-card-avatar class="message-header-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
               <mat-card-title>{{mbpost.title}}</mat-card-title>
               <mat-card-subtitle> - {{ users[mbpost.author].fullName }}</mat-card-subtitle>
             </mat-card-header>
@@ -33,5 +32,3 @@
         </mat-list-item>
       </mat-list>
   </div>
-
-</div>
