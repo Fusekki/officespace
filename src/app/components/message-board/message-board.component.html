@@ -14,7 +14,7 @@
       </mat-list-item>
     </mat-list>
   </div>
-  <div class="message-input-wrapper" *ngIf="mbposts.length == 0">
+  <div class="message-input-wrapper" *ngIf="mbposts">
       <!-- <form> -->
     <div class="form-wrapper" *ngIf="messageboard">
       <mat-form-field>
@@ -37,6 +37,7 @@
     </div>
     <div class="button-row">
       <button mat-raised-button color="accent">Save as a draft</button>
+      <button mat-raised-button color="primary">Post this message</button>
     </div>
       <!-- </form> -->
   </div>
