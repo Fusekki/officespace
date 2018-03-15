@@ -55,10 +55,21 @@
         </span>
     </div>
   </div>
-  <div class="message-list-wrapper">
+  <div class="message-list-wrapper" *ngIf="users">
       <mat-list role="list">
         <mat-list-item *ngFor="let mbpost of mbposts" role="listitem">
-         {{mbpost.title}} - {{mbpost.author}} - {{mbpost.created}}
+          <mat-card class="message-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{mbpost.title}}</mat-card-title>
+              <mat-card-subtitle> - {{ users[mbpost.author].fullName }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <p>
+                {{mbpost.created}} - {{mbpost.content}}
+              </p>
+            </mat-card-content>
+          </mat-card>
         </mat-list-item>
       </mat-list>
   </div>
