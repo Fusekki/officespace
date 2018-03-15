@@ -21,7 +21,7 @@
             <mat-card-header>
               <div mat-card-avatar class="message-header-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
               <mat-card-title>{{mbpost.title}}</mat-card-title>
-              <mat-card-subtitle> - {{ users[mbpost.author].fullName }}</mat-card-subtitle>
+              <mat-card-subtitle> - {{ getauthorName(mbpost.author) }}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
               <p>
