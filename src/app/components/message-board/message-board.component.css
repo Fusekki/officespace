@@ -40,6 +40,7 @@ mat-form-field {
 button {
   width: 100%;
   border-radius: 2rem;
+  margin: 5px auto;
 }
 
 >>> .mat-form-field-label,
