@@ -29,6 +29,7 @@ export class MessageBoardComponent implements OnInit {
   currentUser: User;
   messageboard: MessageBoard;
   mbposts: MbPost[];
+  users: User[];
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
@@ -41,6 +42,7 @@ export class MessageBoardComponent implements OnInit {
     this.getCompany();
     this.getMessageboard();
     this.getMbposts();
+    this.getUsers();
     this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
   }
 
@@ -56,6 +58,13 @@ export class MessageBoardComponent implements OnInit {
     this.companyService.getCompany(id)
       .subscribe(company => this.company = company);
   }
+
+
+  getUsers(): void {
+    this.userService.getUsers()
+      .subscribe(users => this.users = users);
+  }
+
 
   goBack(): void {
     this.location.back();
