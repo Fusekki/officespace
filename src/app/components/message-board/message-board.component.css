@@ -37,8 +37,13 @@ mat-list-item {
   color: black;
 }
 
-.button-column {
+.button-column,
+.button-row {
   text-align: center;
+}
+
+.button-row {
+  display: flex;
 }
 
 
