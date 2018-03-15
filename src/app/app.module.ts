@@ -47,6 +47,7 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { MessageBoardComponent } from './components/message-board/message-board.component';
 import { MessageBoardService } from './services/message-board.service';
 import { MbPostService } from './services/mb-post.service';
+import { MbMessagesComponent } from './components/mb-messages/mb-messages.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { MbPostService } from './services/mb-post.service';
     WatercoolerComponent,
     WcmessageComponent,
     ReportsComponent,
-    MessageBoardComponent
+    MessageBoardComponent,
+    MbMessagesComponent
   ],
   imports: [
     BrowserModule,
