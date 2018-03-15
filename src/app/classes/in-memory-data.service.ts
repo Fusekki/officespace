@@ -1,5 +1,4 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-// import { FormControl } from '@angular/forms';
 
 export class InMemoryDataService implements InMemoryDbService {
     created = Date.now();
@@ -40,9 +39,9 @@ export class InMemoryDataService implements InMemoryDbService {
         {id: 0, name: 'Announcements', icon:'announcement'},
         {id: 1, name: 'FYI', icon:''},
         {id: 2, name: 'Hearbeat', icon:''},
-        {id:3, name: 'Pitch', icon:''},
-        {id:4, name: 'Question', icon:''}
-    ]};
+        {id: 3, name: 'Pitch', icon:''},
+        {id: 4, name: 'Question', icon:''} ]
+    }];
 
     const mbposts = [
       {id: 0, messageboard_id: 0, author: 0, created: this.created, title: "Hello", category: 1, body: "Just wanted to say hi!!" }
