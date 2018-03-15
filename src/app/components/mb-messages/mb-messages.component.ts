@@ -66,6 +66,10 @@ export class MbMessagesComponent implements OnInit {
       .subscribe(users => this.users = users);
   }
 
+  getauthorName(id: number): string {
+    return this.users[id].fullName;
+  }
+
 
   goBack(): void {
     this.location.back();
