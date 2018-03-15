@@ -1,49 +1,49 @@
-<div class="banner">
-  <h3 class="subtitle">Kick Things off with your first message.</h3>
-  <p>Post an announcement, pitch an idea, or ask a question.</p>
-</div>
-<div class="clearspace">
-
-</div>
-<div class="section" *ngIf="company">
-  <h3>{{company.name}} HQ</h3>
-  <div class="message-list-wrapper" *ngIf="mbposts">
-    <mat-list role="list">
-      <mat-list-item *ngFor="let mbpost of mbposts" role="listitem">
-       {{mbpost.title}} - {{mbpost.author}} - {{mbpost.created}}
-      </mat-list-item>
-    </mat-list>
+<div class="no-messages-container" *ngIf="messages?.length == 0">
+  <div class="banner">
+    <h3 class="subtitle">Kick Things off with your first message.</h3>
+    <p>Post an announcement, pitch an idea, or ask a question.</p>
   </div>
-  <div class="message-input-wrapper" *ngIf="mbposts < 1">
-    <!-- <div *ngIf="mbposts.length < 1"> -->
-            <!-- <form> -->
-    <div class="form-wrapper" *ngIf="messageboard">
-      <mat-form-field>
-        <mat-select placeholder="Pick a category (optional)"  [(ngModel)]="selectedCategory">
-          <mat-option *ngFor="let category of messageboard.categories" [value]="category.id">
-            {{ category.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="title-container">
-      <mat-form-field>
-        <input matInput placeholder="Title...">
-      </mat-form-field>
-    </div>
-    <div class="body-container">
-      <mat-form-field>
-        <textarea matInput placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6"></textarea>
-      </mat-form-field>
-    </div>
-    <div class="button-column">
-      <button mat-raised-button color="accent">Save as a draft</button>
-      <button mat-raised-button color="primary">Post this message</button>
-    </div>
-      <!-- </form> -->
-    </div>
+  <div class="clearspace">
+  </div>
+  <div class="section" *ngIf="company">
+    <h3>{{company.name}} HQ</h3>
 
-  <!-- </div> -->
+    <div class="message-input-wrapper" >
+              <!-- <form> -->
+      <div class="form-wrapper" *ngIf="messageboard">
+        <mat-form-field>
+          <mat-select placeholder="Pick a category (optional)"  [(ngModel)]="selectedCategory">
+            <mat-option *ngFor="let category of messageboard.categories" [value]="category.id">
+              {{ category.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="title-container">
+        <mat-form-field>
+          <input matInput placeholder="Title...">
+        </mat-form-field>
+      </div>
+      <div class="body-container">
+        <mat-form-field>
+          <textarea matInput placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="button-column">
+        <button mat-raised-button color="accent">Save as a draft</button>
+        <button mat-raised-button color="primary">Post this message</button>
+      </div>
+        <!-- </form> -->
+    </div>
+  </div>
+</div>
 
-
+<div class="messages-wrapper">
+  <div class="message-list-wrapper">
+      <mat-list role="list">
+        <mat-list-item *ngFor="let mbpost of mbposts" role="listitem">
+         {{mbpost.title}} - {{mbpost.author}} - {{mbpost.created}}
+        </mat-list-item>
+      </mat-list>
+  </div>
 </div>
