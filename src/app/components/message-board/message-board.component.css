@@ -19,8 +19,12 @@ p {
   height: 20px;
 }
 
-h3 {
+h2, h3 {
   text-align: center;
+}
+
+h3 span {
+  font-weight: lighter;
 }
 
 mat-list-item {
@@ -28,7 +32,7 @@ mat-list-item {
 }
 
 .section,
-mat-form-field {
+.no-messages-container mat-form-field {
   width: 100%;
   color: black;
 }
@@ -37,9 +41,14 @@ mat-form-field {
   text-align: center;
 }
 
+
 button {
-  width: 100%;
   border-radius: 2rem;
+}
+
+
+.no-messages-container button {
+  width: 100%;
   margin: 5px auto;
 }
 
