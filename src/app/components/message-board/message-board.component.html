@@ -14,8 +14,9 @@
       </mat-list-item>
     </mat-list>
   </div>
-  <div class="message-input-wrapper" *ngIf="mbposts">
-      <!-- <form> -->
+  <div class="message-input-wrapper" *ngIf="mbposts < 1">
+    <!-- <div *ngIf="mbposts.length < 1"> -->
+            <!-- <form> -->
     <div class="form-wrapper" *ngIf="messageboard">
       <mat-form-field>
         <mat-select placeholder="Pick a category (optional)"  [(ngModel)]="selectedCategory">
@@ -40,7 +41,9 @@
       <button mat-raised-button color="primary">Post this message</button>
     </div>
       <!-- </form> -->
-  </div>
+    </div>
+
+  <!-- </div> -->
 
 
 </div>
