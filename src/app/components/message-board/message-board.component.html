@@ -39,6 +39,22 @@
 </div>
 
 <div class="messages-wrapper">
+  <div class="section" *ngIf="company">
+    <h3><a routerLink="/companies/{{company.id}}">{{company.name}} HQ</a></h3>
+    <h2>Message Board</h2>
+    <div class="button-column">
+      <button mat-raised-button color="accent">New message</button>
+        <span class="form-wrapper" *ngIf="messageboard">
+          <mat-form-field>
+            <mat-select placeholder="All Messages"  [(ngModel)]="selectedCategory">
+              <mat-option *ngFor="let category of messageboard.categories" [value]="category.id">
+                {{ category.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </span>
+    </div>
+  </div>
   <div class="message-list-wrapper">
       <mat-list role="list">
         <mat-list-item *ngFor="let mbpost of mbposts" role="listitem">
@@ -46,4 +62,5 @@
         </mat-list-item>
       </mat-list>
   </div>
+
 </div>
