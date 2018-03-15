@@ -42,7 +42,7 @@
   <div class="section" *ngIf="company">
     <h3><a routerLink="/companies/{{company.id}}">{{company.name}} HQ</a></h3>
     <h2>Message Board</h2>
-    <div class="button-column">
+    <div class="button-row">
       <button mat-raised-button color="accent">New message</button>
         <span class="form-wrapper" *ngIf="messageboard">
           <mat-form-field>
