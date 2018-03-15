@@ -31,8 +31,7 @@ mat-list-item {
   color: black !important;
 }
 
-.section,
-.no-messages-container mat-form-field {
+.section {
   width: 100%;
   color: black;
 }
