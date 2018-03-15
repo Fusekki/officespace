@@ -1,23 +1,10 @@
-.banner {
-  background: #fffae5;
-  border: 1px solid orange;
-  margin: 0 -23px;
-  padding: 5px;
-  text-align: center;
-}
 
-.subtitle {
-  margin-bottom: 2px;
-}
 
 p {
   color: grey;
   margin-top: 2px;
 }
 
-.clearspace {
-  height: 20px;
-}
 
 h2, h3 {
   text-align: center;
@@ -31,19 +18,14 @@ mat-list-item {
   color: black !important;
 }
 
-.section,
-.no-messages-container mat-form-field {
+.section {
   width: 100%;
   color: black;
 }
 
-.button-column,
-.button-row {
-  text-align: center;
-}
-
 .button-row {
   display: flex;
+  text-align: center;
 }
 
 
@@ -51,27 +33,14 @@ button {
   border-radius: 2rem;
 }
 
-.no-messages-container button {
-  width: 100%;
-  margin: 5px auto;
-}
-
 >>> .mat-form-field-label,
 >>> .mat-select-value-text {
   color: black !important;
 }
 
-.title-container >>> .mat-input-infix {
-  color: grey !important;
-  font-weight: bold;
-}
 
-.body-container >>> .mat-form-field-label {
-  color: grey !important;
-}
-
-.messages-wrapper button,
-.messages-wrapper .form-wrapper {
+ button,
+.form-wrapper {
   margin: 0 5px;
 
 }
@@ -79,4 +48,14 @@ button {
 .message-card {
   padding: 6px;
   width: 100%;
+}
+
+.buttons-container {
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.message-header-image {
+  height: 100%;  
 }
