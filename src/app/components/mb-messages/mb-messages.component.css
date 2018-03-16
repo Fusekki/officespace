@@ -1,14 +1,10 @@
-
-
 p {
   color: #877457;
-  /* margin-top: 2px; */
 }
 
 p span {
   color: black;
 }
-
 
 h2, h3 {
   text-align: center;
@@ -32,17 +28,15 @@ mat-list-item {
   text-align: center;
 }
 
-
 button {
   border-radius: 2rem;
 }
 
->>> .mat-form-field-label,
->>> .mat-select-value-text {
+>>>.mat-form-field-label, >>>.mat-select-value-text {
   color: black !important;
 }
 
->>> .mat-list-item-content {
+>>>.mat-list-item-content {
   padding: 0 !important;
 }
 
@@ -55,17 +49,17 @@ button {
   color: black;
   margin: 0;
 }
+
 .mat-card-title h3 {
   text-align: left;
   margin: 0;
 }
 
 .mat-card-subtitle {
-    color: #877457;
+  color: #877457;
 }
 
- button,
-.form-wrapper {
+button, .form-wrapper {
   margin: 0 5px;
 }
 
