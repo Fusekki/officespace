@@ -15,6 +15,7 @@ import { MessageBoardService } from '../../services/message-board.service';
 
 import { MbPost } from '../../classes/mb-post';
 import { MbPostService } from '../../services/mb-post.service';
+
 // Keep until we move to a backend
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
@@ -70,7 +71,7 @@ export class MbMessagesComponent implements OnInit {
     return this.users[id].fullName;
   }
 
-  getcategoryName(id: number): string {
+  getcategoryName(id: number) {
     return this.messageboard.categories[id].name;
   }
 
