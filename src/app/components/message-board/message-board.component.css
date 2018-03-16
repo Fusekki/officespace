@@ -10,6 +10,10 @@
   margin-bottom: 2px;
 }
 
+>>> .mat-form-field {
+  width: 100%;
+}
+
 p {
   color: grey;
   margin-top: 2px;
