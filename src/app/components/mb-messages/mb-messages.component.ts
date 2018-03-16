@@ -71,7 +71,7 @@ export class MbMessagesComponent implements OnInit {
     return this.users[id].fullName;
   }
 
-  getcategoryName(id: number) {
+  getcategoryName(id: number): object {
     return this.messageboard.categories[id].name;
   }
 
