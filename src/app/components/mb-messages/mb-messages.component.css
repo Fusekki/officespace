@@ -40,6 +40,10 @@ button {
   padding: 0 !important;
 }
 
+.mat-form-field {
+  width: 50%;
+}
+
 .mat-list-item:not(:last-child) {
   margin-bottom: 50px;
 }
@@ -74,4 +78,10 @@ button, .form-wrapper {
 
 .mat-card-content {
   margin-left: 46px;
+}
+
+.buttons-container {
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
 }
