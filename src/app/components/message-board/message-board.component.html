@@ -10,4 +10,4 @@
   </div>
 </div>
 <app-mb-message-input *ngIf="mbposts?.length == 0"></app-mb-message-input>
-<app-mb-messages></app-mb-messages>
+<app-mb-messages *ngIf="mbposts?.length > 0"></app-mb-messages>
