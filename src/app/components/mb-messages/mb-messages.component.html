@@ -5,7 +5,10 @@
       <button mat-raised-button color="accent">New message</button>
         <span class="form-wrapper" *ngIf="messageboard">
           <mat-form-field>
-            <mat-select placeholder="All Messages"  [(ngModel)]="selectedCategory">
+            <mat-select placeholder="All Messages"  [(ngModel)]="selected" (ngModelChange)="onSelect(selected)">
+              <mat-option [value]="-1">
+                All Messages
+              </mat-option>
               <mat-option *ngFor="let category of messageboard.categories" [value]="category.id">
                 {{ category.name }}
               </mat-option>
@@ -16,7 +19,8 @@
   </div>
   <div class="message-list-wrapper" *ngIf="users">
       <mat-list role="list">
-        <mat-list-item *ngFor="let mbpost of mbposts" role="listitem">
+        <!-- <mat-list-item *ngFor="let mbpost of mbposts" role="listitem"> -->
+        <mat-list-item *ngFor="let mbpost of selectedData" role="listitem">
           <mat-card class="message-card">
             <mat-card-header>
               <div mat-card-avatar class="message-header-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
