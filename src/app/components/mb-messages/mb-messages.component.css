@@ -40,6 +40,10 @@ button {
   padding: 0 !important;
 }
 
+.mat-list-item:not(:last-child) {
+  margin-bottom: 50px;
+}
+
 .mat-card {
   color: black;
   background: none;
