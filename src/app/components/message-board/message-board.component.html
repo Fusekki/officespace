@@ -1,2 +1,13 @@
-<app-mb-message-input></app-mb-message-input>
+<div class="header" *ngIf="mbposts?.length == 0">
+  <div class="banner">
+    <h3 class="subtitle">Kick Things off with your first message.</h3>
+    <p>Post an announcement, pitch an idea, or ask a question.</p>
+  </div>
+  <div class="clearspace">
+  </div>
+  <div class="section" *ngIf="company">
+    <h3>{{company.name}} HQ</h3>
+  </div>
+</div>
+<app-mb-message-input *ngIf="mbposts?.length == 0"></app-mb-message-input>
 <app-mb-messages></app-mb-messages>
