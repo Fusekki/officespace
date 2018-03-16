@@ -43,10 +43,22 @@ button {
   background: none;
 }
 
+.mat-card-header-text {
+  color: black;
+  margin: 0;
+}
+.mat-card-title h3 {
+  text-align: left;
+  margin: 0;
+}
+
+.mat-card-subtitle {
+    color: grey;
+}
+
  button,
 .form-wrapper {
   margin: 0 5px;
-
 }
 
 .message-card {
@@ -54,12 +66,12 @@ button {
   width: 100%;
 }
 
+.mat-card-content {
+  margin-left: 46px;
+}
+
 .buttons-container {
   margin: 0;
   white-space: nowrap;
   text-align: center;
-}
-
-.message-header-image {
-  height: 100%;
 }
