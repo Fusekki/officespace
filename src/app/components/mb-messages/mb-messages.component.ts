@@ -26,26 +26,32 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./mb-messages.component.css']
 })
 export class MbMessagesComponent implements OnInit {
-  selectedCategory: string;
+  selected: string;
   company: Company;
   currentUser: User;
   messageboard: MessageBoard;
   mbposts: MbPost[];
   users: User[];
+  selectedData: MbPost[];
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
               private location: Location,
               private userService: UserService,
               private messageboardService: MessageBoardService,
-              private mbpostService: MbPostService) { }
+              private mbpostService: MbPostService) {}
 
   ngOnInit() {
     this.getCompany();
     this.getMessageboard();
-    this.getMbposts();
+    // this.getMbposts();
     this.getUsers();
     this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
+
+    this.getMbposts().subscribe(_ => {
+      ;
+      this.selectedData = this.mbposts;
+    });
   }
 
   // Temporary. This route has the id for the messageboard.
@@ -94,12 +100,27 @@ export class MbMessagesComponent implements OnInit {
     //     this.wcmessages.push(wcmessage)
     //   });
   }
+  //
+  //
+  // getMbposts(): void {
+  //   this.mbpostService.getMbPosts()
+  //     .subscribe(mbposts => this.mbposts = mbposts);
+  // }
 
-
-  getMbposts(): void {
-    this.mbpostService.getMbPosts()
-      .subscribe(mbposts => this.mbposts = mbposts);
+  getMbposts(): mbpost[] {
+    return this.mbpostService.getMbPosts()
+      .map(mbposts => this.mbposts = mbposts);
   }
+
+
+
+  onSelect(id: number) {
+    if (id == -1) {
+      this.selectedData = this.mbposts;
+    } else {
+      this.selectedData = this.mbposts.filter(mbpost => mbpost.category == id);
+  }
+}
 
 
 }
