@@ -36,7 +36,7 @@ export class MbMessageInputComponent implements OnInit {
               private userService: UserService,
               private messageboardService: MessageBoardService,
               private mbpostService: MbPostService) { }
-              
+
   ngOnInit() {
     this.getCompany();
     this.getMessageboard();
@@ -89,15 +89,6 @@ export class MbMessageInputComponent implements OnInit {
     this.mbpostService.getMbPosts()
       .subscribe(mbposts => this.mbposts = mbposts);
   }
-
-
-}
-
-
-
-
-
-
 
 
 }
