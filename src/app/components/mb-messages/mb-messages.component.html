@@ -20,8 +20,8 @@
           <mat-card class="message-card">
             <mat-card-header>
               <div mat-card-avatar class="message-header-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
-              <mat-card-title>{{mbpost.title}}</mat-card-title>
-              <mat-card-subtitle> - {{ getauthorName(mbpost.author) }}</mat-card-subtitle>
+              <mat-card-title><h3>{{mbpost.title}}</h3></mat-card-title>
+              <mat-card-subtitle>{{ getcategoryName(mbpost.category) }} by {{ getauthorName(mbpost.author) }}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
               <p>
