@@ -12,6 +12,8 @@ import { WatercoolerComponent } from './components/watercooler/watercooler.compo
 import { WcmessageComponent } from './components/wc-message/wc-message.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { MessageBoardComponent } from './components/message-board/message-board.component';
+import { MbMessageInputComponent } from './components/mb-message-input/mb-message-input.component';
+import { MbMessageWrapperComponent } from './components/mb-message-wrapper/mb-message-wrapper.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full' },
@@ -27,7 +29,8 @@ const routes: Routes = [
   { path: 'watercooler/:id', component: WatercoolerComponent },
   { path: 'wcmessages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent },
-  { path: 'messageboards/:id', component: MessageBoardComponent }
+  { path: 'messageboards/:id', component: MessageBoardComponent },
+  { path: 'messages/new', component: MbMessageWrapperComponent }
 
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
