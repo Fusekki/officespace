@@ -1,0 +1,54 @@
+.banner {
+  background: #fffae5;
+  border: 1px solid orange;
+  margin: 0 -23px;
+  padding: 5px;
+  text-align: center;
+}
+
+.subtitle {
+  margin-bottom: 2px;
+}
+
+p {
+  color: grey;
+  margin-top: 2px;
+}
+
+.clearspace {
+  height: 20px;
+}
+
+h3 {
+  text-align: center;
+}
+
+.section {
+  width: 100%;
+  color: black;
+}
+
+.button-column
+ {
+  text-align: center;
+}
+
+ button {
+  border-radius: 2rem;
+  width: 100%;
+  margin: 5px auto;
+}
+
+>>> .mat-form-field-label,
+>>> .mat-select-value-text {
+  color: black !important;
+}
+
+.title-container >>> .mat-input-infix {
+  color: grey !important;
+  font-weight: bold;
+}
+
+.body-container >>> .mat-form-field-label {
+  color: grey !important;
+}

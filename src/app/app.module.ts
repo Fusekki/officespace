@@ -50,6 +50,7 @@ import { MessageBoardComponent } from './components/message-board/message-board.
 import { MessageBoardService } from './services/message-board.service';
 import { MbPostService } from './services/mb-post.service';
 import { MbMessagesComponent } from './components/mb-messages/mb-messages.component';
+import { MbMessageInputComponent } from './components/mb-message-input/mb-message-input.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { MbMessagesComponent } from './components/mb-messages/mb-messages.compon
     WcmessageComponent,
     ReportsComponent,
     MessageBoardComponent,
-    MbMessagesComponent
+    MbMessagesComponent,
+    MbMessageInputComponent
   ],
   imports: [
     BrowserModule,
