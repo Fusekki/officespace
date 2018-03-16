@@ -70,6 +70,10 @@ export class MbMessagesComponent implements OnInit {
     return this.users[id].fullName;
   }
 
+  getcategoryName(id: number): string {
+    return this.messageboard.categories[id].name;
+  }
+
 
   goBack(): void {
     this.location.back();
