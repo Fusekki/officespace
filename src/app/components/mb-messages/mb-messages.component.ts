@@ -1,9 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
 
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatListModule} from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -35,11 +35,11 @@ export class MbMessagesComponent implements OnInit {
   selectedData: MbPost[];
 
   constructor(private companyService: CompanyService,
-              private route: ActivatedRoute,
-              private location: Location,
-              private userService: UserService,
-              private messageboardService: MessageBoardService,
-              private mbpostService: MbPostService) {}
+    private route: ActivatedRoute,
+    private location: Location,
+    private userService: UserService,
+    private messageboardService: MessageBoardService,
+    private mbpostService: MbPostService) { }
 
   ngOnInit() {
     this.getCompany();
@@ -119,8 +119,8 @@ export class MbMessagesComponent implements OnInit {
       this.selectedData = this.mbposts;
     } else {
       this.selectedData = this.mbposts.filter(mbpost => mbpost.category == id);
+    }
   }
-}
 
 
 }
