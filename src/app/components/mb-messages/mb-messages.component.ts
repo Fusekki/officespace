@@ -107,7 +107,7 @@ export class MbMessagesComponent implements OnInit {
   //     .subscribe(mbposts => this.mbposts = mbposts);
   // }
 
-  getMbposts(): mbpost[] {
+  getMbposts() {
     return this.mbpostService.getMbPosts()
       .map(mbposts => this.mbposts = mbposts);
   }
