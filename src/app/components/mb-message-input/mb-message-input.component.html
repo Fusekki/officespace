@@ -11,16 +11,16 @@
       </div>
       <div class="title-container">
         <mat-form-field>
-          <input matInput placeholder="Title..." [(ngModel)]="title">
+          <input matInput #titlebox placeholder="Title..." [(ngModel)]="title">
         </mat-form-field>
       </div>
       <div class="body-container">
         <mat-form-field>
-          <textarea matInput placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6" [(ngModel)]="body"></textarea>
+          <textarea matInput #contentbox placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6" [(ngModel)]="body"></textarea>
         </mat-form-field>
       </div>
       <div class="button-column">
-        <button mat-raised-button color="accent">Save as a draft</button>
+        <button mat-raised-button color="accent" (click)="addMbPost(titlebox.value, contentbox.value); titlebox.value=''; contentbox.value='';">Save as a draft</button>
         <button mat-raised-button color="primary">Post this message</button>
       </div>
         <!-- </form> -->
