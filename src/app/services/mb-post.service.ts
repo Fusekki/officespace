@@ -70,7 +70,7 @@ export class MbPostService {
   /** POST: add a new MbPost to the server */
   addMbPost (mbpost: MbPost): Observable<MbPost> {
     return this.http.post<MbPost>(this.MbpostsUrl, mbpost, httpOptions).pipe(
-      tap((mbpost: MbPost) => this.log(`added MbPost w/ id=${mbpost.id}`)),
+      tap((mbpost: MbPost) => this.log(`added MbPost w/ id=${mbpost.id}, c=${mbpost.category}, t=${mbpost.title}, b=${mbpost.content}, a=${mbpost.author}`)),
       catchError(this.handleError<MbPost>('addMbPost'))
     );
   }
