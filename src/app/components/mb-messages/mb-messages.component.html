@@ -1,5 +1,5 @@
     <div class="buttons-container">
-      <button mat-raised-button color="accent" routerLink="/messages/new">New message</button>
+      <button mat-raised-button color="accent" routerLink="/messages/{{messageboard?.id}}/new">New message</button>
         <span class="form-wrapper" *ngIf="messageboard">
           <mat-form-field>
             <mat-select placeholder="All Messages"  [(ngModel)]="selected" (ngModelChange)="onSelect(selected)">
