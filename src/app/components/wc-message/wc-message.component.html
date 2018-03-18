@@ -1,14 +1,18 @@
-<mat-card *ngIf="wcmessage" class="watercooler-card">
-  <mat-card-header>
-    <div mat-card-avatar class="watercooler-header-image"></div>
-    <div class="mat-title-container">
-      <mat-card-title>{{wcmessage.created | date}}</mat-card-title>
-      <mat-card-subtitle id='subtitle'>{{wcmessage.author}}</mat-card-subtitle>
-    </div>
-  </mat-card-header>
-  <mat-card-content>
-    <p>
-      {{wcmessage.content}}
-    </p>
-  </mat-card-content>
-</mat-card>
+<div class="message-container">
+  <div mat-card-avatar class="watercooler-header-image">
+    <img src="http://via.placeholder.com/45x45"  />
+  </div>
+  <mat-card *ngIf="wcmessage" class="watercooler-card">
+    <mat-card-header>
+      <div class="mat-title-container">
+        <mat-card-title>{{wcmessage.created | date}}</mat-card-title>
+        <mat-card-subtitle id='subtitle'>{{wcmessage.author}}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{wcmessage.content}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
