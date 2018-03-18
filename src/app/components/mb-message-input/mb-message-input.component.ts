@@ -79,8 +79,9 @@ export class MbMessageInputComponent implements OnInit {
     content = content.trim();
     if (!content) { return; }
     this.mbpostService.addMbPost({
+      // id: 100,
       messageboard_id: 0,
-      author: this.currentUser.fullName,
+      author: this.currentUser.id,
       created: this.date,
       title: title,
       content: content
@@ -89,24 +90,7 @@ export class MbMessageInputComponent implements OnInit {
         this.mbposts.push(mbpost)
       });
   }
-  //
-  // addMbPost(title: string, content: string): void {
-  //   const id = +this.route.snapshot.paramMap.get('id');
-  //   this.date = new Date(Date.now());
-  //   content = content.trim();
-  //   if (!content) { return; }
-  //   this.mbpostService.addMbPost({
-  //     messageboard_id: 0,
-  //     author: this.currentUser.fullName,
-  //     created: this.date,
-  //     title: title,
-  //     category: id,
-  //     content: content
-  //   } as MbPost)
-  //     .subscribe(mbpost => {
-  //       this.mbposts.push(mbpost)
-  //     });
-  // }
+
 
 
   getMbposts(): void {
