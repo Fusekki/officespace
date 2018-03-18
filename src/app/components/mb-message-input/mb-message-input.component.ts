@@ -30,6 +30,9 @@ export class MbMessageInputComponent implements OnInit {
   mbposts: MbPost[];
   users: User[];
 
+  title: string;
+  body: string;
+
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
               private location: Location,
