@@ -20,10 +20,12 @@
     </li>
   </ul>
 </section>
-<div class="form-container">
-  <form class (keyup.enter)="addMessage(box.value); box.value='';">
-    <mat-form-field>
-      <input #box matInput placeholder="Say something" />
-    </mat-form-field>
-  </form>
+<div class="form-wrapper">
+  <div class="form-container">
+    <form class (keyup.enter)="addMessage(box.value); box.value='';">
+      <mat-form-field>
+        <input #box matInput placeholder="Say something" />
+      </mat-form-field>
+    </form>
+  </div>
 </div>
