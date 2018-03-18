@@ -11,12 +11,12 @@
       </div>
       <div class="title-container">
         <mat-form-field>
-          <input matInput placeholder="Title...">
+          <input matInput placeholder="Title..." [(ngModel)]="title">
         </mat-form-field>
       </div>
       <div class="body-container">
         <mat-form-field>
-          <textarea matInput placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6"></textarea>
+          <textarea matInput placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6" [(ngModel)]="body"></textarea>
         </mat-form-field>
       </div>
       <div class="button-column">
