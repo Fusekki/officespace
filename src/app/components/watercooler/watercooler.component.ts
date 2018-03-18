@@ -51,7 +51,6 @@ export class WatercoolerComponent implements OnInit {
     });
     this.getMessages();
     this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
-
   }
 
   getWatercooler() {
