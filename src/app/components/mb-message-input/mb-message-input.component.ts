@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -6,7 +6,8 @@ import {MatListModule} from '@angular/material/list';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import { MessageBoard } from '../../classes/message-board';
 import { Company } from '../../classes/company';
 import { CompanyService } from '../../services/company.service';
@@ -23,15 +24,15 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./mb-message-input.component.css']
 })
 export class MbMessageInputComponent implements OnInit {
+  @Input() mbpost: MbPost;
+
   selectedCategory: string;
   company: Company;
   currentUser: User;
   messageboard: MessageBoard;
-  mbposts: MbPost[];
-  users: User[];
-
-  title: string;
-  body: string;
+  mbposts: MbPost[] = [];
+  users: User[] = [];
+  date: Date;
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
@@ -72,20 +73,40 @@ export class MbMessageInputComponent implements OnInit {
     this.location.back();
   }
 
-  addPost(content: string): void {
-    // this.date = new Date(Date.now());
-    // content = content.trim();
-    // if (!content) { return; }
-    // this.wcmessageService.addMessage({
-    //   author: this.currentUser.fullName,
-    //   created: this.date,
-    //   content: content,
-    //   watercooler_id: 0
-    // } as Wcmessage)
-    //   .subscribe(wcmessage => {
-    //     this.wcmessages.push(wcmessage)
-    //   });
+  addMbPost(title: string, content: string): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.date = new Date(Date.now());
+    content = content.trim();
+    if (!content) { return; }
+    this.mbpostService.addMbPost({
+      messageboard_id: 0,
+      author: this.currentUser.fullName,
+      created: this.date,
+      title: title,
+      content: content
+    } as MbPost)
+      .subscribe(mbpost => {
+        this.mbposts.push(mbpost)
+      });
   }
+  //
+  // addMbPost(title: string, content: string): void {
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.date = new Date(Date.now());
+  //   content = content.trim();
+  //   if (!content) { return; }
+  //   this.mbpostService.addMbPost({
+  //     messageboard_id: 0,
+  //     author: this.currentUser.fullName,
+  //     created: this.date,
+  //     title: title,
+  //     category: id,
+  //     content: content
+  //   } as MbPost)
+  //     .subscribe(mbpost => {
+  //       this.mbposts.push(mbpost)
+  //     });
+  // }
 
 
   getMbposts(): void {
