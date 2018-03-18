@@ -74,16 +74,18 @@ export class MbMessageInputComponent implements OnInit {
   }
 
   addMbPost(title: string, content: string): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.date = new Date(Date.now());
     content = content.trim();
     if (!content) { return; }
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.date = new Date(Date.now());
+    this.category = this.messageboard.categories.indexOf(this.selectedCategory);
     this.mbpostService.addMbPost({
       // id: 100,
       messageboard_id: 0,
       author: this.currentUser.id,
       created: this.date,
       title: title,
+      category: this.category,
       content: content
     } as MbPost)
       .subscribe(mbpost => {
