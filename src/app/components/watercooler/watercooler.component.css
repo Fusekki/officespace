@@ -21,13 +21,23 @@ p:nth-of-type(2) {
   font-weight: bold;
 }
 
-.form-container {
-  background: white;
+.form-wrapper {
   bottom: 0;
+  margin: 0 -10px 0 -10px;
   position: fixed;
-  /* There is 32 margin on each side set by the container with 25px per side
-  and body with 8px. */
-  width: calc(100% - 64px);
+  width: 100%;
+}
+
+.form-container {
+  background: #ecf9fd;
+  border: 1px solid grey;
+  margin: 0 0 5px -13px;
+  padding: 15px 30px 10px;
+  width: calc(100% - 84px);
+}
+
+form {
+  width: 100%;
 }
 
 
