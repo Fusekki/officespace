@@ -86,20 +86,6 @@ export class MbMessagesComponent implements OnInit {
     this.location.back();
   }
 
-  addPost(content: string): void {
-    // this.date = new Date(Date.now());
-    // content = content.trim();
-    // if (!content) { return; }
-    // this.wcmessageService.addMessage({
-    //   author: this.currentUser.fullName,
-    //   created: this.date,
-    //   content: content,
-    //   watercooler_id: 0
-    // } as Wcmessage)
-    //   .subscribe(wcmessage => {
-    //     this.wcmessages.push(wcmessage)
-    //   });
-  }
   //
   //
   // getMbposts(): void {
