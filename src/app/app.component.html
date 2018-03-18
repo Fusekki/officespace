@@ -2,5 +2,6 @@
 <div class="container">
   <router-outlet></router-outlet>
 </div>
-
-<app-reports></app-reports>
+<div class="report-container" *ngIf="reporting">
+  <app-reports></app-reports>
+</div>
