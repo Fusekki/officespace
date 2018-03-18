@@ -15,7 +15,7 @@ const httpOptions = {
 @Injectable()
 export class MbPostService {
 
-  private mbpostsUrl = 'api/mbposts';  // URL to web api
+  private MbpostsUrl = 'api/mbposts';  // URL to web api
 
   constructor(
     private http: HttpClient,
@@ -23,7 +23,7 @@ export class MbPostService {
 
   /** GET MbPosts from the server */
   getMbPosts (): Observable<MbPost[]> {
-    return this.http.get<MbPost[]>(this.mbpostsUrl)
+    return this.http.get<MbPost[]>(this.MbpostsUrl)
       .pipe(
         tap(mbposts => this.log(`fetched legal files`)),
         catchError(this.handleError('getmbposts', []))
@@ -32,7 +32,7 @@ export class MbPostService {
 
   /** GET MbPost by id. Return `undefined` when id not found */
   getMbPostNo404<Data>(id: number): Observable<MbPost> {
-    const url = `${this.mbpostsUrl}/?id=${id}`;
+    const url = `${this.MbpostsUrl}/?id=${id}`;
     return this.http.get<MbPost[]>(url)
       .pipe(
         map(mbposts => mbposts[0]), // returns a {0|1} element array
@@ -46,7 +46,7 @@ export class MbPostService {
 
   /** GET MbPost by id. Will 404 if id not found */
   getMbPost(id: number): Observable<MbPost> {
-    const url = `${this.mbpostsUrl}/${id}`;
+    const url = `${this.MbpostsUrl}/${id}`;
     return this.http.get<MbPost>(url).pipe(
       tap(_ => this.log(`fetched MbPost id=${id}`)),
       catchError(this.handleError<MbPost>(`getMbPost id=${id}`))
@@ -68,9 +68,9 @@ export class MbPostService {
   //////// Save methods //////////
 
   /** POST: add a new MbPost to the server */
-  addMbPost (MbPost: MbPost): Observable<MbPost> {
-    return this.http.post<MbPost>(this.mbpostsUrl, MbPost, httpOptions).pipe(
-      tap((MbPost: MbPost) => this.log(`added MbPost w/ id=${MbPost.id}`)),
+  addMbPost (mbpost: MbPost): Observable<MbPost> {
+    return this.http.post<MbPost>(this.MbpostsUrl, mbpost, httpOptions).pipe(
+      tap((mbpost: MbPost) => this.log(`added MbPost w/ id=${mbpost.id}`)),
       catchError(this.handleError<MbPost>('addMbPost'))
     );
   }
@@ -78,7 +78,7 @@ export class MbPostService {
   /** DELETE: delete the MbPost from the server */
   deleteMbPost (MbPost: MbPost | number): Observable<MbPost> {
     const id = typeof MbPost === 'number' ? MbPost : MbPost.id;
-    const url = `${this.mbpostsUrl}/${id}`;
+    const url = `${this.MbpostsUrl}/${id}`;
 
     return this.http.delete<MbPost>(url, httpOptions).pipe(
       tap(_ => this.log(`deleted MbPost id=${id}`)),
@@ -88,7 +88,7 @@ export class MbPostService {
 
   /** PUT: update the MbPost on the server */
   updateMbPost (MbPost: MbPost): Observable<any> {
-    return this.http.put(this.mbpostsUrl, MbPost, httpOptions).pipe(
+    return this.http.put(this.MbpostsUrl, MbPost, httpOptions).pipe(
       tap(_ => this.log(`updated MbPost id=${MbPost.id}`)),
       catchError(this.handleError<any>('updateMbPost'))
     );
@@ -96,7 +96,7 @@ export class MbPostService {
 
   /** GET MbPost by id. Will 404 if id not found */
   getCurrentMbPost(): Observable<MbPost> {
-    const url = `${this.mbpostsUrl}/0`;
+    const url = `${this.MbpostsUrl}/0`;
     return this.http.get<MbPost>(url).pipe(
       tap(_ => this.log(`fetched MbPost id=0`)),
       catchError(this.handleError<MbPost>(`getMbPost id=0`))
