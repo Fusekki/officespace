@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'wcmessages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent },
   { path: 'messageboards/:id', component: MessageBoardComponent },
-  { path: 'messages/new', component: MbMessageWrapperComponent }
+  { path: 'messages/:id/new', component: MbMessageWrapperComponent }
 
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
