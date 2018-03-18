@@ -24,7 +24,6 @@ import { UserService } from '../../services/user.service';
 export class WatercoolerComponent implements OnInit {
   @Input() wcmessage: Wcmessage;
 
-
   private messageText: string;
 
   wcmessages: Wcmessage[] = [];
