@@ -33,6 +33,7 @@ export class MbMessageInputComponent implements OnInit {
   mbposts: MbPost[] = [];
   users: User[] = [];
   date: Date;
+  category: number;
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
@@ -78,7 +79,7 @@ export class MbMessageInputComponent implements OnInit {
     if (!content) { return; }
     const id = +this.route.snapshot.paramMap.get('id');
     this.date = new Date(Date.now());
-    this.category = this.messageboard.categories.indexOf(this.selectedCategory);
+    this.category = this.messageboard.categories[this.selectedCategory];
     this.mbpostService.addMbPost({
       // id: 100,
       messageboard_id: 0,
