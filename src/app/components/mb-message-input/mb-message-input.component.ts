@@ -1,5 +1,7 @@
 import { Component,Input, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatListModule} from '@angular/material/list';
@@ -31,16 +33,19 @@ export class MbMessageInputComponent implements OnInit {
   currentUser: User;
   messageboard: MessageBoard;
   mbposts: MbPost[] = [];
+  currentPost: MbPost;
   users: User[] = [];
   date: Date;
   category: number;
+
 
   constructor(private companyService: CompanyService,
               private route: ActivatedRoute,
               private location: Location,
               private userService: UserService,
               private messageboardService: MessageBoardService,
-              private mbpostService: MbPostService) { }
+              private mbpostService: MbPostService,
+              private router: Router) { }
 
   ngOnInit() {
     this.getCompany();
@@ -74,15 +79,16 @@ export class MbMessageInputComponent implements OnInit {
     this.location.back();
   }
 
-  addMbPost(title: string, content: string): void {
+  addMbPost(title: string, content: string, draft: boolean): void {
     content = content.trim();
     if (!content) { return; }
     const id = +this.route.snapshot.paramMap.get('id');
     this.date = new Date(Date.now());
     this.category = this.selectedCategory;
+    this.currentPost = new MbPost(0, 0, draft, this.currentUser.id, this.date, title, this.category, content);
     this.mbpostService.addMbPost({
-      // id: 100,
       messageboard_id: 0,
+      draft: draft,
       author: this.currentUser.id,
       created: this.date,
       title: title,
@@ -108,6 +114,12 @@ export class MbMessageInputComponent implements OnInit {
 
   setCategory(value: number): void {
     this.selectedCategory = value;
+  }
+
+  changeRoute(): void {
+    // this.mbpostService.changeRoute();
+    // this.router.navigate(['/results', { dateFrom: this.dateFrom, page: this.page }]);
+
   }
 
 
