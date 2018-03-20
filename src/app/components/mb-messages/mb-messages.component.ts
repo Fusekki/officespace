@@ -74,7 +74,7 @@ export class MbMessagesComponent implements OnInit {
       .subscribe(users => this.users = users);
   }
 
-  getauthorName(id: number): any {
+  getauthorName(id: number): string {
     return this.users.find(user => user.id == id).fullName;
   }
 
