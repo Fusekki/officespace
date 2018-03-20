@@ -44,7 +44,8 @@ export class MbMessagesComponent implements OnInit {
     private location: Location,
     private userService: UserService,
     private messageboardService: MessageBoardService,
-    private mbpostService: MbPostService) { }
+    private mbpostService: MbPostService,
+    private mbcategoryService: MbCategoryService) { }
 
   ngOnInit() {
     this.getCompany();
