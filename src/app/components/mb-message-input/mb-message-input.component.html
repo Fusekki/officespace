@@ -2,7 +2,7 @@
               <!-- <form> -->
       <div class="form-wrapper" *ngIf="messageboard">
         <mat-form-field>
-          <mat-select placeholder="Pick a category (optional)" [(ngModel)]="selectedCategory">
+          <mat-select #selectElem placeholder="Pick a category (optional)" (change)="setCategory(selectElem.value)">
             <mat-option *ngFor="let category of messageboard.categories" [value]="category.id">
               {{ category.name }}
             </mat-option>
