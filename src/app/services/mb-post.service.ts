@@ -53,6 +53,15 @@ export class MbPostService {
     );
   }
 
+  // /** GET MbPost by id. Will 404 if id not found */
+  // changeRoute(id: number): Observable<MbPost> {
+  //   const url = `${this.MbpostsUrl}/drafts/${id}`;
+  //   return this.http.get<MbPost>(url).pipe(
+  //     tap(_ => this.log(`fetched MbPost id=${id}`)),
+  //     catchError(this.handleError<MbPost>(`getMbPost id=${id}`))
+  //   );
+  // }
+
   /* GET MbPostes whose name contains search term */
   searchmbposts(term: string): Observable<MbPost[]> {
     if (!term.trim()) {
