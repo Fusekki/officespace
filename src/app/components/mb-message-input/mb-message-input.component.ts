@@ -26,7 +26,7 @@ import { UserService } from '../../services/user.service';
 export class MbMessageInputComponent implements OnInit {
   @Input() mbpost: MbPost;
 
-  selectedCategory: string;
+  selectedCategory: number;
   company: Company;
   currentUser: User;
   messageboard: MessageBoard;
@@ -79,7 +79,7 @@ export class MbMessageInputComponent implements OnInit {
     if (!content) { return; }
     const id = +this.route.snapshot.paramMap.get('id');
     this.date = new Date(Date.now());
-    this.category = this.messageboard.categories[this.selectedCategory];
+    this.category = this.selectedCategory;
     this.mbpostService.addMbPost({
       // id: 100,
       messageboard_id: 0,
@@ -104,6 +104,10 @@ export class MbMessageInputComponent implements OnInit {
   getCurrentUser(): void {
     this.userService.getCurrentUser()
     .subscribe(currentUser => this.currentUser = currentUser);
+  }
+
+  setCategory(value: number): void {
+    this.selectedCategory = value;
   }
 
 
