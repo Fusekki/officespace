@@ -14,6 +14,8 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { MessageBoardComponent } from './components/message-board/message-board.component';
 import { MbMessageInputComponent } from './components/mb-message-input/mb-message-input.component';
 import { MbMessageWrapperComponent } from './components/mb-message-wrapper/mb-message-wrapper.component';
+import { MbCategoryComponent } from './components/mb-category/mb-category.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full' },
@@ -30,7 +32,8 @@ const routes: Routes = [
   { path: 'wcmessages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent },
   { path: 'messageboards/:id', component: MessageBoardComponent },
-  { path: 'messages/:id/new', component: MbMessageWrapperComponent }
+  { path: 'messages/:id/new', component: MbMessageWrapperComponent },
+  { path: 'mbcategories/:id', component: MbCategoryComponent }
 
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
