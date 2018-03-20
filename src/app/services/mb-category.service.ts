@@ -59,7 +59,7 @@ export class MbCategoryService {
       // if not search term, return empty mbcategory array.
       return of([]);
     }
-    return this.http.get<MbCategory[]>(`api/mbcategories/?title=${term}`).pipe(
+    return this.http.get<MbCategory[]>(`api/mbcategories/?name=${term}`).pipe(
       tap(_ => this.log(`found mbcategories matching "${term}"`)),
       catchError(this.handleError<MbCategory[]>('searchMbCategories', []))
     );
