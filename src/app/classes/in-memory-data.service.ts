@@ -47,8 +47,8 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const mbposts = [
-      {id: 0, messageboard_id: 0, author: 0, created: this.created, title: "Hello", category: 1, body: "Just wanted to say hi!!" },
-      {id: 1, messageboard_id: 0, author: 0, created: this.created, title: "Test", category: 2, body: "This is a test" }
+      {id: 0, messageboardId: 0, author: 0, created: this.created, title: "Hello", category: 1, body: "Just wanted to say hi!!" },
+      {id: 1, messageboardId: 0, author: 0, created: this.created, title: "Test", category: 2, body: "This is a test" }
     ];
 
 
