@@ -53,6 +53,7 @@ import { MbMessagesComponent } from './components/mb-messages/mb-messages.compon
 import { MbMessageInputComponent } from './components/mb-message-input/mb-message-input.component';
 import { MbHeaderComponent } from './components/mb-header/mb-header.component';
 import { MbMessageWrapperComponent } from './components/mb-message-wrapper/mb-message-wrapper.component';
+import { MbMessageDraftComponent } from './components/mb-message-draft/mb-message-draft.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { MbMessageWrapperComponent } from './components/mb-message-wrapper/mb-me
     MbMessagesComponent,
     MbMessageInputComponent,
     MbHeaderComponent,
-    MbMessageWrapperComponent
+    MbMessageWrapperComponent,
+    MbMessageDraftComponent
   ],
   imports: [
     BrowserModule,
