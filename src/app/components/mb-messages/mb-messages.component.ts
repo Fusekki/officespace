@@ -37,7 +37,7 @@ export class MbMessagesComponent implements OnInit {
   mbposts: MbPost[];
   users: User[];
   selectedData: MbPost[];
-  mbcategories: MbCategory[];
+  mbCategories: MbCategory[];
 
   constructor(private companyService: CompanyService,
     private route: ActivatedRoute,
@@ -58,6 +58,8 @@ export class MbMessagesComponent implements OnInit {
       ;
       this.selectedData = this.mbposts;
     });
+
+    this.getMbcategories();
   }
 
   // Temporary. This route has the id for the messageboard.
@@ -83,8 +85,13 @@ export class MbMessagesComponent implements OnInit {
     return this.users[id].fullName;
   }
 
-  getcategoryName(id: number): object {
-    return this.messageboard.categories[id].name;
+  getcategoryName(id: number): string {
+    return this.mbCategories[id].name;
+  }
+
+  getMbcategories(): void {
+    this.mbcategoryService.getMbCategories()
+      .subscribe(mbCategories => this.mbCategories = mbCategories);
   }
 
 
