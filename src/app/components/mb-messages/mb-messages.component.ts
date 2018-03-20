@@ -16,9 +16,6 @@ import { MessageBoardService } from '../../services/message-board.service';
 import { MbPost } from '../../classes/mb-post';
 import { MbPostService } from '../../services/mb-post.service';
 
-import { MbCategory } from '../../classes/mb-category';
-import { MbCategoryService } from '../../services/mb-category.service';
-
 // Keep until we move to a backend
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
@@ -36,29 +33,26 @@ export class MbMessagesComponent implements OnInit {
   mbposts: MbPost[];
   users: User[];
   selectedData: MbPost[];
-  mbCategories: MbCategory[];
+
 
   constructor(private companyService: CompanyService,
     private route: ActivatedRoute,
     private location: Location,
     private userService: UserService,
     private messageboardService: MessageBoardService,
-    private mbpostService: MbPostService,
-    private mbcategoryService: MbCategoryService) { }
+    private mbpostService: MbPostService) { }
 
   ngOnInit() {
     this.getCompany();
     this.getMessageboard();
     // this.getMbposts();
     this.getUsers();
-    this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
+    this.userService.getCurrentUser();
 
     this.getMbposts().subscribe(_ => {
       ;
       this.selectedData = this.mbposts;
     });
-
-    this.getMbcategories();
   }
 
   // Temporary. This route has the id for the messageboard.
@@ -84,26 +78,8 @@ export class MbMessagesComponent implements OnInit {
     return this.users[id].fullName;
   }
 
-  getcategoryName(id: number): string {
-    return this.mbCategories[id].name;
-  }
-
-  getMbcategories(): void {
-    this.mbcategoryService.getMbCategories()
-      .subscribe(mbCategories => this.mbCategories = mbCategories);
-  }
-
-
   goBack(): void {
     this.location.back();
-  }
-
-  getCurrentCategories(id: number): number {
-    console.log(id);
-    console.log(this.mbCategories);
-    var x = this.mbCategories.filter(mbcategory => mbcategory.messageboardId == id);
-    console.log(x);
-    // return this.mbCategories.filter(mbcategory => mbcategory.messageboardId == id);
   }
 
 
@@ -118,6 +94,11 @@ export class MbMessagesComponent implements OnInit {
     } else {
       this.selectedData = this.mbposts.filter(mbpost => mbpost.category == id);
     }
+  }
+
+  getCurrentUser(): void {
+    this.userService.getCurrentUser()
+    .subscribe(currentUser => this.currentUser = currentUser);
   }
 
 

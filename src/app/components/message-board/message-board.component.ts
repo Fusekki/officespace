@@ -15,9 +15,6 @@ import { MessageBoardService } from '../../services/message-board.service';
 import { MbPost } from '../../classes/mb-post';
 import { MbPostService } from '../../services/mb-post.service';
 
-import { MbCategory } from '../../classes/mb-category';
-import { MbCategoryService } from '../../services/mb-category.service';
-
 // Keep until we move to a backend
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
@@ -33,7 +30,6 @@ export class MessageBoardComponent implements OnInit {
   currentUser: User;
   messageboard: MessageBoard;
   mbposts: MbPost[];
-  mbCategories: MbCategory[];
   users: User[];
 
 
@@ -42,8 +38,7 @@ export class MessageBoardComponent implements OnInit {
               private location: Location,
               private userService: UserService,
               private messageboardService: MessageBoardService,
-              private mbpostService: MbPostService,
-              private mbcategoryService: MbCategoryService) { }
+              private mbpostService: MbPostService) { }
 
   ngOnInit() {
     this.getCompany();
@@ -51,7 +46,6 @@ export class MessageBoardComponent implements OnInit {
     this.getMbposts();
     this.getUsers();
     this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
-    this.getMbcategories();
   }
 
   // Temporary. This route has the id for the messageboard.
@@ -97,11 +91,6 @@ export class MessageBoardComponent implements OnInit {
   getMbposts(): void {
     this.mbpostService.getMbPosts()
       .subscribe(mbposts => this.mbposts = mbposts);
-  }
-  
-  getMbcategories(): void {
-    this.mbcategoryService.getMbCategories()
-      .subscribe(mbCategories => this.mbCategories = mbCategories);
   }
 
 
