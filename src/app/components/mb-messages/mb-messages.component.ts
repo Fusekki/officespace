@@ -51,7 +51,7 @@ export class MbMessagesComponent implements OnInit {
 
     this.getMbposts().subscribe(_ => {
       ;
-      this.selectedData = this.mbposts;
+      this.selectedData = this.mbposts.filter(mbpost => mbpost.draft != true);
     });
   }
 
@@ -90,9 +90,9 @@ export class MbMessagesComponent implements OnInit {
 
   onSelect(id: number) {
     if (id == -1) {
-      this.selectedData = this.mbposts;
+      this.selectedData = this.mbposts.filter(mbpost => mbpost.draft != true);
     } else {
-      this.selectedData = this.mbposts.filter(mbpost => mbpost.category == id);
+      this.selectedData = this.mbposts.filter(mbpost => mbpost.category == id && mbpost.draft != true);
     }
   }
 
