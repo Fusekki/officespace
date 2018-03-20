@@ -16,6 +16,8 @@ import { MessageBoardService } from '../../services/message-board.service';
 import { MbPost } from '../../classes/mb-post';
 import { MbPostService } from '../../services/mb-post.service';
 
+import { MbCategory } from '../../classes/mb-category';
+
 // Keep until we move to a backend
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
@@ -33,6 +35,7 @@ export class MbMessagesComponent implements OnInit {
   mbposts: MbPost[];
   users: User[];
   selectedData: MbPost[];
+  mbcategories: MbCategory[];
 
   constructor(private companyService: CompanyService,
     private route: ActivatedRoute,
