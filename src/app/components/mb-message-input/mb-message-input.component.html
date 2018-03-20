@@ -20,7 +20,7 @@
         </mat-form-field>
       </div>
       <div class="button-column">
-        <button mat-raised-button color="accent">Save as a draft</button>
+        <button mat-raised-button color="accent" (click)="addMbDraft(titlebox.value, contentbox.value); titlebox.value=''; contentbox.value='';">Save as a draft</button>
         <button mat-raised-button color="primary" (click)="addMbPost(titlebox.value, contentbox.value); titlebox.value=''; contentbox.value='';">Post this message</button>
       </div>
         <!-- </form> -->
