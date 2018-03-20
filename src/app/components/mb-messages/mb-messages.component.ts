@@ -98,19 +98,19 @@ export class MbMessagesComponent implements OnInit {
     this.location.back();
   }
 
-  //
-  //
-  // getMbposts(): void {
-  //   this.mbpostService.getMbPosts()
-  //     .subscribe(mbposts => this.mbposts = mbposts);
-  // }
+  getCurrentCategories(id: number): number {
+    console.log(id);
+    console.log(this.mbCategories);
+    var x = this.mbCategories.filter(mbcategory => mbcategory.messageboardId == id);
+    console.log(x);
+    // return this.mbCategories.filter(mbcategory => mbcategory.messageboardId == id);
+  }
+
 
   getMbposts() {
     return this.mbpostService.getMbPosts()
       .map(mbposts => this.mbposts = mbposts);
   }
-
-
 
   onSelect(id: number) {
     if (id == -1) {
