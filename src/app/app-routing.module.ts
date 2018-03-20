@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'reports/:id', component: ReportsComponent },
   { path: 'messageboards/:id', component: MessageBoardComponent },
   { path: 'messages/:id/new', component: MbMessageWrapperComponent },
-  { path: 'mbcategories/:id', component: MbCategoryComponent }
+  { path: 'mbcategories', component: MbCategoryComponent }
 
   // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
