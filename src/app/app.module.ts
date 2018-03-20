@@ -53,6 +53,8 @@ import { MbMessagesComponent } from './components/mb-messages/mb-messages.compon
 import { MbMessageInputComponent } from './components/mb-message-input/mb-message-input.component';
 import { MbHeaderComponent } from './components/mb-header/mb-header.component';
 import { MbMessageWrapperComponent } from './components/mb-message-wrapper/mb-message-wrapper.component';
+import { MbCategoryService } from './services/mb-category.service';
+import { MbCategoryComponent } from './components/mb-category/mb-category.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,8 @@ import { MbMessageWrapperComponent } from './components/mb-message-wrapper/mb-me
     MbMessagesComponent,
     MbMessageInputComponent,
     MbHeaderComponent,
-    MbMessageWrapperComponent
+    MbMessageWrapperComponent,
+    MbCategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -128,7 +131,8 @@ import { MbMessageWrapperComponent } from './components/mb-message-wrapper/mb-me
     WatercoolerService,
     WcmessageService,
     MessageBoardService,
-    MbPostService
+    MbPostService,
+    MbCategoryService
   ],
   bootstrap: [AppComponent]
 })
