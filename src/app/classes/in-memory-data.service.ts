@@ -35,16 +35,9 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
     const messageboards = [
-      {id: 0, company_id: 0, categories: [0, 1, 2, 3, 4]}
+      {id: 0, company_id: 0, categories: ['Announcements', 'FYI', 'Hearbeat', 'Pitch', 'Question'] }
     ];
 
-    const mbcategories = [
-        {id: 0, messsageboardId: 0, name: 'Announcements', icon:'announcement'},
-        {id: 1, messsageboardId: 0, name: 'FYI', icon:''},
-        {id: 2, messsageboardId: 0, name: 'Hearbeat', icon:''},
-        {id: 3, messsageboardId: 0, name: 'Pitch', icon:''},
-        {id: 4, messsageboardId: 0, name: 'Question', icon:''}
-    ];
 
     const mbposts = [
       {id: 0, messageboardId: 0, author: 0, created: this.created, title: "Hello", category: 1, body: "Just wanted to say hi!!" },
@@ -66,7 +59,7 @@ export class InMemoryDataService implements InMemoryDbService {
       wcmessages,
       currentUser,
       messageboards,
-      mbposts,
-      mbcategories};
+      mbposts
+      };
   }
 }
