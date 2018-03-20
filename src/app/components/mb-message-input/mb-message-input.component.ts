@@ -31,6 +31,7 @@ export class MbMessageInputComponent implements OnInit {
   currentUser: User;
   messageboard: MessageBoard;
   mbposts: MbPost[] = [];
+  mbdrafts: MbPost[] = [];
   users: User[] = [];
   date: Date;
   category: number;
@@ -91,6 +92,26 @@ export class MbMessageInputComponent implements OnInit {
     } as MbPost)
       .subscribe(mbpost => {
         this.mbposts.push(mbpost)
+      });
+  }
+
+  addMbDraft(title: string, content: string): void {
+    content = content.trim();
+    if (!content) { return; }
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.date = new Date(Date.now());
+    this.category = this.selectedCategory;
+    this.mbpostService.addMbPost({
+      // id: 100,
+      messageboard_id: 0,
+      author: this.currentUser.id,
+      created: this.date,
+      title: title,
+      category: this.category,
+      content: content
+    } as MbPost)
+      .subscribe(mbdraft => {
+        this.mbdrafts.push(mbdraft);
       });
   }
 
