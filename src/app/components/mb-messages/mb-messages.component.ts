@@ -19,7 +19,6 @@ import { MbPostService } from '../../services/mb-post.service';
 import { MbCategory } from '../../classes/mb-category';
 import { MbCategoryService } from '../../services/mb-category.service';
 
-
 // Keep until we move to a backend
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
