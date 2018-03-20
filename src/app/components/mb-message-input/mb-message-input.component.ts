@@ -47,7 +47,7 @@ export class MbMessageInputComponent implements OnInit {
     this.getMessageboard();
     this.getMbposts();
     this.getUsers();
-    this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
+    this.getCurrentUser();
   }
 
   // Temporary. This route has the id for the messageboard.
@@ -99,6 +99,11 @@ export class MbMessageInputComponent implements OnInit {
   getMbposts(): void {
     this.mbpostService.getMbPosts()
       .subscribe(mbposts => this.mbposts = mbposts);
+  }
+
+  getCurrentUser(): void {
+    this.userService.getCurrentUser()
+    .subscribe(currentUser => this.currentUser = currentUser);
   }
 
 
