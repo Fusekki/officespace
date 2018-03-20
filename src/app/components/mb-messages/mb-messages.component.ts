@@ -45,7 +45,6 @@ export class MbMessagesComponent implements OnInit {
   ngOnInit() {
     this.getCompany();
     this.getMessageboard();
-    // this.getMbposts();
     this.getUsers();
     this.userService.getCurrentUser();
 
