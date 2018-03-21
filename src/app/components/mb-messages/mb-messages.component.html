@@ -13,6 +13,9 @@
           </mat-form-field>
         </span>
     </div>
+    <div class="drafts-container" *ngIf="draftPosts">
+      <a routerLink="/messages/drafts/user/:id">Continue writing {{draftPosts.length}} drafts...</a>
+     </div>
   <div class="message-list-wrapper" *ngIf="users">
       <mat-list role="list">
         <mat-list-item *ngFor="let mbpost of selectedData" role="listitem">
