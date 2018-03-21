@@ -33,6 +33,7 @@ export class MbMessagesComponent implements OnInit {
   mbposts: MbPost[];
   users: User[];
   selectedData: MbPost[];
+  draftPosts: MbPost[];
 
 
   constructor(private companyService: CompanyService,
@@ -52,6 +53,7 @@ export class MbMessagesComponent implements OnInit {
     this.getMbposts().subscribe(_ => {
       ;
       this.selectedData = this.mbposts.filter(mbpost => mbpost.draft != true);
+      this.draftPosts = this.mbposts.filter(mbpost => mbpost.draft == true);
     });
   }
 
