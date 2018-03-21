@@ -1,4 +1,6 @@
-h2, p {
+h2,
+p,
+.sub-header-content {
   text-align: center;
 }
 
@@ -11,6 +13,34 @@ p {
   margin-top: 3px;
 }
 
+.mat-grid-tile {
+  border: 1px solid grey;
+}
+
 .mat-grid-tile-header {
+  background: none !important;
+  color: black !important;
+  font-weight: bold;
   justify-content: space-between;
+}
+
+img {
+  border-radius: 50px;
+  margin-right: 5px;
+}
+
+.sub-header {
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+  display: flex;
+  padding: 5px 0;
+}
+
+.tile-content {
+  font-size: 12px;
+  padding: 0 5px;
+}
+
+.message-body {
+  padding-top: 5px;
 }
