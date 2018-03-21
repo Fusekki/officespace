@@ -42,7 +42,11 @@ export class InMemoryDataService implements InMemoryDbService {
     const mbposts = [
       {id: 0, messageboardId: 0, draft: false, author: 0, created: this.created, title: "Hello", category: 1, body: "Just wanted to say hi!!" },
       {id: 1, messageboardId: 0, draft: false, author: 0, created: this.created, title: "Test", category: 2, body: "This is a test" },
-      {id: 2, messageboardId: 0, draft: true, author: 0, created: this.created, title: "Draft", category: 0, body: "This is a draft" }
+      {id: 2, messageboardId: 0, draft: true, author: 0, created: this.created, title: "Draft", category: 0, body: "This is a draft" },
+      {id: 3, messageboardId: 3, draft: true, author: 0, created: this.created, title: "Hello", category: 0, body: "I am saying hi." },
+      {id: 5, messageboardId: 2, draft: true, author: 0, created: this.created, title: "I'm tired", category: 0, body: "Massvely drunk. Hope I am not posting this for real." }
+
+
 
     ];
 
