@@ -8,6 +8,15 @@ h2 {
   margin-bottom: 0;
 }
 
+.icon-container {
+  height: 20px;
+  overflow: visible;
+}
+
+mat-icon {
+  font-size: 38px !important;
+}
+
 p {
   font-size: 18px;
   margin-top: 3px;
@@ -18,10 +27,20 @@ p {
 }
 
 .mat-grid-tile-header {
-  background: none !important;
+  background: white !important;
   color: black !important;
+  font-size: 19px;
+  height: auto !important;
+  overflow: visible !important;
   font-weight: bold;
   justify-content: space-between;
+  padding: 0 8px;
+}
+
+.mat-icon {
+  font-size: 30px;
+  transform-origin: left;
+  transform: translate(-26%, -19%) rotate(-10deg);
 }
 
 img {
@@ -33,7 +52,7 @@ img {
   border-bottom: 1px solid #e5e5e5;
   border-top: 1px solid #e5e5e5;
   display: flex;
-  padding: 5px 0;
+  padding: 0;
 }
 
 .tile-content {
