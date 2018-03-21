@@ -23,7 +23,9 @@ p {
 }
 
 .mat-grid-tile {
-  border: 1px solid grey;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 2px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.1);
+  background: #fff;
 }
 
 .mat-grid-tile-header {
@@ -34,13 +36,13 @@ p {
   overflow: visible !important;
   font-weight: bold;
   justify-content: space-between;
-  padding: 0 8px;
+  padding: 5px 8px !important;
 }
 
 .mat-icon {
   font-size: 30px;
   transform-origin: left;
-  transform: translate(-26%, -19%) rotate(-10deg);
+  transform: translate(-45%, -45%) rotate(-10deg);
 }
 
 img {
@@ -52,14 +54,16 @@ img {
   border-bottom: 1px solid #e5e5e5;
   border-top: 1px solid #e5e5e5;
   display: flex;
-  padding: 0;
+  padding: 2px !important;
 }
 
 .tile-content {
   font-size: 12px;
+  margin-top: -40px;
   padding: 0 5px;
 }
 
 .message-body {
-  padding-top: 5px;
+  font-weight: bold;
+  padding: 5px;
 }
