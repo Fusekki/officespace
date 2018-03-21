@@ -3,7 +3,7 @@
 <p>Since you haven;t published these yet, you're the only one who can see them.</p>
 <div class="drafts-list-wrapper">
   <mat-grid-list cols="2" cols="2" rowHeight="3:4" [gutterSize]="15">
-    <mat-grid-tile *ngFor="let mbpost of draftPosts">
+    <mat-grid-tile *ngFor="let mbpost of draftPosts" routerLink="../../../../messages/drafts/{{mbpost.id}}">
       <mat-grid-tile-header>{{mbpost.title}}
         <div class="icon-container" id="water-cooler">
           <mat-icon aria-label="forum" matTooltip="Water Cooler">drafts</mat-icon>
