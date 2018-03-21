@@ -48,7 +48,7 @@ export class MbMessagesComponent implements OnInit {
     this.getMessageboard();
     // this.getMbposts();
     this.getUsers();
-    this.userService.getCurrentUser();
+    this.getCurrentUser();
 
     this.getMbposts().subscribe(_ => {
       ;
