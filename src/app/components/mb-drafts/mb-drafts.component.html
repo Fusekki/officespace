@@ -1,4 +1,21 @@
 <app-mb-header></app-mb-header>
-<p>
-  mb-drafts works!
-</p>
+<h2>Here are all your drafts.</h2>
+<p>Since you haven;t published these yet, you're the only one who can see them.</p>
+<div class="drafts-list-wrapper">
+    <mat-list role="list">
+      <mat-list-item *ngFor="let mbpost of draftPosts" role="listitem">
+        <mat-card class="message-card">
+          <mat-card-header>
+            <div mat-card-avatar class="message-header-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
+            <mat-card-title><h3>{{mbpost.title}}</h3></mat-card-title>
+            <mat-card-subtitle>{{ messageboard.categories[mbpost.category] }} by {{ getauthorName(mbpost.author) }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{mbpost.created | date:'LLL d'}} — <span>{{mbpost.body}}</span>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </mat-list-item>
+    </mat-list>
+</div>
