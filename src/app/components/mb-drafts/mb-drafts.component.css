@@ -11,21 +11,6 @@ p {
   margin-top: 3px;
 }
 
-.mat-card {
-  color: black;
-  background: none;
-}
-
-.mat-card-header-text {
-  color: black;
-  margin: 0;
-}
-
-.mat-card-title h3 {
-  text-align: left;
-  margin: 0;
-}
-
-.mat-card-subtitle {
-  color: #877457;
+.mat-grid-tile-header {
+  justify-content: space-between;
 }
