@@ -2,7 +2,7 @@
 <h2>Here are all your drafts.</h2>
 <p>Since you haven;t published these yet, you're the only one who can see them.</p>
 <div class="drafts-list-wrapper">
-  <mat-grid-list cols="2" cols="2" rowHeight="3:4" [gutterSize]="15">
+  <mat-grid-list cols="2" cols="2" rowHeight="1:1" [gutterSize]="15">
     <mat-grid-tile *ngFor="let mbpost of draftPosts">
       <mat-grid-tile-header>{{mbpost.title}}
         <div class="icon-container" id="water-cooler">
@@ -11,12 +11,10 @@
       </mat-grid-tile-header>
       <div class="tile-content">
         <div class="sub-header">
-          <!-- <div class="message-header-image"> -->
             <img src="http://via.placeholder.com/34x34" alt="" />
             <div class="sub-header-content">
               {{ messageboard.categories[mbpost.category] }} by {{ getauthorName(mbpost.author) }}
             </div>
-          <!-- </div> -->
         </div>
         <div class="message-body">
           {{mbpost.body}}
