@@ -6,7 +6,7 @@ p span {
   color: black;
 }
 
-h2, h3 {
+h2, h3, .drafts-container {
   text-align: center;
 }
 
@@ -30,6 +30,10 @@ mat-list-item {
 
 button {
   border-radius: 2rem;
+}
+
+.drafts-container {
+  margin: 10px auto 20px;
 }
 
 >>>.mat-form-field-label, >>>.mat-select-value-text {
