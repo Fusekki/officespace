@@ -14,7 +14,7 @@
         </span>
     </div>
     <div class="drafts-container" *ngIf="draftPosts">
-      <a routerLink="/messages/drafts/user/:id">Continue writing {{draftPosts.length}} drafts...</a>
+      <a routerLink="/messages/drafts/user/{{currentUser?.id}}">Continue writing {{draftPosts.length}} drafts...</a>
      </div>
   <div class="message-list-wrapper" *ngIf="users">
       <mat-list role="list">
