@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'legalcases', component: LegalCasesComponent },
   { path: 'people', component: LegalCasesComponent },
   { path: 'files/:id', component: LegalfilesComponent },
-  { path: 'projects/:id', component: ProjectsComponent },
+  { path: ':id/projects', component: ProjectsComponent },
   { path: 'teams/:id', component: TeamDetailComponent },
   { path: ':id/companies/:co', component: CompanyDashboardComponent },
   { path: ':id/companies/:co/watercoolers/:wa', component: WatercoolerComponent },
