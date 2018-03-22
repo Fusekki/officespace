@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Project } from '../../classes/project';
+// import { Project } from '../../classes/project';
 import { User } from '../../classes/user';
 import { Team } from '../../classes/team';
-import { Company } from '../../classes/company';
+import { Project } from '../../classes/project';
 import { ProjectService } from '../../services/project.service';
 import { TeamService } from '../../services/team.service';
 import { CompanyService } from '../../services/company.service';
@@ -14,11 +14,11 @@ import { CompanyService } from '../../services/company.service';
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: Project[] = [];
+  // projects: Project[] = [];
   teams: Team[] = [];
-  companies: Company[] = [];
+  projects: Project[] = [];
   user = { id: 0, email: 'ying@staffordesq.com',
-                    firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford', companies: [0] };
+                    firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford', projects: [0] };
 
   constructor(
     private projectService: ProjectService,
@@ -26,24 +26,24 @@ export class ProjectsComponent implements OnInit {
     private companyService: CompanyService ) { }
 
   ngOnInit() {
-    this.getProjects();
+    // this.getProjects();
     this.getTeams();
-    this.getCompanies();
+    this.getProjects();
   }
 
-  getProjects(): void {
-    this.projectService.getProjects()
-      .subscribe(projects => this.projects = projects);
-  }
+  // getProjects(): void {
+  //   this.projectService.getProjects()
+  //     .subscribe(projects => this.projects = projects);
+  // }
 
   getTeams(): void {
     this.teamService.getTeams()
       .subscribe(teams => this.teams = teams);
   }
 
-  getCompanies(): void {
+  getProjects(): void {
     this.companyService.getCompanies()
-      .subscribe(companies => this.companies = companies);
+      .subscribe(projects => this.projects = projects);
   }
 
 

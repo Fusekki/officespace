@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { MessageBoard } from '../../classes/message-board';
-import { Company } from '../../classes/company';
+import { Project } from '../../classes/project';
 import { CompanyService } from '../../services/company.service';
 import { MessageBoardService } from '../../services/message-board.service';
 
@@ -29,7 +29,7 @@ export class MbMessageInputComponent implements OnInit {
   @Input() mbpost: MbPost;
 
   selectedCategory: number;
-  company: Company;
+  project: Project;
   currentUser: User;
   messageboard: MessageBoard;
   mbposts: MbPost[] = [];
@@ -48,7 +48,7 @@ export class MbMessageInputComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.getCompany();
+    this.getProject();
     this.getMessageboard();
     this.getMbposts();
     this.getUsers();
@@ -62,10 +62,10 @@ export class MbMessageInputComponent implements OnInit {
       .subscribe(messageboard => this.messageboard = messageboard);
   }
 
-  getCompany(): void {
+  getProject(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.companyService.getCompany(id)
-      .subscribe(company => this.company = company);
+      .subscribe(project => this.project = project);
   }
 
 

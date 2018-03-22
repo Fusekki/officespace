@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { MessageBoard } from '../../classes/message-board';
-import { Company } from '../../classes/company';
+import { Project } from '../../classes/project';
 import { CompanyService } from '../../services/company.service';
 import { MessageBoardService } from '../../services/message-board.service';
 

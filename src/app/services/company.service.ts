@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Company } from '../classes/company';
+import { Project } from '../classes/project';
 
 import { ReportService } from './report.service';
 
@@ -23,74 +23,74 @@ export class CompanyService {
     private reportService: ReportService) { }
 
   /** GET Companyes from the server */
-  getCompanies (): Observable<Company[]> {
-    return this.http.get<Company[]>(this.CompanyUrl)
+  getCompanies (): Observable<Project[]> {
+    return this.http.get<Project[]>(this.CompanyUrl)
       .pipe(
-        tap(Company => this.log(`fetched legal files`)),
+        tap(Project => this.log(`fetched legal files`)),
         catchError(this.handleError('getCompany', []))
       );
   }
 
-  /** GET Company by id. Return `undefined` when id not found */
-  getCompanyNo404<Data>(id: number): Observable<Company> {
+  /** GET Project by id. Return `undefined` when id not found */
+  getCompanyNo404<Data>(id: number): Observable<Project> {
     const url = `${this.CompanyUrl}/?id=${id}`;
-    return this.http.get<Company[]>(url)
+    return this.http.get<Project[]>(url)
       .pipe(
-        map(Company => Company[0]), // returns a {0|1} element array
+        map(Project => Project[0]), // returns a {0|1} element array
         tap(h => {
           const outcome = h ? `fetched` : `did not find`;
-          this.log(`${outcome} Company id=${id}`);
+          this.log(`${outcome} Project id=${id}`);
         }),
-        catchError(this.handleError<Company>(`getCompany id=${id}`))
+        catchError(this.handleError<Project>(`getCompany id=${id}`))
       );
   }
 
-  /** GET Company by id. Will 404 if id not found */
-  getCompany(id: number): Observable<Company> {
+  /** GET Project by id. Will 404 if id not found */
+  getCompany(id: number): Observable<Project> {
     const url = `${this.CompanyUrl}/${id}`;
-    return this.http.get<Company>(url).pipe(
-      tap(_ => this.log(`fetched Company id=${id}`)),
-      catchError(this.handleError<Company>(`getCompany id=${id}`))
+    return this.http.get<Project>(url).pipe(
+      tap(_ => this.log(`fetched Project id=${id}`)),
+      catchError(this.handleError<Project>(`getCompany id=${id}`))
     );
   }
 
   /* GET Companyes whose name contains search term */
-  searchCompany(term: string): Observable<Company[]> {
+  searchCompany(term: string): Observable<Project[]> {
     if (!term.trim()) {
-      // if not search term, return empty Company array.
+      // if not search term, return empty Project array.
       return of([]);
     }
-    return this.http.get<Company[]>(`api/Company/?title=${term}`).pipe(
-      tap(_ => this.log(`found Company matching "${term}"`)),
-      catchError(this.handleError<Company[]>('searchCompany', []))
+    return this.http.get<Project[]>(`api/Project/?title=${term}`).pipe(
+      tap(_ => this.log(`found Project matching "${term}"`)),
+      catchError(this.handleError<Project[]>('searchCompany', []))
     );
   }
 
   //////// Save methods //////////
 
-  /** POST: add a new Company to the server */
-  addCompany (Company: Company): Observable<Company> {
-    return this.http.post<Company>(this.CompanyUrl, Company, httpOptions).pipe(
-      tap((Company: Company) => this.log(`added Company w/ id=${Company.id}`)),
-      catchError(this.handleError<Company>('addCompany'))
+  /** POST: add a new Project to the server */
+  addCompany (Project: Project): Observable<Project> {
+    return this.http.post<Project>(this.CompanyUrl, Project, httpOptions).pipe(
+      tap((Project: Project) => this.log(`added Project w/ id=${Project.id}`)),
+      catchError(this.handleError<Project>('addCompany'))
     );
   }
 
-  /** DELETE: delete the Company from the server */
-  deleteCompany (Company: Company | number): Observable<Company> {
-    const id = typeof Company === 'number' ? Company : Company.id;
+  /** DELETE: delete the Project from the server */
+  deleteCompany (Project: Project | number): Observable<Project> {
+    const id = typeof Project === 'number' ? Project : Project.id;
     const url = `${this.CompanyUrl}/${id}`;
 
-    return this.http.delete<Company>(url, httpOptions).pipe(
-      tap(_ => this.log(`deleted Company id=${id}`)),
-      catchError(this.handleError<Company>('deleteCompany'))
+    return this.http.delete<Project>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted Project id=${id}`)),
+      catchError(this.handleError<Project>('deleteCompany'))
     );
   }
 
-  /** PUT: update the Company on the server */
-  updateCompany (Company: Company): Observable<any> {
-    return this.http.put(this.CompanyUrl, Company, httpOptions).pipe(
-      tap(_ => this.log(`updated Company id=${Company.id}`)),
+  /** PUT: update the Project on the server */
+  updateCompany (Project: Project): Observable<any> {
+    return this.http.put(this.CompanyUrl, Project, httpOptions).pipe(
+      tap(_ => this.log(`updated Project id=${Project.id}`)),
       catchError(this.handleError<any>('updateCompany'))
     );
   }

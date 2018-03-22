@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
 
-import { Company } from '../../classes/company';
+import { Project } from '../../classes/project';
 import { CompanyService } from '../../services/company.service';
 
 
@@ -17,7 +17,7 @@ import { UserService } from '../../services/user.service';
 })
 export class MbHeaderComponent implements OnInit {
 
-  company: Company;
+  project: Project;
   currentUser: User;
 
 
@@ -26,13 +26,13 @@ export class MbHeaderComponent implements OnInit {
       private userService: UserService) { }
 
       ngOnInit() {
-        this.getCompany();
+        this.getProject();
       }
 
-      getCompany(): void {
+      getProject(): void {
         const co = +this.route.snapshot.paramMap.get('co');
         this.companyService.getCompany(co)
-          .subscribe(company => this.company = company);
+          .subscribe(project => this.project = project);
       }
 
 }

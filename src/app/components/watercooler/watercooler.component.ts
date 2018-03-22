@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Company } from '../../classes/company';
+import { Project } from '../../classes/project';
 import { Wcmessage } from '../../classes/wc-message';
 import { WcmessageService } from '../../services/wc-message.service';
 
@@ -28,7 +28,7 @@ export class WatercoolerComponent implements OnInit {
 
   wcmessages: Wcmessage[] = [];
   watercooler: Watercooler;
-  company: Company;
+  project: Project;
   date: Date;
   user: User;
 
@@ -46,7 +46,7 @@ export class WatercoolerComponent implements OnInit {
       ;
       var id = this.watercooler.company_id;
       this.companyService.getCompany(id)
-        .subscribe(company => this.company = company);
+        .subscribe(project => this.project = project);
     });
     this.getMessages();
     this.getUser();
@@ -67,7 +67,7 @@ export class WatercoolerComponent implements OnInit {
   getCompany(): void {
     const co = +this.route.snapshot.paramMap.get('co');
     this.companyService.getCompany(co)
-      .subscribe(company => this.company = company);
+      .subscribe(project => this.project = project);
   }
 
   goBack(): void {

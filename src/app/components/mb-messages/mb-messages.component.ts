@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { MessageBoard } from '../../classes/message-board';
-import { Company } from '../../classes/company';
+import { Project } from '../../classes/project';
 import { CompanyService } from '../../services/company.service';
 import { MessageBoardService } from '../../services/message-board.service';
 
@@ -27,7 +27,7 @@ import { UserService } from '../../services/user.service';
 })
 export class MbMessagesComponent implements OnInit {
   selected: string;
-  company: Company;
+  project: Project;
   currentUser: User;
   messageboard: MessageBoard;
   mbposts: MbPost[];
@@ -44,7 +44,7 @@ export class MbMessagesComponent implements OnInit {
     private mbpostService: MbPostService) { }
 
   ngOnInit() {
-    this.getCompany();
+    this.getProject();
     this.getMessageboard();
     // this.getMbposts();
     this.getUsers();
@@ -64,10 +64,10 @@ export class MbMessagesComponent implements OnInit {
       .subscribe(messageboard => this.messageboard = messageboard);
   }
 
-  getCompany(): void {
+  getProject(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.companyService.getCompany(id)
-      .subscribe(company => this.company = company);
+      .subscribe(project => this.project = project);
   }
 
 
