@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'files/:id', component: LegalfilesComponent },
   { path: 'projects/:id', component: ProjectsComponent },
   { path: 'teams/:id', component: TeamDetailComponent },
-  { path: 'projects/:id/companies/:co', component: CompanyDashboardComponent },
+  { path: ':id/projects/companies/:co', component: CompanyDashboardComponent },
   { path: 'watercooler/:co/:wa/:id', component: WatercoolerComponent },
   { path: 'wcmessages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent },
