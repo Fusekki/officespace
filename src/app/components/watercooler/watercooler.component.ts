@@ -30,7 +30,7 @@ export class WatercoolerComponent implements OnInit {
   watercooler: Watercooler;
   company: Company;
   date: Date;
-  currentUser: User;
+  user: User;
 
   constructor(private watercoolerService: WatercoolerService,
     private companyService: CompanyService,
@@ -49,7 +49,7 @@ export class WatercoolerComponent implements OnInit {
         .subscribe(company => this.company = company);
     });
     this.getMessages();
-    this.getCurrentuser();
+    this.getUser();
   }
 
   getWatercooler() {
@@ -58,10 +58,10 @@ export class WatercoolerComponent implements OnInit {
       .map(watercooler => this.watercooler = watercooler);
   }
 
-  getCurrentuser() {
+  getUser() {
     const id = +this.route.snapshot.paramMap.get('id');
     return this.userService.getUser(id)
-      .map(currentuser => this.currentUser = currentUser);
+      .map(user => this.user = user);
   }
 
   getCompany(): void {
@@ -84,7 +84,7 @@ export class WatercoolerComponent implements OnInit {
     content = content.trim();
     if (!content) { return; }
     this.wcmessageService.addMessage({
-      author: this.currentUser.fullName,
+      author: this.user.fullName,
       created: this.date,
       content: content,
       watercooler_id: 0
