@@ -37,7 +37,7 @@ import { ProjectService } from './services/project.service';
 import { UserService } from './services/user.service';
 import { TeamService } from './services/team.service';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
-import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
+import { ProjectDashboardComponent } from './components/project-dashboard/project-dashboard.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -67,7 +67,7 @@ import { HomeComponent } from './components/home/home.component';
     LegalfilesComponent,
     ProjectsComponent,
     TeamDetailComponent,
-    CompanyDashboardComponent,
+    ProjectDashboardComponent,
     NaviComponent,
     WatercoolerComponent,
     WcmessageComponent,

@@ -11,11 +11,11 @@ import { UserService } from '../../services/user.service';
 
 
 @Component({
-  selector: 'app-company-dashboard',
-  templateUrl: './company-dashboard.component.html',
-  styleUrls: ['./company-dashboard.component.css']
+  selector: 'app-project-dashboard',
+  templateUrl: './project-dashboard.component.html',
+  styleUrls: ['./project-dashboard.component.css']
 })
-export class CompanyDashboardComponent implements OnInit {
+export class ProjectDashboardComponent implements OnInit {
 
   user: User;
   company: Company;

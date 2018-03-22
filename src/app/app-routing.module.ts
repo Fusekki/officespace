@@ -8,7 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
-import { CompanyDashboardComponent } from './components/company-dashboard/company-dashboard.component';
+import { ProjectDashboardComponent } from './components/project-dashboard/project-dashboard.component';
 import { WatercoolerComponent } from './components/watercooler/watercooler.component';
 import { WcmessageComponent } from './components/wc-message/wc-message.component';
 import { ReportsComponent } from './components/reports/reports.component';
@@ -30,11 +30,11 @@ const routes: Routes = [
   { path: 'files/:id', component: LegalfilesComponent },
   { path: ':id/projects', component: ProjectsComponent },
   { path: 'teams/:id', component: TeamDetailComponent },
-  { path: ':id/companies/:co', component: CompanyDashboardComponent },
+  { path: ':id/companies/:co', component: ProjectDashboardComponent },
   { path: ':id/companies/:co/watercoolers/:wa', component: WatercoolerComponent },
   { path: 'wcmessages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent },
-  { path: 'messageboards/:id', component: MessageBoardComponent },
+  { path: ':id/companies/:co/messageboards/:mb', component: MessageBoardComponent },
   { path: 'messages/:id/new', component: MbMessageWrapperComponent },
   { path: 'messages/drafts/user/:id', component: MbDraftsComponent },
   { path: 'messages/drafts/:ab/:id', component: MbMessageDraftComponent }
