@@ -13,10 +13,10 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 1, legalcase_id: 0, title: 'Document2', icon: 'word' },
       { id: 2, legalcase_id: 0, title: 'Spreadsheet1', icon: 'excel' }
     ];
+    // const projects = [
+    //   { id: 0,  title: 'Special Case' }
+    // ];
     const projects = [
-      { id: 0,  title: 'Special Case' }
-    ];
-    const companies = [
       { id: 0,  name: 'Law Firm', creator:"Ying Stafford", created: this.created, watercooler_id: 0, messageboard_id: 0 }
     ];
     const teams = [
@@ -27,7 +27,7 @@ export class InMemoryDataService implements InMemoryDbService {
                       firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0] }
     ];
     const watercoolers = [
-      {id: 0, company_name: "Law Firm", company_id: 0, messages: [0] }
+      {id: 0, company_name: "Law Firm", projectId: 0, messages: [0] }
     ];
 
     const wcmessages = [
@@ -57,8 +57,8 @@ export class InMemoryDataService implements InMemoryDbService {
     };
     return {legalcases,
       legalfiles,
+      // projects,
       projects,
-      companies,
       teams,
       users,
       watercoolers,

@@ -39,17 +39,16 @@ export class WatercoolerComponent implements OnInit {
     private wcmessageService: WcmessageService,
     private userService: UserService) { }
 
-
-
   ngOnInit() {
+    this.getUser();
     this.getWatercooler().subscribe(_ => {
       ;
-      var id = this.watercooler.company_id;
+      var id = this.watercooler.projectId;
       this.projectService.getProject(id)
         .subscribe(project => this.project = project);
     });
     this.getMessages();
-    this.getUser();
+
   }
 
   getWatercooler() {
@@ -61,7 +60,7 @@ export class WatercoolerComponent implements OnInit {
   getUser() {
     const id = +this.route.snapshot.paramMap.get('id');
     return this.userService.getUser(id)
-      .map(user => this.user = user);
+      .subscribe(user => this.user = user);
   }
 
   getProject(): void {
