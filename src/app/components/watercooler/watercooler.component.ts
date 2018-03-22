@@ -53,8 +53,8 @@ export class WatercoolerComponent implements OnInit {
   }
 
   getWatercooler() {
-    const id = +this.route.snapshot.paramMap.get('wa');
-    return this.watercoolerService.getWatercooler(id)
+    const wa = +this.route.snapshot.paramMap.get('wa');
+    return this.watercoolerService.getWatercooler(wa)
       .map(watercooler => this.watercooler = watercooler);
   }
 
@@ -65,7 +65,7 @@ export class WatercoolerComponent implements OnInit {
   }
 
   getCompany(): void {
-    const id = +this.route.snapshot.paramMap.get('co');
+    const co = +this.route.snapshot.paramMap.get('co');
     this.companyService.getCompany(co)
       .subscribe(company => this.company = company);
   }
