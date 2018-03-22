@@ -49,18 +49,24 @@ export class WatercoolerComponent implements OnInit {
         .subscribe(company => this.company = company);
     });
     this.getMessages();
-    this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
+    this.getCurrentuser();
   }
 
   getWatercooler() {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = +this.route.snapshot.paramMap.get('wa');
     return this.watercoolerService.getWatercooler(id)
       .map(watercooler => this.watercooler = watercooler);
   }
 
+  getCurrentuser() {
+    const id = +this.route.snapshot.paramMap.get('id');
+    return this.userService.getUser(id)
+      .map(currentuser => this.currentUser = currentUser);
+  }
+
   getCompany(): void {
-    const id = +this.watercooler.company_id;
-    this.companyService.getCompany(id)
+    const id = +this.route.snapshot.paramMap.get('co');
+    this.companyService.getCompany(co)
       .subscribe(company => this.company = company);
   }
 
