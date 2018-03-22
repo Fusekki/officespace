@@ -28,7 +28,7 @@ import { UserService } from '../../services/user.service';
 export class MbMessagesComponent implements OnInit {
   selected: string;
   project: Project;
-  currentUser: User;
+  user: User;
   messageboard: MessageBoard;
   mbposts: MbPost[];
   users: User[];
@@ -48,7 +48,7 @@ export class MbMessagesComponent implements OnInit {
     this.getMessageboard();
     // this.getMbposts();
     this.getUsers();
-    this.getCurrentUser();
+    this.getUser();
 
     this.getMbposts().subscribe(_ => {
       ;
@@ -98,9 +98,10 @@ export class MbMessagesComponent implements OnInit {
     }
   }
 
-  getCurrentUser(): void {
-    this.userService.getCurrentUser()
-    .subscribe(currentUser => this.currentUser = currentUser);
+  getUser(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.userService.getUser(id)
+      .subscribe(user => this.user = user);
   }
 
 

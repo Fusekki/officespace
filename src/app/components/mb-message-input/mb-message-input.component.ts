@@ -30,7 +30,7 @@ export class MbMessageInputComponent implements OnInit {
 
   selectedCategory: number;
   project: Project;
-  currentUser: User;
+  user: User;
   messageboard: MessageBoard;
   mbposts: MbPost[] = [];
   currentPost: MbPost;
@@ -52,7 +52,7 @@ export class MbMessageInputComponent implements OnInit {
     this.getMessageboard();
     this.getMbposts();
     this.getUsers();
-    this.getCurrentUser();
+    this.getUser();
   }
 
   // Temporary. This route has the id for the messageboard.
@@ -85,11 +85,11 @@ export class MbMessageInputComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.date = new Date(Date.now());
     this.category = this.selectedCategory;
-    this.currentPost = new MbPost(0, 0, draft, this.currentUser.id, this.date, title, this.category, content);
+    this.currentPost = new MbPost(0, 0, draft, this.user.id, this.date, title, this.category, content);
     this.mbpostService.addMbPost({
       messageboard_id: 0,
       draft: draft,
-      author: this.currentUser.id,
+      author: this.user.id,
       created: this.date,
       title: title,
       category: this.category,
@@ -107,9 +107,10 @@ export class MbMessageInputComponent implements OnInit {
       .subscribe(mbposts => this.mbposts = mbposts);
   }
 
-  getCurrentUser(): void {
-    this.userService.getCurrentUser()
-    .subscribe(currentUser => this.currentUser = currentUser);
+  getUser(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.userService.getUser(id)
+      .subscribe(user => this.user = user);
   }
 
   setCategory(value: number): void {

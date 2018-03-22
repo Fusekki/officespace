@@ -18,7 +18,7 @@ import { UserService } from '../../services/user.service';
 export class MbHeaderComponent implements OnInit {
 
   project: Project;
-  currentUser: User;
+  user: User;
 
 
     constructor(private projectService: ProjectService,
@@ -27,6 +27,7 @@ export class MbHeaderComponent implements OnInit {
 
       ngOnInit() {
         this.getProject();
+        this.getUser();
       }
 
       getProject(): void {
@@ -34,5 +35,13 @@ export class MbHeaderComponent implements OnInit {
         this.projectService.getProject(co)
           .subscribe(project => this.project = project);
       }
+
+      getUser(): void {
+        const id = +this.route.snapshot.paramMap.get('id');
+        this.userService.getUser(id)
+          .subscribe(user => this.user = user);
+      }
+
+
 
 }

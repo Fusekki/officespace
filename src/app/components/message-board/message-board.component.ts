@@ -27,7 +27,7 @@ import { UserService } from '../../services/user.service';
 export class MessageBoardComponent implements OnInit {
   selectedCategory: string;
   project: Project;
-  currentUser: User;
+  user: User;
   messageboard: MessageBoard;
   mbposts: MbPost[];
   users: User[];
@@ -45,7 +45,7 @@ export class MessageBoardComponent implements OnInit {
     this.getMessageboard();
     this.getMbposts();
     this.getUsers();
-    this.userService.getCurrentUser().subscribe(currentUser => this.currentUser = currentUser);
+    this.getUser();
   }
 
   // Temporary. This route has the id for the messageboard.
@@ -60,6 +60,13 @@ export class MessageBoardComponent implements OnInit {
     this.projectService.getProject(id)
       .subscribe(project => this.project = project);
   }
+
+  getUser(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.userService.getUser(id)
+      .subscribe(user => this.user = user);
+  }
+
 
 
   getUsers(): void {

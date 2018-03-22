@@ -28,11 +28,11 @@ import { UserService } from '../../services/user.service';
 export class MbDraftsComponent implements OnInit {
   selected: string;
   project: Project;
-  currentUser: User;
+  user: User;
   messageboard: MessageBoard;
-  mbposts: MbPost[];
-  users: User[];
-  draftPosts: MbPost[];
+  mbposts: MbPost[] = [];
+  users: User[] = [];
+  draftPosts: MbPost[] = [];
 
   constructor(private projectService: ProjectService,
     private route: ActivatedRoute,
@@ -43,7 +43,7 @@ export class MbDraftsComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers();
-    this.getCurrentUser();
+    this.getUser();
     this.getMessageboard();
     this.getMbposts().subscribe(_ => {
       ;
@@ -67,11 +67,12 @@ export class MbDraftsComponent implements OnInit {
       .subscribe(users => this.users = users);
   }
 
-
-  getCurrentUser(): void {
-    this.userService.getCurrentUser()
-    .subscribe(currentUser => this.currentUser = currentUser);
+  getUser(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.userService.getUser(id)
+      .subscribe(user => this.user = user);
   }
+
 
   getauthorName(id: number): string {
     return this.users.find(user => user.id == id).fullName;
