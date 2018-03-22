@@ -41,14 +41,4 @@ export class CompanyDashboardComponent implements OnInit {
     this.userService.getUser(id)
       .subscribe(user => this.user = user);
   }
-
-  goBack(): void {
-    this.location.back();
-  }
-
-  save(): void {
-    this.companyService.updateCompany(this.company)
-      .subscribe(() => this.goBack());
-  }
-
 }
