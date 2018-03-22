@@ -1,5 +1,5 @@
     <div class="buttons-container">
-      <button mat-raised-button color="accent" routerLink="/messages/{{messageboard?.id}}/new">New message</button>
+      <button mat-raised-button color="accent" routerLink="/{{user?.id}}/messageboard/{{messageboard?.id}}/new">New message</button>
         <span class="form-wrapper" *ngIf="messageboard">
           <mat-form-field>
             <mat-select placeholder="All Messages"  [(ngModel)]="selected" (ngModelChange)="onSelect(selected)">
@@ -14,7 +14,7 @@
         </span>
     </div>
     <div class="drafts-container" *ngIf="draftPosts">
-      <a routerLink="/{{user.id}}/messages/drafts">Continue writing {{draftPosts.length}} drafts...</a>
+      <a routerLink="/{{user.id}}/messageboards/drafts">Continue writing {{draftPosts.length}} drafts...</a>
      </div>
   <div class="message-list-wrapper" *ngIf="users">
       <mat-list role="list">
