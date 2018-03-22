@@ -35,9 +35,9 @@ const routes: Routes = [
   { path: 'wcmessages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent },
   { path: ':id/projects/:co/messageboards/:mb', component: MessageBoardComponent },
-  { path: 'messages/:id/new', component: MbMessageWrapperComponent },
-  { path: ':id/messages/drafts', component: MbDraftsComponent },
-  { path: ':id/messages/drafts/:ab', component: MbMessageDraftComponent }
+  { path: ':id/messageboard/:mb/new', component: MbMessageWrapperComponent },
+  { path: ':id/messageboards/drafts', component: MbDraftsComponent },
+  { path: ':id/messageboards/drafts/:ab', component: MbMessageDraftComponent }
 
 
   // { path: 'file/:id', component: LegalfileDetailComponent }
