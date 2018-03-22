@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'projects/:id', component: ProjectsComponent },
   { path: 'teams/:id', component: TeamDetailComponent },
   { path: ':id/companies/:co', component: CompanyDashboardComponent },
-  { path: 'watercooler/:co/:wa/:id', component: WatercoolerComponent },
+  { path: ':id/companies/:co/watercoolers/:wa', component: WatercoolerComponent },
   { path: 'wcmessages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent },
   { path: 'messageboards/:id', component: MessageBoardComponent },
