@@ -32,8 +32,8 @@ import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcas
 import { LegalfilesComponent } from './components/legalfiles/legalfiles.component';
 import { LegalfileService } from './services/legalfile.service';
 import { ProjectsComponent } from './components/projects/projects.component';
-import { CompanyService } from './services/company.service';
 import { ProjectService } from './services/project.service';
+// import { ProjectService } from './services/project.service';
 import { UserService } from './services/user.service';
 import { TeamService } from './services/team.service';
 import { TeamDetailComponent } from './components/team-detail/team-detail.component';
@@ -127,8 +127,8 @@ import { HomeComponent } from './components/home/home.component';
     LegalcaseService,
     LegalfileService,
     ReportService,
-    CompanyService,
     ProjectService,
+    // ProjectService,
     TeamService,
     UserService,
     WatercoolerService,

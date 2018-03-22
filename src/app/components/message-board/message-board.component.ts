@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 
 import { MessageBoard } from '../../classes/message-board';
 import { Project } from '../../classes/project';
-import { CompanyService } from '../../services/company.service';
+import { ProjectService } from '../../services/project.service';
 import { MessageBoardService } from '../../services/message-board.service';
 
 import { MbPost } from '../../classes/mb-post';
@@ -33,7 +33,7 @@ export class MessageBoardComponent implements OnInit {
   users: User[];
 
 
-  constructor(private companyService: CompanyService,
+  constructor(private projectService: ProjectService,
               private route: ActivatedRoute,
               private location: Location,
               private userService: UserService,
@@ -57,7 +57,7 @@ export class MessageBoardComponent implements OnInit {
 
   getProject(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.companyService.getCompany(id)
+    this.projectService.getProject(id)
       .subscribe(project => this.project = project);
   }
 

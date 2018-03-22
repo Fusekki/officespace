@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { Project } from '../../classes/project';
-import { CompanyService } from '../../services/company.service';
+import { ProjectService } from '../../services/project.service';
 
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
@@ -20,7 +20,7 @@ export class ProjectDashboardComponent implements OnInit {
   user: User;
   project: Project;
 
-  constructor(private companyService: CompanyService,
+  constructor(private projectService: ProjectService,
               private route: ActivatedRoute,
               private location: Location,
               private userService: UserService) { }
@@ -32,7 +32,7 @@ export class ProjectDashboardComponent implements OnInit {
 
   getProject(): void {
     const co = +this.route.snapshot.paramMap.get('co');
-    this.companyService.getCompany(co)
+    this.projectService.getProject(co)
       .subscribe(project => this.project = project);
   }
 

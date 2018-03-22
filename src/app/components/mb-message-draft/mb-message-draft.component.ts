@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 
 import { MessageBoard } from '../../classes/message-board';
 import { Project } from '../../classes/project';
-import { CompanyService } from '../../services/company.service';
+import { ProjectService } from '../../services/project.service';
 import { MessageBoardService } from '../../services/message-board.service';
 
 import { MbPost } from '../../classes/mb-post';

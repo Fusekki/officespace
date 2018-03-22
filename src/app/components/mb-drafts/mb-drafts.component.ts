@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 
 import { MessageBoard } from '../../classes/message-board';
 import { Project } from '../../classes/project';
-import { CompanyService } from '../../services/company.service';
+import { ProjectService } from '../../services/project.service';
 import { MessageBoardService } from '../../services/message-board.service';
 
 import { MbPost } from '../../classes/mb-post';
@@ -34,7 +34,7 @@ export class MbDraftsComponent implements OnInit {
   users: User[];
   draftPosts: MbPost[];
 
-  constructor(private projectService: CompanyService,
+  constructor(private projectService: ProjectService,
     private route: ActivatedRoute,
     private location: Location,
     private userService: UserService,

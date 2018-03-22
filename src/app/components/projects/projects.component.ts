@@ -3,9 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../classes/user';
 import { Team } from '../../classes/team';
 import { Project } from '../../classes/project';
-import { ProjectService } from '../../services/project.service';
+// import { ProjectService } from '../../services/project.service';
 import { TeamService } from '../../services/team.service';
-import { CompanyService } from '../../services/company.service';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
   selector: 'app-projects',
@@ -21,9 +21,9 @@ export class ProjectsComponent implements OnInit {
                     firstName: 'Ying', lastName: 'Stafford', fullName: 'Ying Stafford', projects: [0] };
 
   constructor(
-    private projectService: ProjectService,
+    // private projectService: ProjectService,
     private teamService: TeamService,
-    private companyService: CompanyService ) { }
+    private projectService: ProjectService ) { }
 
   ngOnInit() {
     // this.getProjects();
@@ -42,7 +42,7 @@ export class ProjectsComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.companyService.getCompanies()
+    this.projectService.getProjects()
       .subscribe(projects => this.projects = projects);
   }
 

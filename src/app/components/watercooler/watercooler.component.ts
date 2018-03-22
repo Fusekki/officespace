@@ -11,7 +11,7 @@ import { WcmessageService } from '../../services/wc-message.service';
 
 import { Watercooler } from '../../classes/watercooler';
 import { WatercoolerService } from '../../services/watercooler.service';
-import { CompanyService } from '../../services/company.service';
+import { ProjectService } from '../../services/project.service';
 // Keep until we move to a backend
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
@@ -33,7 +33,7 @@ export class WatercoolerComponent implements OnInit {
   user: User;
 
   constructor(private watercoolerService: WatercoolerService,
-    private companyService: CompanyService,
+    private projectService: ProjectService,
     private route: ActivatedRoute,
     private location: Location,
     private wcmessageService: WcmessageService,
@@ -45,7 +45,7 @@ export class WatercoolerComponent implements OnInit {
     this.getWatercooler().subscribe(_ => {
       ;
       var id = this.watercooler.company_id;
-      this.companyService.getCompany(id)
+      this.projectService.getProject(id)
         .subscribe(project => this.project = project);
     });
     this.getMessages();
@@ -64,9 +64,9 @@ export class WatercoolerComponent implements OnInit {
       .map(user => this.user = user);
   }
 
-  getCompany(): void {
+  getProject(): void {
     const co = +this.route.snapshot.paramMap.get('co');
-    this.companyService.getCompany(co)
+    this.projectService.getProject(co)
       .subscribe(project => this.project = project);
   }
 
