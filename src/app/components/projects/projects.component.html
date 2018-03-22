@@ -1,6 +1,6 @@
 <div class="announcments">Placeholder for announcements</div>
 <mat-grid-list cols="2" rowHeight="200px" [gutterSize]="10">
-  <mat-grid-tile *ngFor="let company of companies" routerLink="companies/{{company.id}}">
+  <mat-grid-tile *ngFor="let company of companies" routerLink="/{{user.id}}/companies/{{company.id}}">
     <mat-grid-tile-header>{{ company.name }}</mat-grid-tile-header>
     Company-wide announcements and stuff everyone needs to know
     <mat-icon aria-label="delete"></mat-icon>
