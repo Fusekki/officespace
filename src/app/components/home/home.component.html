@@ -1,0 +1,7 @@
+<h1>Welcome</h1>
+<div class="login-container">
+    Login as
+  <div class="button-container">
+    <button mat-button *ngFor="let user of users" routerLink="../projects/{{user.id}}">{{user.fullName}}</button>
+  </div>
+</div>
