@@ -29,10 +29,9 @@ export class MbHeaderComponent implements OnInit {
         this.getCompany();
       }
 
-
       getCompany(): void {
-        const id = +this.route.snapshot.paramMap.get('id');
-        this.companyService.getCompany(id)
+        const co = +this.route.snapshot.paramMap.get('co');
+        this.companyService.getCompany(co)
           .subscribe(company => this.company = company);
       }
 
