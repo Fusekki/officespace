@@ -19,10 +19,6 @@ import { MbMessageDraftComponent } from './components/mb-message-draft/mb-messag
 import { MbDraftsComponent } from './components/mb-drafts/mb-drafts.component';
 
 
-// Routes should follow the following format:
-
-// userId/component/component#
-
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
