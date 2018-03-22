@@ -22,7 +22,7 @@ import { MbDraftsComponent } from './components/mb-drafts/mb-drafts.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'projects/:id', component: ProjectsComponent },
+  { path: ':id/projects', component: ProjectsComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: LegalcaseDetailComponent },
   { path: 'legalcases', component: LegalCasesComponent },
