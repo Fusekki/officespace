@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { HomeComponent } from './components/home/home.component';
 import { LegalCasesComponent } from './components/legalcases/legalcases.component';
 import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcase-detail.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -19,8 +20,9 @@ import { MbDraftsComponent } from './components/mb-drafts/mb-drafts.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/projects', pathMatch: 'full' },
-  { path: 'projects', component: ProjectsComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'projects/:id', component: ProjectsComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: LegalcaseDetailComponent },
   { path: 'legalcases', component: LegalCasesComponent },
@@ -28,8 +30,8 @@ const routes: Routes = [
   { path: 'files/:id', component: LegalfilesComponent },
   { path: 'projects/:id', component: ProjectsComponent },
   { path: 'teams/:id', component: TeamDetailComponent },
-  { path: 'companies/:id', component: CompanyDashboardComponent },
-  { path: 'watercooler/:id', component: WatercoolerComponent },
+  { path: 'companies/:co', component: CompanyDashboardComponent },
+  { path: 'watercooler/:co/:wa/:id', component: WatercoolerComponent },
   { path: 'wcmessages/:id', component: WcmessageComponent },
   { path: 'reports/:id', component: ReportsComponent },
   { path: 'messageboards/:id', component: MessageBoardComponent },
