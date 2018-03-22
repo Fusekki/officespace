@@ -1,16 +1,16 @@
-<div class="container" *ngIf="company" >
-  <h2 class="name">{{company.name}} HQ</h2>
+<div class="container" *ngIf="project" >
+  <h2 class="name">{{project.name}} HQ</h2>
   <h4 class="announcement">
     Company-wide announcements and stuff everyone needs to know.
   </h4>
   <mat-grid-list cols="2" rowHeight="150px" [gutterSize]="15">
-    <mat-grid-tile routerLink="/{{user?.id}}/companies/{{company.id}}/watercoolers/{{company.watercooler_id}}">
+    <mat-grid-tile routerLink="/{{user?.id}}/projects/{{project.id}}/watercoolers/{{project.watercooler_id}}">
       <mat-grid-tile-header>Water Cooler</mat-grid-tile-header>
       <div class="icon-container" id="water-cooler">
         <mat-icon aria-label="forum" matTooltip="Water Cooler">forum</mat-icon>
       </div>
     </mat-grid-tile>
-    <mat-grid-tile routerLink="/{{user?.id}}/companies/{{company.id}}/messageboards/{{company.watercooler_id}}">
+    <mat-grid-tile routerLink="/{{user?.id}}/projects/{{project.id}}/messageboards/{{project.watercooler_id}}">
       <div class="icon-container" id="message-board">
         <mat-grid-tile-header>Message Board</mat-grid-tile-header>
         <mat-icon  aria-label="message board" matTooltip="Mesage Board">chat</mat-icon>
@@ -39,11 +39,11 @@
     </mat-grid-tile>
   </mat-grid-list>
   <div class="section">
-      <h2>{{company.name}} Activity</h2>
-      <h2>Welcome to {{company.name}} HQ!</h2>
-      <h5>{{company.creator}} created this {{company.created}}.</h5>
+      <h2>{{project.name}} Activity</h2>
+      <h2>Welcome to {{project.name}} HQ!</h2>
+      <h5>{{project.creator}} created this {{project.created}}.</h5>
       <p>
-            This is the communications hub for your whole company. Use it to post announcements, notes, and stuff everyone needs to know.
+            This is the communications hub for your whole project. Use it to post announcements, notes, and stuff everyone needs to know.
         </p>
         <h4>Happy Officecamping!</h4>
   </div>
