@@ -31,7 +31,7 @@ export class MbMessageDraftComponent implements OnInit {
   user: User;
   messageboard: MessageBoard;
   mbposts: MbPost[] = [];
-  draftPost: MbPost;
+  draft: MbPost;
   users: User[] = [];
   date: Date;
   category: number;
@@ -55,7 +55,7 @@ export class MbMessageDraftComponent implements OnInit {
     this.getUser();
     this.getUsers().subscribe(_ => {
       ;
-      this.authorName = this.users.find(user => user.id == this.draftPost.author).fullName;
+      this.authorName = this.users.find(user => user.id == this.draft.author).fullName;
     });
   }
 
@@ -113,7 +113,7 @@ export class MbMessageDraftComponent implements OnInit {
   getMbPost(): void {
     const dr = +this.route.snapshot.paramMap.get('dr');
     this.mbpostService.getMbPost(dr)
-      .subscribe(draftPost => this.draftPost = draftPost);
+      .subscribe(draft => this.draft = draft);
   }
 
   getMbposts(): void {

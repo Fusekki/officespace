@@ -11,15 +11,15 @@
   </div>
 </div>
 
-<div class="draft-container" *ngIf="draftPost">
+<div class="draft-container" *ngIf="draft">
   <div class="draft-title">
-    <h1>{{draftPost.title}} </h1>
+    <h1>{{draft.title}} </h1>
   </div>
   <div class="draft-details">
     <div class="draft-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
-    <div class="draft-specifics">{{ messageboard.categories[draftPost.category] }} by {{authorName}}</div>
+    <div class="draft-specifics">{{ messageboard.categories[draft.category] }} by {{authorName}}</div>
   </div>
   <div class="draft-content">
-    {{draftPost.content}}
+    {{draft.content}}
   </div>
 </div>
