@@ -16,6 +16,10 @@
     <h1>{{draftPost.title}} </h1>
   </div>
   <div class="draft-details">
-    {{draftPost.category}} by {{getauthorName(draftPost.author)}}
+    <div class="draft-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
+    <div class="draft-specifics">{{ messageboard.categories[draftPost.category] }} by {{authorName}}</div>
+  </div>
+  <div class="draft-content">
+    {{draftPost.content}}
   </div>
 </div>
