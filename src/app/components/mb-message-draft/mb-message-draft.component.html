@@ -1,1 +1,25 @@
-<app-mb-header></app-mb-header>
+<div class="section" *ngIf="project">
+  <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}} HQ</a> >
+    <a routerLink="/{{user?.id}}/projects/{{project?.id}}/messageboards/{{messageboard?.id}}">Message Board</a></h3>
+</div>
+
+<div class="notice">
+  <h3>Unpublished draft.</h3>
+  <div class="button-row">
+    <button mat-raised-button color="accent" (click)="addMbPost(titlebox.value, contentbox.value, true); titlebox.value=''; contentbox.value=''; changeRoute();">Edit this draft</button>
+    <button mat-raised-button color="warn" (click)="addMbPost(titlebox.value, contentbox.value, false); titlebox.value=''; contentbox.value='';">Delete it</button>
+  </div>
+</div>
+
+<div class="draft-container" *ngIf="draft">
+  <div class="draft-title">
+    <h1>{{draft.title}} </h1>
+  </div>
+  <div class="draft-details">
+    <div class="draft-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
+    <div class="draft-specifics">{{ messageboard.categories[draft.category] }} by {{authorName}}</div>
+  </div>
+  <div class="draft-content">
+    {{draft.content}}
+  </div>
+</div>

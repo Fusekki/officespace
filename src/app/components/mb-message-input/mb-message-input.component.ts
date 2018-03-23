@@ -57,14 +57,14 @@ export class MbMessageInputComponent implements OnInit {
 
   // Temporary. This route has the id for the messageboard.
   getMessageboard(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.messageboardService.getMessageBoard(id)
+    const mb = +this.route.snapshot.paramMap.get('mb');
+    this.messageboardService.getMessageBoard(mb)
       .subscribe(messageboard => this.messageboard = messageboard);
   }
 
   getProject(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.projectService.getProject(id)
+    const co = +this.route.snapshot.paramMap.get('co');
+    this.projectService.getProject(co)
       .subscribe(project => this.project = project);
   }
 
@@ -115,12 +115,6 @@ export class MbMessageInputComponent implements OnInit {
 
   setCategory(value: number): void {
     this.selectedCategory = value;
-  }
-
-  changeRoute(): void {
-    // this.mbpostService.changeRoute();
-    // this.router.navigate(['/results', { dateFrom: this.dateFrom, page: this.page }]);
-
   }
 
 
