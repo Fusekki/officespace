@@ -1,14 +1,19 @@
-h3 {
+h3,
+.button-column {
   text-align: center;
 }
 
 .draft-container,
-.mat-form-field {
+.mat-form-field,
+button {
   width: 100%;
 }
 
-
 >>> .mat-form-field-label,
+>>> .mat-select-arrow {
+  color: grey !important;
+}
+
 >>> .mat-select-value-text,
 >>> .mat-input-infix  {
   color: black !important;
@@ -16,4 +21,9 @@ h3 {
 
 >>> .mat-input-infix {
   font-weight: bold;
+}
+
+ button {
+  border-radius: 2rem;
+  margin: 5px auto;
 }

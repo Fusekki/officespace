@@ -40,6 +40,10 @@ h3 {
   margin: 5px auto;
 }
 
+.mat-form-field {
+  width: 100%;
+}
+
 >>> .mat-form-field-label,
 >>> .mat-select-value-text {
   color: black !important;
