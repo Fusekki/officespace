@@ -1,5 +1,5 @@
 <div class="announcments">Placeholder for announcements</div>
-<mat-grid-list cols="2" rowHeight="200px" [gutterSize]="10">
+<mat-grid-list cols="2" rowHeight="200px" [gutterSize]="10" *ngIf="user">
   <mat-grid-tile *ngFor="let project of projects" routerLink="/{{user.id}}/projects/{{project.id}}">
     <mat-grid-tile-header>{{ project.name }}</mat-grid-tile-header>
     Company-wide announcements and stuff everyone needs to know
