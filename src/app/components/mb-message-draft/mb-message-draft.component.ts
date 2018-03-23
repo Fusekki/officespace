@@ -30,8 +30,7 @@ export class MbMessageDraftComponent implements OnInit {
   project: Project;
   user: User;
   messageboard: MessageBoard;
-  mbposts: MbPost[] = [];
-  currentPost: MbPost;
+  draftPost: MbPost;
   users: User[] = [];
   date: Date;
   category: number;
@@ -46,7 +45,7 @@ export class MbMessageDraftComponent implements OnInit {
   ngOnInit() {
     this.getProject();
     this.getMessageboard();
-    this.getMbposts();
+    this.getMbPost();
     this.getUsers();
     this.getUser();
   }
@@ -68,6 +67,10 @@ export class MbMessageDraftComponent implements OnInit {
   getUsers(): void {
     this.userService.getUsers()
       .subscribe(users => this.users = users);
+  }
+
+  getauthorName(id: number): string {
+    return this.users.find(user => user.id == id).fullName;
   }
 
 
@@ -98,9 +101,10 @@ export class MbMessageDraftComponent implements OnInit {
 
 
 
-  getMbposts(): void {
-    this.mbpostService.getMbPosts()
-      .subscribe(mbposts => this.mbposts = mbposts);
+  getMbPost(): void {
+    const dr = +this.route.snapshot.paramMap.get('dr');
+    this.mbpostService.getMbPost(dr)
+      .subscribe(draftPost => this.draftPost = draftPost);
   }
 
   getUser(): void {
@@ -111,12 +115,6 @@ export class MbMessageDraftComponent implements OnInit {
 
   setCategory(value: number): void {
     this.selectedCategory = value;
-  }
-
-  changeRoute(): void {
-    // this.mbpostService.changeRoute();
-    // this.router.navigate(['/results', { dateFrom: this.dateFrom, page: this.page }]);
-
   }
 
 
