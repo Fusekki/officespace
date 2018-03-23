@@ -17,6 +17,8 @@ import { MbMessageInputComponent } from './components/mb-message-input/mb-messag
 import { MbMessageWrapperComponent } from './components/mb-message-wrapper/mb-message-wrapper.component';
 import { MbMessageDraftComponent } from './components/mb-message-draft/mb-message-draft.component';
 import { MbDraftsComponent } from './components/mb-drafts/mb-drafts.component';
+import { MbMessageEditComponent } from './components/mb-message-edit/mb-message-edit.component';
+
 
 
 const routes: Routes = [
@@ -37,7 +39,8 @@ const routes: Routes = [
   { path: ':id/projects/:pr/messageboards/:mb', component: MessageBoardComponent },
   { path: ':id/messageboard/:mb/new', component: MbMessageWrapperComponent },
   { path: ':id/messages/drafts', component: MbDraftsComponent },
-  { path: ':id/messages/drafts/:dr', component: MbMessageDraftComponent }
+  { path: ':id/messages/drafts/:dr', component: MbMessageDraftComponent },
+  { path: ':id/messages/edit/:dr', component: MbMessageEditComponent }
 
 
   // { path: 'file/:id', component: LegalfileDetailComponent }
