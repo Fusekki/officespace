@@ -1,0 +1,19 @@
+h3 {
+  text-align: center;
+}
+
+.draft-container,
+.mat-form-field {
+  width: 100%;
+}
+
+
+>>> .mat-form-field-label,
+>>> .mat-select-value-text,
+>>> .mat-input-infix  {
+  color: black !important;
+}
+
+>>> .mat-input-infix {
+  font-weight: bold;
+}
