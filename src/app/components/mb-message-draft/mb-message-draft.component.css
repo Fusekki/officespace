@@ -17,3 +17,24 @@ h3,
 .button-row button {
   border-radius: 50px;
 }
+
+.draft-details {
+  align-items: center;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  padding: 5px 0;
+
+}
+
+.draft-image {
+  margin: 0 5px
+}
+
+.draft-image img {
+  border-radius: 50px;
+}
+
+.draft-content {
+  margin: 10px 0;
+}
