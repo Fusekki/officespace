@@ -30,10 +30,14 @@ export class MbMessageDraftComponent implements OnInit {
   project: Project;
   user: User;
   messageboard: MessageBoard;
+  mbposts: MbPost[] = [];
   draftPost: MbPost;
   users: User[] = [];
   date: Date;
   category: number;
+  authorName: string;
+  currentPost: MbPost;
+
 
   constructor(private projectService: ProjectService,
               private route: ActivatedRoute,
@@ -46,8 +50,13 @@ export class MbMessageDraftComponent implements OnInit {
     this.getProject();
     this.getMessageboard();
     this.getMbPost();
+    this.getMbposts();
     this.getUsers();
     this.getUser();
+    this.getUsers().subscribe(_ => {
+      ;
+      this.authorName = this.users.find(user => user.id == this.draftPost.author).fullName;
+    });
   }
 
   // Temporary. This route has the id for the messageboard.
@@ -64,14 +73,14 @@ export class MbMessageDraftComponent implements OnInit {
   }
 
 
-  getUsers(): void {
-    this.userService.getUsers()
-      .subscribe(users => this.users = users);
+  getUsers() {
+    return this.userService.getUsers()
+      .map(users => this.users = users);
   }
 
-  getauthorName(id: number): string {
-    return this.users.find(user => user.id == id).fullName;
-  }
+  // getauthorName(id: number): string {
+  //   return this.users.find(user => user.id == id).fullName;
+  // }
 
 
   goBack(): void {
@@ -106,6 +115,12 @@ export class MbMessageDraftComponent implements OnInit {
     this.mbpostService.getMbPost(dr)
       .subscribe(draftPost => this.draftPost = draftPost);
   }
+
+  getMbposts(): void {
+    this.mbpostService.getMbPosts()
+      .subscribe(mbposts => this.mbposts = mbposts);
+  }
+
 
   getUser(): void {
     const id = +this.route.snapshot.paramMap.get('id');
