@@ -1,1 +1,4 @@
-<app-mb-header></app-mb-header>
+<div class="section" *ngIf="project">
+  <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}} HQ</a>
+    <a routerLink="/{{user?.id}}/projects/{{project?.id}}/messageboards/{{messageboard.id}}">Message Board</a></h3>
+</div>
