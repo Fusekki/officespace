@@ -3,10 +3,10 @@
     <a routerLink="/{{user?.id}}/projects/{{project?.id}}/messageboards/{{messageboard?.id}}">Message Board</a></h3>
 </div>
 
-<div class="notice">
+<div class="notice" *ngIf="draft && user">
   <h3>Unpublished draft.</h3>
   <div class="button-row">
-    <button mat-raised-button color="accent">Edit this draft</button>
+    <button mat-raised-button color="accent" routerLink="/{{user.id}}/messages/edit/{{draft.id}}">Edit this draft</button>
     <button mat-raised-button color="warn">Delete it</button>
   </div>
 </div>
