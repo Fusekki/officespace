@@ -1,3 +1,35 @@
-<p>
-  mb-message-edit works!
-</p>
+<div class="section" *ngIf="project">
+  <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}} HQ</a> >
+    <a routerLink="/{{user?.id}}/projects/{{project?.id}}/messageboards/{{messageboard?.id}}">Message Board</a></h3>
+    <h3><a routerLink="/{{user.id}}/messages/drafts/{{mbpost.id}}">title</a></h3>
+</div>
+
+
+
+<div class="message-input-wrapper" >
+          <!-- <form> -->
+  <div class="form-wrapper" *ngIf="messageboard">
+    <mat-form-field>
+      <mat-select #selectElem placeholder="Pick a category (optional)" (change)="setCategory(selectElem.value)">
+        <mat-option *ngFor="let category of messageboard.categories; let i = index;" [value]="i">
+          {{ category }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="title-container">
+    <mat-form-field>
+      <input matInput #titlebox placeholder="Title..." [(ngModel)]="title">
+    </mat-form-field>
+  </div>
+  <div class="body-container">
+    <mat-form-field>
+      <textarea matInput #contentbox placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6" [(ngModel)]="body"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="button-column">
+    <button mat-raised-button color="accent" (click)="addMbPost(titlebox.value, contentbox.value, true); titlebox.value=''; contentbox.value=''; changeRoute();">Save as a draft</button>
+    <button mat-raised-button color="primary" (click)="addMbPost(titlebox.value, contentbox.value, false); titlebox.value=''; contentbox.value='';">Post this message</button>
+  </div>
+    <!-- </form> -->
+</div>
