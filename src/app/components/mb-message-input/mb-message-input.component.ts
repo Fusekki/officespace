@@ -117,11 +117,5 @@ export class MbMessageInputComponent implements OnInit {
     this.selectedCategory = value;
   }
 
-  changeRoute(): void {
-    // this.mbpostService.changeRoute();
-    // this.router.navigate(['/results', { dateFrom: this.dateFrom, page: this.page }]);
-
-  }
-
 
 }
