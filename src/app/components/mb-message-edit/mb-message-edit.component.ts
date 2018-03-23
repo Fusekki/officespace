@@ -29,6 +29,7 @@ export class MbMessageEditComponent implements OnInit {
 
   @Input() mbpost: MbPost;
 
+  authorName: string;
   selectedCategory: number;
   project: Project;
   user: User;
@@ -38,6 +39,7 @@ export class MbMessageEditComponent implements OnInit {
   users: User[] = [];
   date: Date;
   category: number;
+  draft: MbPost;
 
 
   constructor(private projectService: ProjectService,
@@ -49,11 +51,16 @@ export class MbMessageEditComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    const dr = +this.route.snapshot.paramMap.get('dr');
     this.getProject();
     this.getMessageboard();
-    this.getMbposts();
+    this.getMbposts().subscribe( mbposts => {
+      this.draft = this.mbposts.find(mbpost => mbpost.id == dr);
+    });
+    // this.getMbpost();
     this.getUsers();
     this.getUser();
+
   }
 
   // Temporary. This route has the id for the messageboard.
@@ -70,9 +77,9 @@ export class MbMessageEditComponent implements OnInit {
   }
 
 
-  getUsers(): void {
-    this.userService.getUsers()
-      .subscribe(users => this.users = users);
+  getUsers() {
+    return this.userService.getUsers()
+      .map(users => this.users = users);
   }
 
 
@@ -100,12 +107,17 @@ export class MbMessageEditComponent implements OnInit {
         this.mbposts.push(mbpost)
       });
   }
+  getMbpost(): void {
+    const mb = +this.route.snapshot.paramMap.get('mb');
+    this.mbpostService.getMbPost(mb)
+      .subscribe(mbpost => this.draft = mbpost);
+  }
 
 
 
-  getMbposts(): void {
-    this.mbpostService.getMbPosts()
-      .subscribe(mbposts => this.mbposts = mbposts);
+  getMbposts() {
+    return this.mbpostService.getMbPosts()
+      .map(mbposts => this.mbposts = mbposts);
   }
 
   getUser(): void {
