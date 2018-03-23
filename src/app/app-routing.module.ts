@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'reports/:id', component: ReportsComponent },
   { path: ':id/projects/:pr/messageboards/:mb', component: MessageBoardComponent },
   { path: ':id/messageboard/:mb/new', component: MbMessageWrapperComponent },
-  { path: ':id/messageboards/drafts', component: MbDraftsComponent },
+  { path: ':id/messages/drafts', component: MbDraftsComponent },
   { path: ':id/messageboards/:mb/drafts/:ab', component: MbMessageDraftComponent }
 
 
