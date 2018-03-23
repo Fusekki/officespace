@@ -21,10 +21,10 @@
     </div>
     <div class="body-container" *ngIf="draft">
       <mat-form-field>
-        <textarea matInput #contentbox placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6" [(ngModel)]="draft.content"></textarea>
+        <textarea matInput #contentbox placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="20" matAutosizeMaxRows="20" [(ngModel)]="draft.content"></textarea>
       </mat-form-field>
     </div>
-    <div class="button-column">
+    <div class="button-row">
       <button mat-raised-button color="accent" (click)="addMbPost(titlebox.value, contentbox.value, true); titlebox.value=''; contentbox.value=''; changeRoute();">Save this draft</button>
       <button mat-raised-button color="primary" (click)="addMbPost(titlebox.value, contentbox.value, false); titlebox.value=''; contentbox.value='';">Post this message</button>
     </div>
