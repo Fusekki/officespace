@@ -64,8 +64,8 @@ export class WatercoolerComponent implements OnInit {
   }
 
   getProject(): void {
-    const co = +this.route.snapshot.paramMap.get('co');
-    this.projectService.getProject(co)
+    const pr = +this.route.snapshot.paramMap.get('pr');
+    this.projectService.getProject(pr)
       .subscribe(project => this.project = project);
   }
 

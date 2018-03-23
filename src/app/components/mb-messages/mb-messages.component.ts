@@ -59,14 +59,14 @@ export class MbMessagesComponent implements OnInit {
 
   // Temporary. This route has the id for the messageboard.
   getMessageboard(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.messageboardService.getMessageBoard(id)
+    const mb = +this.route.snapshot.paramMap.get('mb');
+    this.messageboardService.getMessageBoard(mb)
       .subscribe(messageboard => this.messageboard = messageboard);
   }
 
   getProject(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.projectService.getProject(id)
+    const pr = +this.route.snapshot.paramMap.get('pr');
+    this.projectService.getProject(pr)
       .subscribe(project => this.project = project);
   }
 
