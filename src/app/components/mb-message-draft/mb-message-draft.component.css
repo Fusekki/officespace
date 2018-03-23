@@ -1,0 +1,19 @@
+h3,
+.button-row {
+  text-align: center;
+}
+
+.notice {
+  background: #faf8f7;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 5px;
+  padding: 10px 0;
+}
+
+.notice h3 {
+  margin-top: 0;
+}
+
+.button-row button {
+  border-radius: 50px;
+}
