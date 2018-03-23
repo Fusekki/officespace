@@ -1,7 +1,7 @@
 <div class="section" *ngIf="project">
   <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}} HQ</a> >
     <a routerLink="/{{user?.id}}/projects/{{project?.id}}/messageboards/{{messageboard?.id}}">Message Board</a></h3>
-    <h3><a routerLink="/{{user.id}}/messages/drafts/{{mbpost.id}}">title</a></h3>
+    <h3><a routerLink="/{{user?.id}}/messages/drafts/{{mbpost?.id}}">{{draft?.title}}</a></h3>
 </div>
 
 
@@ -19,13 +19,15 @@
   </div>
   <div class="title-container">
     <mat-form-field>
-      <input matInput #titlebox placeholder="Title..." [(ngModel)]="title">
+      <input matInput #titlebox [(ngModel)]="title">
     </mat-form-field>
   </div>
   <div class="body-container">
     <mat-form-field>
-      <textarea matInput #contentbox placeholder="Write away..." matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6" [(ngModel)]="body"></textarea>
+      <textarea matInput #contentbox  matTextareaAutosize matAutosizeMinRows="6" matAutosizeMaxRows="6" [(ngModel)]="content"></textarea>
     </mat-form-field>
+    {{user?.fullName}}
+    {{authorName}}
   </div>
   <div class="button-column">
     <button mat-raised-button color="accent" (click)="addMbPost(titlebox.value, contentbox.value, true); titlebox.value=''; contentbox.value=''; changeRoute();">Save this draft</button>
