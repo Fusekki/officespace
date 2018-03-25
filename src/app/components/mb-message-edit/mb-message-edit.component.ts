@@ -10,6 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
 import { MessageBoard } from '../../classes/message-board';
 import { Project } from '../../classes/project';
 import { ProjectService } from '../../services/project.service';
@@ -21,6 +30,24 @@ import { MbPostService } from '../../services/mb-post.service';
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
 @Component({
+  animations: [
+  trigger('flyInOut', [
+    state('in', style({opacity: 1, transform: 'translateX(0)'})),
+    transition('void => *', [
+      style({
+        opacity: 0,
+        transform: 'translateX(-100%)'
+      }),
+      animate('0.2s ease-in')
+    ]),
+    transition('* => void', [
+      animate('0.2s 0.1s ease-out', style({
+        opacity: 0,
+        transform: 'translateX(100%)'
+      }))
+    ])
+  ])
+],
   selector: 'app-mb-message-edit',
   templateUrl: './mb-message-edit.component.html',
   styleUrls: ['./mb-message-edit.component.css']
@@ -130,5 +157,11 @@ export class MbMessageEditComponent implements OnInit {
     this.selectedCategory = value;
   }
 
+  saveDraft(): void {
+    console.log('Saved.');
+    console.log(this.draft);
+    this.mbpostService.updateMbPost(this.draft)
+      .subscribe(() => this.goBack());
+  }
 
 }
