@@ -1,7 +1,11 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { MbPost } from './mb-post';
 
 export class InMemoryDataService implements InMemoryDbService {
     created = Date.now();
+    mbposts: MbPost[];
+
+
   createDb() {
     const legalcases = [
       { id: 0, title: 'People vs. Someone', docket:'12345', defendant:'Someone', cols: 2, rows: 1, color: 'lightblue' },
@@ -40,11 +44,11 @@ export class InMemoryDataService implements InMemoryDbService {
 
 
     const mbposts = [
-      {id: 0, messageboardId: 0, draft: false, author: 0, created: this.created, title: "Hello", category: 1, content: "Just wanted to say hi!!" },
-      {id: 1, messageboardId: 0, draft: false, author: 0, created: this.created, title: "Test", category: 2, content: "This is a test" },
-      {id: 2, messageboardId: 0, draft: true, author: 0, created: this.created, title: "Draft", category: 0, content: "This is a draft" },
-      {id: 3, messageboardId: 3, draft: true, author: 0, created: this.created, title: "Hello", category: 0, content: "I am saying hi." },
-      {id: 5, messageboardId: 2, draft: true, author: 0, created: this.created, title: "I'm tired", category: 0, content: "Massvely drunk. Hope I am not posting this for real." }
+      {id: 0, messageboardId: 0, draft: false, author: 0, created: this.created, title: "Hello", category: 1, content: "Just wanted to say hi!!", state: "inactive" },
+      {id: 1, messageboardId: 0, draft: false, author: 0, created: this.created, title: "Test", category: 2, content: "This is a test", state: "inactive" },
+      {id: 2, messageboardId: 0, draft: true, author: 0, created: this.created, title: "Draft", category: 0, content: "This is a draft", state: "inactive" },
+      {id: 3, messageboardId: 3, draft: true, author: 0, created: this.created, title: "Hello", category: 0, content: "I am saying hi.", state: "inactive" },
+      {id: 5, messageboardId: 2, draft: true, author: 0, created: this.created, title: "I'm tired", category: 0, content: "Massvely drunk. Hope I am not posting this for real.", state: "inactive" }
 
 
 
