@@ -122,7 +122,7 @@ export class MbMessageEditComponent implements OnInit {
     this.category = this.selectedCategory;
     this.currentPost = new MbPost(0, 0, draft, this.user.id, this.date, title, this.category, content);
     this.mbpostService.addMbPost({
-      messageboard_id: 0,
+      messageboardId: 0,
       draft: draft,
       author: this.user.id,
       created: this.date,
