@@ -134,6 +134,21 @@ export class MbMessageEditComponent implements OnInit {
         this.mbposts.push(mbpost)
       });
   }
+
+  postMessage(): void {
+    console.log('Added.');
+    this.draft.draft = false;
+    console.log(this.draft);
+    this.mbpostService.updateMbPost(this.draft)
+      .subscribe(() => this.redirect());
+
+  }
+
+  redirect(): void {
+    this.router.navigate(['./' + this.user.id + '/messages/' + this.draft.id]);
+  }
+
+
   getMbpost(): void {
     const mb = +this.route.snapshot.paramMap.get('mb');
     this.mbpostService.getMbPost(mb)
