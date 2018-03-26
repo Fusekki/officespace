@@ -19,7 +19,7 @@
   <div class="message-list-wrapper" *ngIf="users">
       <mat-list role="list">
         <mat-list-item *ngFor="let mbpost of selectedData" role="listitem">
-          <mat-card class="message-card">
+          <mat-card class="message-card" routerLink="/{{user.id}}/messages/{{mbpost.id}}">
             <mat-card-header>
               <div mat-card-avatar class="message-header-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
               <mat-card-title><h3>{{mbpost.title}}</h3></mat-card-title>
