@@ -41,8 +41,6 @@ export class MbMessageThreadComponent implements OnInit {
   date: Date;
   category: number;
   mbpost: MbPost;
-  authorName: string;
-
 
   constructor(private projectService: ProjectService,
               private route: ActivatedRoute,
