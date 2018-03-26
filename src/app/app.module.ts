@@ -18,10 +18,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './classes/in-memory-data.service';
 
 import { OrderModule } from 'ngx-order-pipe';
 
-import { InMemoryDataService } from './classes/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
