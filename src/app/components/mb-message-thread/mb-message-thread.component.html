@@ -7,7 +7,14 @@
   <h1>{{mbpost.title}}</h1>
   <div class="message-details">
     <div class="message-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
-    <div class="message-specifics">{{ messageboard.categories[mbpost.category] }} by {{authorName}}</div>
+    <div class="message-specifics">
+      <div>
+          {{ messageboard.categories[mbpost.category] }} by {{authorName}}
+      </div>
+      <div>
+          {{mbpost.created | date:'shortTime'}} - No one was notified.
+      </div>
+    </div>
   </div>
   <div class="message-body">
     {{mbpost.content}}
@@ -29,4 +36,18 @@
     </div>
   </div>
 
+</div>
+<div class="subscriber">
+  <h3>Subscribers</h3>
+  <p>
+    1 person will be notified when someone comments on this message.
+  </p>
+  <div class="action-row">
+    <div class="user-details">
+      <div class="user-image"><img src="http://via.placeholder.com/35x35" alt="" /></div>
+      <div class="button-column">
+        <button class="btn-people" mat-raised-button color="basic" routerLink="/{{user?.id}}/messageboard/{{messageboard?.id}}/new">Add/remove people...</button>
+      </div>
+    </div>
+  </div>
 </div>
