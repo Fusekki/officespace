@@ -1,0 +1,37 @@
+h3 {
+  text-align: center;
+}
+
+h1 {
+ text-align: left;
+ margin: 0;
+}
+
+.message-details {
+  align-items: center;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  padding: 5px 0;
+}
+
+.message-image {
+  border-radius: 50px;
+  margin-right: 20px;
+}
+
+.message-image {
+  margin: 0 5px
+}
+
+.message-image img {
+  border-radius: 50px;
+}
+
+.message-content {
+  margin: 10px 0;
+}
+
+.message-body {
+  margin: 20px 0;
+}
