@@ -35,3 +35,15 @@ h1 {
 .message-body {
   margin: 20px 0;
 }
+
+.icon-container {
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50px;
+  width: 30px;
+}
+mat-icon {
+  color: yellow;
+  position: relative;
+  top: 2px;
+  left: 3px;
+}
