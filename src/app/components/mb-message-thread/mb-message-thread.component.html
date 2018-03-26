@@ -1,3 +1,15 @@
-<p>
-  mb-message-thread works!
-</p>
+<div class="section" *ngIf="project">
+  <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}} HQ</a> >
+    <a routerLink="/{{user?.id}}/projects/{{project?.id}}/messageboards/{{messageboard?.id}}">Message Board</a></h3>
+</div>
+
+<div class="message-content" *ngIf="mbpost">
+  <h1>{{mbpost.title}}</h1>
+  <div class="message-details">
+    <div class="message-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
+    <div class="message-specifics">{{ messageboard.categories[mbpost.category] }} by {{authorName}}</div>
+  </div>
+  <div class="message-body">
+    {{mbpost.content}}
+  </div>
+</div>
