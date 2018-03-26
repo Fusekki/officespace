@@ -25,7 +25,7 @@
       </mat-form-field>
     </div>
     <div class="button-row">
-      <button [@flyInOut]="draft.state" mat-raised-button color="accent" (click)="saveDraft(); draft.toggleState();">Save this draft</button>
+      <button [@flyInOut]="draft.state" mat-raised-button color="accent" (click)="saveDraft();">Save this draft</button>
       <button mat-raised-button color="primary" (click)="addMbPost(titlebox.value, contentbox.value, false); titlebox.value=''; contentbox.value='';">Post this message</button>
     </div>
   </div>
