@@ -19,9 +19,7 @@ import { MbMessageDraftComponent } from './components/mb-message-draft/mb-messag
 import { MbDraftsComponent } from './components/mb-drafts/mb-drafts.component';
 import { MbMessageEditComponent } from './components/mb-message-edit/mb-message-edit.component';
 import { MbMessageThreadComponent } from './components/mb-message-thread/mb-message-thread.component';
-
-
-
+import { MbMessageSubscribersComponent } from './components/mb-message-subscribers/mb-message-subscribers.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -43,11 +41,9 @@ const routes: Routes = [
   { path: ':id/messages/drafts', component: MbDraftsComponent },
   { path: ':id/messages/drafts/:dr', component: MbMessageDraftComponent },
   { path: ':id/messages/edit/:dr', component: MbMessageEditComponent },
-  { path: ':id/messages/:ms', component: MbMessageThreadComponent }
+  { path: ':id/messages/:ms', component: MbMessageThreadComponent },
+  { path: ':id/messages/:ms/subscribers/edit', component: MbMessageSubscribersComponent }
 
-
-
-  // { path: 'file/:id', component: LegalfileDetailComponent }
 ];
 
 @NgModule({
