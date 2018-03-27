@@ -58,6 +58,7 @@ import { MbDraftsComponent } from './components/mb-drafts/mb-drafts.component';
 import { HomeComponent } from './components/home/home.component';
 import { MbMessageEditComponent } from './components/mb-message-edit/mb-message-edit.component';
 import { MbMessageThreadComponent } from './components/mb-message-thread/mb-message-thread.component';
+import { MbMessageSubscribersComponent } from './components/mb-message-subscribers/mb-message-subscribers.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +84,8 @@ import { MbMessageThreadComponent } from './components/mb-message-thread/mb-mess
     MbDraftsComponent,
     HomeComponent,
     MbMessageEditComponent,
-    MbMessageThreadComponent
+    MbMessageThreadComponent,
+    MbMessageSubscribersComponent
   ],
   imports: [
     BrowserModule,
