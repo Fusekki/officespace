@@ -29,24 +29,23 @@
 <div class="action-row">
   <div class="user-details">
     <div class="user-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
-
-
     <div class="button-column">
       <button class="btn-add" mat-raised-button color="accent" routerLink="/{{user?.id}}/messageboard/{{messageboard?.id}}/new">Add a comment or a file...</button>
     </div>
   </div>
-
 </div>
-<div class="subscriber">
-  <h3>Subscribers</h3>
-  <p>
-    1 person will be notified when someone comments on this message.
-  </p>
-  <div class="action-row">
-    <div class="user-details">
-      <div class="user-image"><img src="http://via.placeholder.com/35x35" alt="" /></div>
-      <div class="button-column">
-        <button class="btn-people" mat-raised-button color="basic" routerLink="/{{user?.id}}/messageboard/{{messageboard?.id}}/new">Add/remove people...</button>
+<div class="subscriber" *ngIf="mbpost">
+  <div class="subscribers-container" *ngIf="mbpost.author == user?.id">
+    <h3>Subscribers</h3>
+    <p>
+    {{mbpost?.subscribers.length}} person will be notified when someone comments on this message.
+    </p>
+    <div class="action-row">
+      <div class="user-details">
+        <div class="user-image"><img src="http://via.placeholder.com/35x35" alt="" /></div>
+        <div class="button-column">
+          <button class="btn-people" mat-raised-button color="basic" routerLink="/{{user?.id}}/messageboard/{{messageboard?.id}}/new">Add/remove people...</button>
+        </div>
       </div>
     </div>
   </div>
