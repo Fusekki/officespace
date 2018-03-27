@@ -16,14 +16,27 @@ h1 {
  margin: 0;
 }
 
-.message-details,
 .user-details {
+  flex-grow: 1;
+}
+
+.message-details,
+.user-container {
   align-items: center;
   border-top: 1px solid rgba(0,0,0,0.1);
   border-bottom: 1px solid rgba(0,0,0,0.1);
   display: flex;
   padding: 2px 0;
 }
+
+.user-details div:not(.job-title) {
+  font-weight: bold;
+}
+
+.job-title {
+  text-transform: capitalize;
+}
+
 
 img {
   vertical-align: middle;
@@ -85,18 +98,17 @@ mat-icon {
     background: #fff;
   }
 
-  .btn-add,
-  .btn-people {
+  .button-column,
+  .button-column button {
+    width: 100%;
+  }
+
+  .button-column button {
     border-radius: 50px;
-    width: 100%;
+    margin: 5px 0;
   }
-
-  .btn-people {
+  .button-column button:nth-child(2) {
     color: white;
-  }
-
-  .button-column {
-    width: 100%;
   }
 
   .subscriber {
@@ -111,3 +123,15 @@ mat-icon {
     font-size: 15px;
     -webkit-margin-before: 2px;
   }
+
+  .radio-container {
+    margin: 10px 0;
+  }
+
+  mat-radio-button {
+    margin: 5px 0;
+  }
+
+>>> .mat-radio-label-content {
+    white-space: normal;
+    }
