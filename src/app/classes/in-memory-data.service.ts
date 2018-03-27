@@ -25,7 +25,7 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     const users = [
       {id: 0, email: 'janedoe@gmail.com',
-                      firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0] }
+                      firstName: 'Jane', lastName: 'Doe', jobTitle: 'lawyer', fullName: 'Jane Doe', companies: [0] }
     ];
     const watercoolers = [
       {id: 0, company_name: "Law Firm", projectId: 0, messages: [0] }
@@ -49,10 +49,6 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
 
-    const currentUser = {
-      id: 0, email: 'janedoe@gmail.com',
-      firstName: 'Jane', lastName: 'Doe', fullName: 'Jane Doe', companies: [0]
-    };
     return {legalcases,
       legalfiles,
       // projects,
@@ -61,7 +57,6 @@ export class InMemoryDataService implements InMemoryDbService {
       users,
       watercoolers,
       wcmessages,
-      currentUser,
       messageboards,
       mbposts
       };
