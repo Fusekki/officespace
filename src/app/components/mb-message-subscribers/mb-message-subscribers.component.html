@@ -7,28 +7,24 @@
   <h3 class='notifications'>Who should be notified about comments on this message?</h3>
   <a>Select Everyone</a> • <a>Select no one</a>
 </div>
-<div class="action-row">
-  <h3 class="project-name">{{project.name}}</h3>
-  <div class="user-details">
+<div>
+  <h3 class="project-name">{{project?.name}}</h3>
+  <div class="user-container" *ngIf="user">
     <div class="user-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
-    <div class="button-column">
-      <button class="btn-add" mat-raised-button color="accent" routerLink="/{{user?.id}}/messageboard/{{messageboard?.id}}/new">Add a comment or a file...</button>
+    <div class="user-details">
+      <div>{{user.fullName}}</div>
+      <div class="job-title">{{user.jobTitle}}</div>
     </div>
+    <div class="subscribe-toggle"><mat-slide-toggle checked=true></mat-slide-toggle></div>
   </div>
 </div>
-<div class="subscriber" *ngIf="mbpost">
-  <div class="subscribers-container" *ngIf="mbpost.author == user?.id">
-    <h3>Subscribers</h3>
-    <p>
-    {{mbpost?.subscribers.length}} person will be notified when someone comments on this message.
-    </p>
-    <div class="action-row">
-      <div class="user-details">
-        <div class="user-image"><img src="http://via.placeholder.com/35x35" alt="" /></div>
-        <div class="button-column">
-          <button class="btn-people" mat-raised-button color="basic" routerLink="/{{user?.id}}/messages/{{mbpost?.id}}/subscribers/edit">Add/remove people...</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="radio-container">
+  <mat-radio-group >
+    <mat-radio-button checked=true value="1">Don't notify people until the next comment is posted</mat-radio-button>
+    <mat-radio-button value="2">Send new people the message right now</mat-radio-button>
+  </mat-radio-group>
+</div>
+<div class="button-column">
+  <button mat-raised-button color="accent">Save changes</button>
+  <button mat-raised-button color="basic">Never mind</button>
 </div>
