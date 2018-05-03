@@ -62,6 +62,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MbMessageEditComponent } from './components/mb-message-edit/mb-message-edit.component';
 import { MbMessageThreadComponent } from './components/mb-message-thread/mb-message-thread.component';
 import { MbMessageSubscribersComponent } from './components/mb-message-subscribers/mb-message-subscribers.component';
+import { ToDosComponent } from './components/to-dos/to-dos.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { MbMessageSubscribersComponent } from './components/mb-message-subscribe
     HomeComponent,
     MbMessageEditComponent,
     MbMessageThreadComponent,
-    MbMessageSubscribersComponent
+    MbMessageSubscribersComponent,
+    ToDosComponent
   ],
   imports: [
     BrowserModule,
