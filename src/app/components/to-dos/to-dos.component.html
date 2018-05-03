@@ -1,3 +1,17 @@
-<p>
-  to-dos works!
-</p>
+<div class="header" *ngIf="todos?.length == 0">
+  <div class="banner">
+    <h3 class="subtitle">Kick Things off with your first message.</h3>
+    <p>Post an announcement, pitch an idea, or ask a question.</p>
+  </div>
+  <div class="clearspace">
+  </div>
+  <div class="section" *ngIf="project">
+    <h3>{{project.name}} HQ</h3>
+  </div>
+</div><div class="section" *ngIf="project">
+  <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}} HQ</a></h3>
+  <h2>To-dos</h2>
+</div>
+
+<app-mb-message-input *ngIf="mbposts?.length == 0"></app-mb-message-input>
+<app-mb-messages *ngIf="mbposts?.length > 0"></app-mb-messages>
