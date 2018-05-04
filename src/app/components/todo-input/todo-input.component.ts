@@ -20,8 +20,6 @@ import { ToDoService } from '../../services/todo.service';
 import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
 
-
-
 @Component({
   selector: 'app-todo-input',
   templateUrl: './todo-input.component.html',
@@ -46,10 +44,9 @@ export class TodoInputComponent implements OnInit {
               private todoService: ToDoService,
               private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() {    
+    this.getTodos();
     this.getProject();
-    this.getMessageboard();
-    this.getMbposts();
     this.getUsers();
     this.getUser();
   }
@@ -81,19 +78,15 @@ export class TodoInputComponent implements OnInit {
     this.date = new Date(Date.now());
     this.category = this.selectedCategory;
     this.todoService.addToDo({
-      messageboardId: 0,
-      draft: draft,
       author: this.user.id,
       created: this.date,
       title: title,
-      category: this.category,
       content: content
-    } as todo)
+    } as ToDo)
       .subscribe(todo => {
         this.todos.push(todo)
       });
   }
-
 
 
   getTodos(): void {
