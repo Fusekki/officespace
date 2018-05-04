@@ -33,7 +33,8 @@ export class ToDosComponent implements OnInit {
   constructor(private projectService: ProjectService,
               private route: ActivatedRoute,
               private location: Location,
-              private userService: UserService) { }
+              private userService: UserService,
+              private todoService: ToDoService) { }
 
   ngOnInit() {
     this.getProject();
@@ -42,11 +43,9 @@ export class ToDosComponent implements OnInit {
   }
 
   getTodos(): void {
-    this.to.getTeams()
-      .subscribe(teams => this.teams = teams);
+    this.todoService.getToDos()
+      .subscribe(todos => this.todos = todos);
   }
-  
-  
 
 
   getProject(): void {
