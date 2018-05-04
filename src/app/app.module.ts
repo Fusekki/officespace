@@ -64,6 +64,7 @@ import { MbMessageThreadComponent } from './components/mb-message-thread/mb-mess
 import { MbMessageSubscribersComponent } from './components/mb-message-subscribers/mb-message-subscribers.component';
 import { ToDosComponent } from './components/todos/todos.component';
 import { ToDoService } from './services/todo.service';
+import { TodoInputComponent } from './components/todo-input/todo-input.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { ToDoService } from './services/todo.service';
     MbMessageEditComponent,
     MbMessageThreadComponent,
     MbMessageSubscribersComponent,
-    ToDosComponent
+    ToDosComponent,
+    TodoInputComponent
   ],
   imports: [
     BrowserModule,
