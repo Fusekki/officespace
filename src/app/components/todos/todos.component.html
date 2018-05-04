@@ -1,12 +1,9 @@
 <div class="header" *ngIf="todos?.length == 0">
   <div class="banner">
-    <h3 class="subtitle">Kick Things off with your first message.</h3>
-    <p>Post an announcement, pitch an idea, or ask a question.</p>
+    <h3 class="subtitle">Start your first To-do list below.</h3>
+    <p>Use to-do lists to outline tasks, set due dates, and assign work.</p>
   </div>
   <div class="clearspace">
-  </div>
-  <div class="section" *ngIf="project">
-    <h3>{{project.name}} HQ</h3>
   </div>
 </div><div class="section" *ngIf="project">
   <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}} HQ</a></h3>
