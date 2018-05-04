@@ -1,3 +1,26 @@
-<p>
-  todo-input works!
-</p>
+<div class="message-input-wrapper" >
+  <!-- <form> -->
+<div class="form-wrapper" *ngIf="messageboard">
+<mat-form-field>
+<mat-select #selectElem placeholder="Pick a category (optional)" (change)="setCategory(selectElem.value)">
+<mat-option *ngFor="let category of messageboard.categories; let i = index;" [value]="i">
+  {{ category }}
+</mat-option>
+</mat-select>
+</mat-form-field>
+</div>
+<div class="title-container">
+<mat-form-field>
+<input matInput #titlebox placeholder="Name this list" [(ngModel)]="title">
+</mat-form-field>
+</div>
+<div class="body-container">
+<mat-form-field>
+<textarea matInput #contentbox placeholder="Add extra details or attach a file." matTextareaAutosize matAutosizeMinRows="5" matAutosizeMaxRows="5" [(ngModel)]="body"></textarea>
+</mat-form-field>
+</div>
+<div class="button-column">
+<button mat-raised-button color="accent" (click)="addMbPost(titlebox.value, contentbox.value, false); titlebox.value=''; contentbox.value='';">Add this list</button>
+</div>
+<!-- </form> -->
+</div>
