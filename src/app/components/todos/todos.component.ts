@@ -18,9 +18,9 @@ import { User } from '../../classes/user';
 import { UserService } from '../../services/user.service';
 
 @Component({
-  selector: 'app-to-dos',
-  templateUrl: './to-dos.component.html',
-  styleUrls: ['./to-dos.component.css']
+  selector: 'app-todos',
+  templateUrl: './todos.component.html',
+  styleUrls: ['./todos.component.css']
 })
 export class ToDosComponent implements OnInit {
 
