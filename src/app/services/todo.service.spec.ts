@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ToDoService } from './to-do.service';
+import { ToDoService } from './todo.service';
 
 describe('ToDoService', () => {
   beforeEach(() => {

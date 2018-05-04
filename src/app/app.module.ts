@@ -63,6 +63,7 @@ import { MbMessageEditComponent } from './components/mb-message-edit/mb-message-
 import { MbMessageThreadComponent } from './components/mb-message-thread/mb-message-thread.component';
 import { MbMessageSubscribersComponent } from './components/mb-message-subscribers/mb-message-subscribers.component';
 import { ToDosComponent } from './components/to-dos/to-dos.component';
+import { ToDoService } from './services/todo.service';
 
 @NgModule({
   declarations: [
@@ -142,6 +143,7 @@ import { ToDosComponent } from './components/to-dos/to-dos.component';
     ReportService,
     ProjectService,
     // ProjectService,
+    ToDoService,
     TeamService,
     UserService,
     WatercoolerService,

@@ -11,6 +11,7 @@ import { Project } from '../../classes/project';
 import { ProjectService } from '../../services/project.service';
 
 import { ToDo } from '../../classes/to-do';
+import { ToDoService } from '../../services/todo.service';
 
 // Keep until we move to a backend
 import { User } from '../../classes/user';
@@ -27,6 +28,7 @@ export class ToDosComponent implements OnInit {
   project: Project;
   user: User;
   users: User[];
+  todos: ToDo[];
 
   constructor(private projectService: ProjectService,
               private route: ActivatedRoute,
@@ -38,6 +40,13 @@ export class ToDosComponent implements OnInit {
     this.getUsers();
     this.getUser();
   }
+
+  getTodos(): void {
+    this.to.getTeams()
+      .subscribe(teams => this.teams = teams);
+  }
+  
+  
 
 
   getProject(): void {
