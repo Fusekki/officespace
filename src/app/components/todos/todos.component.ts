@@ -37,6 +37,7 @@ export class ToDosComponent implements OnInit {
               private todoService: ToDoService) { }
 
   ngOnInit() {
+    this.getTodos();
     this.getProject();
     this.getUsers();
     this.getUser();
@@ -59,7 +60,6 @@ export class ToDosComponent implements OnInit {
     this.userService.getUser(id)
       .subscribe(user => this.user = user);
   }
-
 
 
   getUsers(): void {
