@@ -1,3 +1,18 @@
-<p>
-  todos-list works!
-</p>
+<div class="todo-list-wrapper" *ngIf="users">
+  <mat-list role="list">
+    <mat-list-item *ngFor="let todo of todos" role="listitem">
+      <mat-card class="todo-card" routerLink="/{{user.id}}/todos/{{todo.id}}">
+        <mat-card-header>
+          <div mat-card-avatar class="todo-header-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
+          <mat-card-title><h3>{{todo.title}}</h3></mat-card-title>
+          <mat-card-subtitle>{{ getauthorName(todo.author) }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{todo.created | date:'LLL d'}} — <span>{{todo.content}}</span>
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </mat-list-item>
+  </mat-list>
+</div>
