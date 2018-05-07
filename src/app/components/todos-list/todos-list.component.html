@@ -1,17 +1,18 @@
+<div class="button-row">
+    <button mat-raised-button color="accent" (click)="addMbPost(titlebox.value, contentbox.value, false); titlebox.value=''; contentbox.value='';">New List</button>
+</div>
+<div class="vert-padding"></div>
 <div class="todo-list-wrapper" *ngIf="users">
   <mat-list role="list">
     <mat-list-item *ngFor="let todo of todos" role="listitem">
       <mat-card class="todo-card">
         <mat-card-header>
-          <mat-card-title><a href="/{{user.id}}/todos/{{todo.id}}"><h3>{{todo.title}}</h3></a>
-                    <div mat-card-avatar class="todo-header-image"><img src="http://via.placeholder.com/20x20" alt="" /></div>
-          </mat-card-title>
-          <mat-card-subtitle>{{ getauthorName(todo.author) }}</mat-card-subtitle>
+          <div mat-card-avatar class="todo-header-image"><img src="http://via.placeholder.com/20x20" alt="" /></div>
+          <mat-card-title><a href="/{{user.id}}/todos/{{todo.id}}"><h3 class="link">{{todo.title}}</h3></a></mat-card-title>
+          <mat-card-subtitle>0/0 completed</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <p>
-            {{todo.created | date:'LLL d'}} — <span>{{todo.content}}</span>
-          </p>
+            {{todo.content}}
         </mat-card-content>
       </mat-card>
     </mat-list-item>
