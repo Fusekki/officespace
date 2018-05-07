@@ -1,10 +1,11 @@
 <div class="todo-list-wrapper" *ngIf="users">
   <mat-list role="list">
     <mat-list-item *ngFor="let todo of todos" role="listitem">
-      <mat-card class="todo-card" routerLink="/{{user.id}}/todos/{{todo.id}}">
+      <mat-card class="todo-card">
         <mat-card-header>
-          <div mat-card-avatar class="todo-header-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
-          <mat-card-title><h3>{{todo.title}}</h3></mat-card-title>
+          <mat-card-title><a href="/{{user.id}}/todos/{{todo.id}}"><h3>{{todo.title}}</h3></a>
+                    <div mat-card-avatar class="todo-header-image"><img src="http://via.placeholder.com/20x20" alt="" /></div>
+          </mat-card-title>
           <mat-card-subtitle>{{ getauthorName(todo.author) }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
