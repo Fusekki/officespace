@@ -1,0 +1,182 @@
+p {
+  color: #877457;
+}
+
+p span {
+  color: black;
+}
+
+h2, h3, .drafts-container {
+  text-align: center;
+}
+
+h3 span {
+  font-weight: lighter;
+}
+
+mat-list-item {
+  color: black !important;
+}
+
+.section {
+  color: black;
+  width: 100%;
+}
+
+.button-row {
+  display: flex;
+  text-align: center;
+}
+
+button {
+  border-radius: 2rem;
+}
+
+.drafts-container {
+  margin: 10px auto 20px;
+}
+
+>>>.mat-form-field-label, >>>.mat-select-value-text {
+  color: black !important;
+}
+
+>>>.mat-list-item-content {
+  padding: 0 !important;
+}
+
+.mat-form-field {
+  width: 50%;
+}
+
+.mat-list-item:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.mat-card {
+  color: black;
+  background: none;
+}
+
+.mat-card-header-text {
+  color: black;
+  margin: 0;
+}
+
+.mat-card-title h3 {
+  text-align: left;
+  margin: 0;
+}
+
+.mat-card-subtitle {
+  color: #877457;
+}
+
+button, .form-wrapper {
+  margin: 0 5px;
+}
+
+.todo-card {
+  padding: 6px;
+  width: 100%;
+}
+
+.mat-card-content {
+  margin-left: 46px;
+}
+
+.buttons-container {
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+}
+p {
+  color: #877457;
+}
+
+p span {
+  color: black;
+}
+
+h2, h3, .todo-container {
+  text-align: center;
+}
+
+h3 span {
+  font-weight: lighter;
+}
+
+mat-list-item {
+  color: black !important;
+}
+
+.section {
+  color: black;
+  width: 100%;
+}
+
+.button-row {
+  display: flex;
+  text-align: center;
+}
+
+button {
+  border-radius: 2rem;
+}
+
+.todos-container {
+  margin: 10px auto 20px;
+}
+
+>>>.mat-form-field-label, >>>.mat-select-value-text {
+  color: black !important;
+}
+
+>>>.mat-list-item-content {
+  padding: 0 !important;
+}
+
+.mat-form-field {
+  width: 50%;
+}
+
+.mat-list-item:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.mat-card {
+  color: black;
+  background: none;
+}
+
+.mat-card-header-text {
+  color: black;
+  margin: 0;
+}
+
+.mat-card-title h3 {
+  text-align: left;
+  margin: 0;
+}
+
+.mat-card-subtitle {
+  color: #877457;
+}
+
+button, .form-wrapper {
+  margin: 0 5px;
+}
+
+.todo-card {
+  padding: 6px;
+  width: 100%;
+}
+
+.mat-card-content {
+  margin-left: 46px;
+}
+
+.buttons-container {
+  margin: 0;
+  white-space: nowrap;
+  text-align: center;
+}
