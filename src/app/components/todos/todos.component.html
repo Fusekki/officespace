@@ -11,6 +11,6 @@
 </div>
 
 <app-todo-input *ngIf="todos?.length == 0"></app-todo-input>
-<!-- <app-mb-messages *ngIf="todos?.length > 0"></app-mb-messages> -->
+<app-todos-list *ngIf="todos?.length > 0"></app-todos-list>
 
 <app-todo-input></app-todo-input>
