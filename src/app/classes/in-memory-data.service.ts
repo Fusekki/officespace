@@ -54,6 +54,12 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
 
 
+    const todos = [
+      {id: 0, author: 0, created: this.created,
+        title: 'Stuff I have to do', content: 'Write briefs', subscribers: [0] }
+    ];
+
+
     return {legalcases,
       legalfiles,
       // projects,
@@ -63,7 +69,8 @@ export class InMemoryDataService implements InMemoryDbService {
       watercoolers,
       wcmessages,
       messageboards,
-      mbposts
+      mbposts,
+      todos
       };
   }
 }
