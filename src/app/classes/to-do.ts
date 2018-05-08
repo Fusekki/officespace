@@ -4,5 +4,6 @@ export class ToDo {
     created: any;
     title: string;
     content: string;
+    completed: boolean;
     subscribers: number[];
 }
