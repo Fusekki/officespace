@@ -67,6 +67,7 @@ import { ToDosComponent } from './components/todos/todos.component';
 import { ToDoService } from './services/todo.service';
 import { TodoInputComponent } from './components/todo-input/todo-input.component';
 import { TodosListComponent } from './components/todos-list/todos-list.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { TodosListComponent } from './components/todos-list/todos-list.component
     MbMessageSubscribersComponent,
     ToDosComponent,
     TodoInputComponent,
-    TodosListComponent
+    TodosListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
