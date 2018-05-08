@@ -23,6 +23,7 @@ import { MbMessageEditComponent } from './components/mb-message-edit/mb-message-
 import { MbMessageThreadComponent } from './components/mb-message-thread/mb-message-thread.component';
 import { MbMessageSubscribersComponent } from './components/mb-message-subscribers/mb-message-subscribers.component';
 import { ToDosComponent } from './components/todos/todos.component';
+import { TodoDetailComponent } from './components/todo-detail/todo-detail.component';
 
 const routes: Routes = [
   { path: ':id/projects', component: ProjectsComponent },
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: ':id/messages/:ms', component: MbMessageThreadComponent },
   { path: ':id/messages/:ms/subscribers/edit', component: MbMessageSubscribersComponent },  
   { path: ':id/todos/:pr/todos', component: ToDosComponent},
+  { path: ':id/todos/:pr/todos/:to', component: TodoDetailComponent},
   // These defaults need to be last
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
