@@ -14,7 +14,13 @@
         <mat-card-content>
             {{todo.content}}
         </mat-card-content>
+        <mat-checkbox class="example-margin" [(ngModel)]="todo.completed">Checked</mat-checkbox>
       </mat-card>
     </mat-list-item>
   </mat-list>
 </div>
+<div class="vert-padding"></div>
+<div class="button-row">
+  <button mat-raised-button color="primary" (click)="addMbPost(titlebox.value, contentbox.value, false); titlebox.value=''; contentbox.value='';">Add a todo</button>
+</div>
+
