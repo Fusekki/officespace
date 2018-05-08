@@ -17,6 +17,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox'
 
 
 import { HttpClientModule } from '@angular/common/http';
@@ -109,6 +110,7 @@ import { TodosListComponent } from './components/todos-list/todos-list.component
     MatIconModule,
     MatInputModule,
     MatCardModule,
+    MatCheckboxModule,
     MatTooltipModule,
     MatSelectModule,
     MatSidenavModule,
