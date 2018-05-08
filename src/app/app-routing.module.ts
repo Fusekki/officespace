@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+
 import { LegalCasesComponent } from './components/legalcases/legalcases.component';
 import { LegalcaseDetailComponent } from './components/legalcase-detail/legalcase-detail.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -23,8 +25,6 @@ import { MbMessageSubscribersComponent } from './components/mb-message-subscribe
 import { ToDosComponent } from './components/todos/todos.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
   { path: ':id/projects', component: ProjectsComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: LegalcaseDetailComponent },
@@ -43,8 +43,12 @@ const routes: Routes = [
   { path: ':id/messages/drafts/:dr', component: MbMessageDraftComponent },
   { path: ':id/messages/edit/:dr', component: MbMessageEditComponent },
   { path: ':id/messages/:ms', component: MbMessageThreadComponent },
-  { path: ':id/messages/:ms/subscribers/edit', component: MbMessageSubscribersComponent },
-  { path: ':id/todos/:pr/todos', component: ToDosComponent}
+  { path: ':id/messages/:ms/subscribers/edit', component: MbMessageSubscribersComponent },  
+  { path: ':id/todos/:pr/todos', component: ToDosComponent},
+  // These defaults need to be last
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
