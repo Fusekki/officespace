@@ -56,7 +56,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const todos = [
       {id: 0, author: 0, created: this.created,
-        title: 'Stuff I have to do', content: 'Write briefs', subscribers: [0] }
+        title: 'Stuff I have to do', content: 'Write briefs', completed: false, subscribers: [0] }
     ];
 
 
