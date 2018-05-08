@@ -44,7 +44,7 @@ const routes: Routes = [
   { path: ':id/messages/edit/:dr', component: MbMessageEditComponent },
   { path: ':id/messages/:ms', component: MbMessageThreadComponent },
   { path: ':id/messages/:ms/subscribers/edit', component: MbMessageSubscribersComponent },
-  { path: ':id/todos/:pr/todos/:td', component: ToDosComponent}
+  { path: ':id/todos/:pr/todos', component: ToDosComponent}
 ];
 
 @NgModule({
