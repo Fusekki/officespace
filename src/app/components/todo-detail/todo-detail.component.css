@@ -1,21 +1,20 @@
-.section {
+.section, .button-row {
   text-align: center;
 }
 
 h3:not(.subscriber h3) {
-    text-align: center;
-  }
-  
+  text-align: center;
+}
+
 h1 {
   text-align: left;
   margin: 0;
 }
 
-.message-details,
-.user-details {
+.todo-details, .user-details {
   align-items: center;
-  border-top: 1px solid rgba(0,0,0,0.1);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   padding: 2px 0;
 }
@@ -24,34 +23,37 @@ img {
   vertical-align: middle;
 }
 
-.message-image {
+.todo-image {
   border-radius: 50px;
   margin-right: 20px;
 }
 
-.message-image,
-.user-image {
+.todo-image, .user-image {
   margin: 0 5px
 }
 
-.message-image img,
-.user-image img {
+.todo-image img, .user-image img {
   border-radius: 50px;
 }
 
-.message-content {
+.todo-content {
   margin: 10px 0;
 }
 
-.message-body {
+/* .todo-title {
+  order: 1;
+} */
+
+.todo-body {
   margin: 20px 0;
 }
 
 .icon-container {
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50px;
   width: 30px;
 }
+
 mat-icon {
   color: yellow;
   position: relative;
@@ -59,50 +61,56 @@ mat-icon {
   left: 3px;
 }
 
-
 .discussions:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    border-bottom: 3px solid #000;
-    z-index: -1;
-  }
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-bottom: 3px solid #000;
+  z-index: -1;
+}
 
-  .discussions {
-    position: relative;
-  }
+.discussions {
+  position: relative;
+}
 
-  .discussions span {
-    display: inline-block;
-    padding: 0 0.5em 0 0;
-    background: #fff;
-  }
+.discussions span {
+  display: inline-block;
+  padding: 0 0.5em 0 0;
+  background: #fff;
+}
 
-  .btn-add,
-  .btn-people {
-    border-radius: 50px;
-    width: 100%;
-  }
+.btn-add, .btn-wide {
+  border-radius: 50px;
+}
 
-  .btn-people {
-    color: white;
-  }
+.btn-add,
+.subscriber .btn-wide {
+  color: white;
+}
 
-  .button-column {
-    width: 100%;
-  }
+.btn-wide {
+  width: 100%;
+}
 
-  .subscriber {
-    margin-left: 50px;
-  }
+.btn-people {
+  color: white;
+}
 
-  .subscribers-container h3 {
-    margin-bottom: 0;
-  }
+.button-column {
+  width: 100%;
+}
 
-  .subscribers-container p {
-    font-size: 15px;
-    -webkit-margin-before: 2px;
-  }
+.subscriber {
+  margin-left: 50px;
+}
+
+.subscribers-container h3 {
+  margin-bottom: 0;
+}
+
+.subscribers-container p {
+  font-size: 15px;
+  -webkit-margin-before: 2px;
+}
