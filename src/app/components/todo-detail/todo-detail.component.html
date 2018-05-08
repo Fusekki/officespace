@@ -1,19 +1,23 @@
 <div class="section" *ngIf="project">
-  <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}}</a></h3>
-  <h3>Todos</h3>
+  <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}}</a> >
+  <a routerLink="/{{user?.id}}/projects/{{project?.id}}/todos">Todos</a></h3>
 </div>
 
 <div class="todo-content" *ngIf="todo">
-  <h1>{{todo.title}}</h1>
   <div class="todo-details">
-    <div class="todo-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
+    <h2 class="todo-title">{{todo.title}}</h2>
+    <!-- <div class="todo-details"> -->
+      <div class="todo-image"><img src="http://via.placeholder.com/20x20" alt="" /></div>
+      <div class="completed">0/0 completed</div>
+    <!-- </div> -->
   </div>
+
   <div class="todo-body">
     {{todo.content}}
   </div>
-  <div class="icon-container">
-    <mat-icon aria-label="thumbs up">thumb_up</mat-icon>
-  </div>
+</div>
+<div class="button-row">
+  <button class="btn-add" mat-raised-button color="basic" (click)="AddTodo(titlebox.value, contentbox.value, false); titlebox.value=''; contentbox.value='';">Add a to-do</button>
 </div>
 <div>
   <h2 class='discussions'><span>Discussion</span></h2>
@@ -22,21 +26,21 @@
   <div class="user-details">
     <div class="user-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
     <div class="button-column">
-      <button class="btn-add" mat-raised-button color="accent" routerLink="/{{user?.id}}/messageboard/{{messageboard?.id}}/new">Add a comment or a file...</button>
+      <button class="btn-wide" mat-raised-button color="accent" routerLink="/{{user?.id}}/messageboard/{{messageboard?.id}}/new">Add a comment or a file...</button>
     </div>
   </div>
 </div>
-<div class="subscriber" *ngIf="mbpost">
-  <div class="subscribers-container" *ngIf="mbpost.author == user?.id">
+<div class="subscriber" *ngIf="todo">
+  <div class="subscribers-container" *ngIf="todo.author == user?.id">
     <h3>Subscribers</h3>
     <p>
-    {{mbpost?.subscribers.length}} person will be notified when someone comments on this message.
+    {{todo?.subscribers.length}} person will be notified when someone comments on this message.
     </p>
     <div class="action-row">
       <div class="user-details">
         <div class="user-image"><img src="http://via.placeholder.com/35x35" alt="" /></div>
         <div class="button-column">
-          <button class="btn-people" mat-raised-button color="basic" routerLink="/{{user?.id}}/messages/{{mbpost?.id}}/subscribers/edit">Add/remove people...</button>
+          <button class="btn-wide" mat-raised-button color="basic" routerLink="/{{user?.id}}/messages/{{mbpost?.id}}/subscribers/edit">Add/remove people...</button>
         </div>
       </div>
     </div>
