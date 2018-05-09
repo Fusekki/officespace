@@ -1,13 +1,17 @@
 <div class="section" *ngIf="project">
-  <h3><a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}}</a> >
-  <a routerLink="/{{user?.id}}/projects/{{project?.id}}/todos">Todos</a></h3>
+  <h3>
+    <a routerLink="/{{user?.id}}/projects/{{project?.id}}">{{project.name}}</a> >
+    <a routerLink="/{{user?.id}}/projects/{{project?.id}}/todos">Todos</a>
+  </h3>
 </div>
 
 <div class="todo-content" *ngIf="todo">
   <div class="todo-details">
     <h2 class="todo-title">{{todo.title}}</h2>
     <!-- <div class="todo-details"> -->
-    <div class="todo-image"><img src="http://via.placeholder.com/20x20" alt="" /></div>
+    <div class="todo-image">
+      <img src="http://via.placeholder.com/20x20" alt="" />
+    </div>
     <span class="completed">0/0 completed</span>
     <!-- </div> -->
   </div>
@@ -20,11 +24,15 @@
   <button class="btn-add" mat-raised-button color="basic" (click)="AddTodo(titlebox.value, contentbox.value, false); titlebox.value=''; contentbox.value='';">Add a to-do</button>
 </div>
 <div>
-  <h2 class='discussions'><span>Discussion</span></h2>
+  <h2 class='discussions'>
+    <span>Discussion</span>
+  </h2>
 </div>
 <div class="action-row">
   <div class="user-details">
-    <div class="user-image"><img src="http://via.placeholder.com/40x40" alt="" /></div>
+    <div class="user-image">
+      <img src="http://via.placeholder.com/40x40" alt="" />
+    </div>
     <div class="button-column">
       <button class="btn-wide" mat-raised-button color="accent" routerLink="/{{user?.id}}/messageboard/{{messageboard?.id}}/new">Add a comment or a file...</button>
     </div>
@@ -34,11 +42,13 @@
   <div class="subscribers-container" *ngIf="todo.author == user?.id">
     <h3>Subscribers</h3>
     <p>
-    {{todo?.subscribers.length}} person will be notified when someone comments on this message.
+      {{todo?.subscribers.length}} person will be notified when someone comments on this message.
     </p>
     <div class="action-row">
       <div class="user-details">
-        <div class="user-image"><img src="http://via.placeholder.com/35x35" alt="" /></div>
+        <div class="user-image">
+          <img src="http://via.placeholder.com/35x35" alt="" />
+        </div>
         <div class="button-column">
           <button class="btn-wide" mat-raised-button color="basic" routerLink="/{{user?.id}}/messages/{{mbpost?.id}}/subscribers/edit">Add/remove people...</button>
         </div>
@@ -48,7 +58,7 @@
   <div class="subscribers-container" *ngIf="todo.author == user?.id">
     <h3>You're subscribed</h3>
     <p>
-    You'll get a notification when someone comments on this to-do list.
+      You'll get a notification when someone comments on this to-do list.
     </p>
     <div class="action-row">
       <div class="user-details">
