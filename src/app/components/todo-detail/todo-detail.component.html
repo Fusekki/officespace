@@ -45,4 +45,18 @@
       </div>
     </div>
   </div>
+  <div class="subscribers-container" *ngIf="todo.author == user?.id">
+    <h3>You're subscribed</h3>
+    <p>
+    You'll get a notification when someone comments on this to-do list.
+    </p>
+    <div class="action-row">
+      <div class="user-details">
+        <div class="button-column">
+          <button mat-raised-button color="basic" routerLink="/{{user?.id}}/messages/{{mbpost?.id}}/subscribers/edit">Unsubscribe me</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
