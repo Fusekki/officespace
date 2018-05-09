@@ -1,19 +1,13 @@
-/* 
-p {
-  color: #877457;
-  font-style: italic;
-}
-
-p span {
-  color: black;
-} */
-
 h2, h3 {
   text-align: center;
 }
 
 h3 span {
   font-weight: lighter;
+}
+
+img {
+  border-radius: 50px;
 }
 
 .link {
@@ -35,7 +29,7 @@ mat-list-item {
 
 .button-row {
   /* display: flex; */
-  text-align: center;
+  text-align: left;
   /* margin: 0;
   white-space: nowrap;
   text-align: center; */
@@ -46,7 +40,7 @@ button {
 }
 
 .vert-padding {
-  height: 40px;
+  height: 15px;
 }
 
 >>>.mat-form-field-label, >>>.mat-select-value-text {
@@ -70,12 +64,21 @@ button {
   background: none;
 }
 
+.mat-card-header {
+  margin-bottom: 10px;
+}
+
 .mat-card-title {
   order: 1;
 }
 
 .mat-card-subtitle {
   order: 3;
+}
+
+.mat-card-avatar {
+  height: 20px;
+  width: 20px;
 }
 
 .mat-card-header-text {
@@ -89,13 +92,19 @@ button {
   margin: 0;
 }
 
-.todo-header-image {
+.completed {
+  font-size: 12px; 
   margin-left: 5px;
+  order: 3;
+}
+
+.todo-header-image {
   order: 2;
 }
 
 mat-card-title {
   white-space: nowrap;
+  order: 1;
 }
 
 .mat-card-subtitle {
