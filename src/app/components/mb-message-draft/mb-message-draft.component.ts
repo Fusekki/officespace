@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -73,7 +74,7 @@ export class MbMessageDraftComponent implements OnInit {
 
   getUsers() {
     return this.userService.getUsers()
-      .map(users => this.users = users);
+      .pipe(map(users => this.users = users));
   }
 
   // getauthorName(id: number): string {

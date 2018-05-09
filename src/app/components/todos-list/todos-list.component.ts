@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+import { map } from 'rxjs/operators';
+
+
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
-import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -71,7 +74,7 @@ export class TodosListComponent implements OnInit {
 
   getTodos() {
     return this.todoService.getToDos()
-      .map(todos => this.todos = todos);
+      .pipe(map(todos => this.todos = todos));
   }
 
   getUser(): void {

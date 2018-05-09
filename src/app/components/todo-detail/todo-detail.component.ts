@@ -1,4 +1,7 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+
+import { map } from 'rxjs/operators';
 
 import { Router } from '@angular/router';
 
@@ -8,8 +11,8 @@ import {MatListModule} from '@angular/material/list';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+
+
 
 import { Project } from '../../classes/project';
 import { ProjectService } from '../../services/project.service';
@@ -66,7 +69,7 @@ getProject(): void {
 
 getUsers() {
   return this.userService.getUsers()
-    .map(users => this.users = users);
+    .pipe(map(users => this.users = users));
 }
 
 
@@ -85,7 +88,7 @@ getTodo(): void {
 
 getTodos() {
   return this.todoService.getToDos()
-    .map(todos => this.todos = todos);
+    .pipe(map(todos => this.todos = todos));
 }
 
 getUser(): void {

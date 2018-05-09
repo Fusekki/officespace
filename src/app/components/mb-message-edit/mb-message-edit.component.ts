@@ -1,5 +1,7 @@
 import { Component,Input, OnInit } from '@angular/core';
 
+import { map } from 'rxjs/operators';
+
 import { Router } from '@angular/router';
 
 import {MatSelectModule} from '@angular/material/select';
@@ -8,8 +10,8 @@ import {MatListModule} from '@angular/material/list';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+
+
 
 import {
   trigger,
@@ -105,7 +107,7 @@ export class MbMessageEditComponent implements OnInit {
 
   getUsers() {
     return this.userService.getUsers()
-      .map(users => this.users = users);
+      .pipe(map(users => this.users = users));
   }
 
 
@@ -157,7 +159,7 @@ export class MbMessageEditComponent implements OnInit {
 
   getMbposts() {
     return this.mbpostService.getMbPosts()
-      .map(mbposts => this.mbposts = mbposts);
+      .pipe(map(mbposts => this.mbposts = mbposts));
   }
 
   getUser(): void {

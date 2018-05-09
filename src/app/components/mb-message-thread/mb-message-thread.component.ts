@@ -1,4 +1,6 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { map } from 'rxjs/operators';
 
 import { Router } from '@angular/router';
 
@@ -8,8 +10,8 @@ import {MatListModule} from '@angular/material/list';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+
+
 
 import { MessageBoard } from '../../classes/message-board';
 import { Project } from '../../classes/project';
@@ -80,7 +82,7 @@ export class MbMessageThreadComponent implements OnInit {
 
   getUsers() {
     return this.userService.getUsers()
-      .map(users => this.users = users);
+      .pipe(map(users => this.users = users));
   }
 
 
@@ -113,7 +115,7 @@ export class MbMessageThreadComponent implements OnInit {
 
   getMbposts() {
     return this.mbpostService.getMbPosts()
-      .map(mbposts => this.mbposts = mbposts);
+      .pipe(map(mbposts => this.mbposts = mbposts));
   }
 
   getUser(): void {

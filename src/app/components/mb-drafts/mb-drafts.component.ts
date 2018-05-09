@@ -7,6 +7,8 @@ import { MatListModule } from '@angular/material/list';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { map } from 'rxjs/operators';
+
 import { MessageBoard } from '../../classes/message-board';
 import { Project } from '../../classes/project';
 import { ProjectService } from '../../services/project.service';
@@ -59,7 +61,7 @@ export class MbDraftsComponent implements OnInit {
 
   getMbposts() {
     return this.mbpostService.getMbPosts()
-      .map(mbposts => this.mbposts = mbposts);
+      .pipe(map(mbposts => this.mbposts = mbposts));
   }
 
   getUsers(): void {

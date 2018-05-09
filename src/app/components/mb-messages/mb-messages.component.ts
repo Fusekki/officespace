@@ -1,5 +1,6 @@
-
 import { Component, OnInit } from '@angular/core';
+
+import { map } from 'rxjs/operators';
 
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -86,7 +87,7 @@ export class MbMessagesComponent implements OnInit {
 
   getMbposts() {
     return this.mbpostService.getMbPosts()
-      .map(mbposts => this.mbposts = mbposts);
+      .pipe(map(mbposts => this.mbposts = mbposts));
   }
 
   onSelect(id: number) {

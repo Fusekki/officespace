@@ -8,8 +8,8 @@ import {MatListModule} from '@angular/material/list';
 
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+
+
 import { MessageBoard } from '../../classes/message-board';
 import { Project } from '../../classes/project';
 import { ProjectService } from '../../services/project.service';
