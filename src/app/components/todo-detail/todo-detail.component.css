@@ -15,6 +15,10 @@ h1 {
   font-size: 12px;
 }
 
+.todo-title {
+  margin: 10px 0;
+}
+
 .todo-details {
   align-items: baseline;
 }
@@ -23,10 +27,17 @@ h1 {
   align-items: center;
 }
 
-.todo-details, .user-details {
+.todo-content,
+.user-details {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.todo-details, .user-details {
   display: flex;
+}
+
+.user-details {
   padding: 2px 0;
 }
 
@@ -51,12 +62,8 @@ img {
   margin: 10px 0;
 }
 
-/* .todo-title {
-  order: 1;
-} */
-
 .todo-body {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .icon-container {
