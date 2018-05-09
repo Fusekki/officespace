@@ -9,12 +9,12 @@
         <mat-card-header>
           <div mat-card-avatar class="todo-header-image"><img src="http://via.placeholder.com/20x20" alt="" /></div>
           <mat-card-title><a routerLink="/{{user?.id}}/todos/{{project.id}}/todos/{{todo.id}}"><h3 class="link">{{todo.title}}</h3></a></mat-card-title>
-          <mat-card-subtitle>0/0 completed</mat-card-subtitle>
+          <span class="completed">0/0 completed</span>
         </mat-card-header>
         <mat-card-content>
             {{todo.content}}
         </mat-card-content>
-        <mat-checkbox class="example-margin" [(ngModel)]="todo.completed">Checked</mat-checkbox>
+        <!-- <mat-checkbox class="example-margin" [(ngModel)]="todo.completed">Checked</mat-checkbox> -->
       </mat-card>
     </mat-list-item>
   </mat-list>
